@@ -52,7 +52,11 @@ Words intentionally avoided: *help*, *suggest*, *recommend*, *generating*, *anyt
 
 ### Entry state design
 
-The entry state does not use an AI greeting. Instead, it anchors on the listing itself — property name, city, and a retrieval-framed subtitle. This reduces AI-assistant framing and reinforces that the product is scoped to this specific listing. The star-four symbol serves as the product's identity mark across all states.
+The entry state does not use an AI greeting. The primary visual is the action intent — "Look up details in this listing" — not the property address. The address and city appear below as a secondary scope label, confirming which listing the tool is scoped to.
+
+This hierarchy reflects the context: the bottom sheet is embedded in the listing detail page, so the user already knows which property they are viewing. Repeating the address as the dominant element would be redundant. What the entry state needs to communicate first is *what this tool does*, not *where you are*.
+
+The star-four symbol serves as the product's identity mark across all states.
 
 ### MVP Scope Boundary
 
