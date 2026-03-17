@@ -1,0 +1,33 @@
+{
+  "cli_version": "0.4.9",
+  "checkpoint_id": "0223b548daac",
+  "session_id": "1cb407a8-dd29-47d0-94ff-dded76e8e14c",
+  "strategy": "manual-commit",
+  "created_at": "2026-03-17T14:45:19.454456Z",
+  "branch": "main",
+  "checkpoints_count": 1,
+  "files_touched": [
+    "design-decisions.md",
+    "design-doc.md"
+  ],
+  "agent": "Claude Code",
+  "turn_id": "307a2c225cfc",
+  "checkpoint_transcript_start": 280,
+  "transcript_lines_at_start": 280,
+  "token_usage": {
+    "input_tokens": 14,
+    "cache_creation_tokens": 15927,
+    "cache_read_tokens": 1049901,
+    "output_tokens": 3367,
+    "api_call_count": 8
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-03-17T14:45:19.339119Z",
+    "agent_lines": 0,
+    "human_added": 0,
+    "human_modified": 0,
+    "human_removed": 37,
+    "total_committed": 29,
+    "agent_percentage": 0
+  }
+}
