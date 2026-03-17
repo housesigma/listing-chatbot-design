@@ -2705,20 +2705,20 @@
     {
       "type": "frame",
       "id": "W528Z",
-      "x": -7,
-      "y": 1411,
+      "x": -907,
+      "y": 1454,
       "name": "Frame 1",
       "clip": true,
-      "width": 2707,
-      "height": 1134,
+      "width": 3694,
+      "height": 1108,
       "fill": "#FFFFFF",
       "layout": "none",
       "children": [
         {
           "type": "text",
           "id": "K9mHj",
-          "x": 1060,
-          "y": 76,
+          "x": 2308,
+          "y": 112,
           "name": "L2",
           "fill": "#28A3B3",
           "content": "lookup — result",
@@ -2729,8 +2729,8 @@
         {
           "type": "text",
           "id": "IVgJM",
-          "x": 1510,
-          "y": 76,
+          "x": 2758,
+          "y": 112,
           "name": "L3",
           "fill": "#28A3B3",
           "content": "lookup — retrieving",
@@ -2741,8 +2741,8 @@
         {
           "type": "text",
           "id": "ju9cC",
-          "x": 1960,
-          "y": 76,
+          "x": 3208,
+          "y": 112,
           "name": "L4",
           "fill": "#28A3B3",
           "content": "lookup — no result",
@@ -2753,8 +2753,8 @@
         {
           "type": "frame",
           "id": "vp2ac",
-          "x": 1060,
-          "y": 116,
+          "x": 2308,
+          "y": 152,
           "name": "lookup_result",
           "clip": true,
           "width": 390,
@@ -3009,8 +3009,8 @@
         {
           "type": "frame",
           "id": "0fWFl",
-          "x": 1510,
-          "y": 116,
+          "x": 2758,
+          "y": 152,
           "name": "lookup_retrieving",
           "clip": true,
           "width": 390,
@@ -3356,8 +3356,8 @@
         {
           "type": "frame",
           "id": "i9Xp9",
-          "x": 1960,
-          "y": 116,
+          "x": 3208,
+          "y": 152,
           "name": "lookup_noresult",
           "clip": true,
           "width": 390,
@@ -3596,8 +3596,8 @@
         {
           "type": "frame",
           "id": "buenB",
-          "x": 599,
-          "y": 116,
+          "x": 1847,
+          "y": 152,
           "name": "lookup_entry_hero",
           "clip": true,
           "width": 390,
@@ -4026,14 +4026,4527 @@
         {
           "type": "text",
           "id": "oX7fu",
-          "x": 599,
-          "y": 76,
+          "x": 1847,
+          "y": 112,
           "name": "labelB",
           "fill": "#28A3B3",
           "content": "lookup — entry · hero",
           "fontFamily": "Inter",
           "fontSize": 16,
           "fontWeight": "700"
+        },
+        {
+          "type": "frame",
+          "id": "kJMGT",
+          "x": 1275,
+          "y": 112,
+          "name": "#2.0.2 PROPERTY_DETAILS_ ALL EXTENDED",
+          "clip": true,
+          "width": 414,
+          "height": 924,
+          "fill": "#ffffffff",
+          "stroke": {
+            "align": "inside",
+            "thickness": 1
+          },
+          "layout": "none",
+          "children": [
+            {
+              "type": "group",
+              "id": "7XsYe",
+              "x": 20,
+              "y": 2883,
+              "name": "Tab Guide",
+              "enabled": false,
+              "children": [
+                {
+                  "type": "rectangle",
+                  "id": "exMKv",
+                  "x": 0,
+                  "y": 0,
+                  "name": "Rectangle 20",
+                  "fill": "#5bd8ffff",
+                  "width": 93.75,
+                  "height": 40
+                },
+                {
+                  "type": "rectangle",
+                  "id": "IMxx9",
+                  "x": 94,
+                  "y": 0,
+                  "name": "Rectangle 20 Copy 2",
+                  "fill": "#00c2ffff",
+                  "width": 93.75,
+                  "height": 40
+                },
+                {
+                  "type": "rectangle",
+                  "id": "3xVzK",
+                  "x": 187,
+                  "y": 0,
+                  "name": "Rectangle 20 Copy 3",
+                  "fill": "#1e8baeff",
+                  "width": 93.75,
+                  "height": 40
+                },
+                {
+                  "type": "rectangle",
+                  "id": "UaGYZ",
+                  "x": 281,
+                  "y": 0,
+                  "name": "Rectangle 20 Copy 4",
+                  "fill": "#1e8baeff",
+                  "width": 93.75,
+                  "height": 40
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "QRzmU",
+              "x": 26,
+              "y": 505,
+              "name": "5+1 Bedrooms",
+              "fill": "#333333ff",
+              "content": "5+1 Bedrooms",
+              "fontFamily": "Poppins",
+              "fontSize": 16,
+              "fontWeight": "500"
+            },
+            {
+              "type": "text",
+              "id": "eNumK",
+              "x": 164,
+              "y": 505,
+              "name": "6 Bathrooms",
+              "fill": "#333333ff",
+              "content": "6 Bathrooms",
+              "fontFamily": "Poppins",
+              "fontSize": 16,
+              "fontWeight": "500"
+            },
+            {
+              "type": "text",
+              "id": "CH2yr",
+              "x": 312,
+              "y": 505,
+              "name": "3 Garage",
+              "fill": "#333333ff",
+              "content": "3 Garage",
+              "fontFamily": "Poppins",
+              "fontSize": 16,
+              "fontWeight": "500"
+            },
+            {
+              "type": "text",
+              "id": "u4ZCL",
+              "x": 16,
+              "y": 570,
+              "name": "Listing History",
+              "fill": "#000000ff",
+              "content": "Listing History",
+              "fontFamily": "Poppins",
+              "fontSize": 18,
+              "fontWeight": "600"
+            },
+            {
+              "type": "text",
+              "id": "gsGoj",
+              "x": 16,
+              "y": 660,
+              "name": "$3,900,000",
+              "fill": "#333333ff",
+              "content": "$3,900,000",
+              "fontFamily": "Poppins",
+              "fontSize": 16,
+              "fontWeight": "500"
+            },
+            {
+              "type": "frame",
+              "id": "TOSLz",
+              "x": 116,
+              "y": 656,
+              "name": "Group 334",
+              "clip": true,
+              "width": 78,
+              "height": 31,
+              "fill": {
+                "type": "color",
+                "color": "#ffffffff",
+                "enabled": false
+              },
+              "stroke": {
+                "align": "inside",
+                "thickness": 1
+              },
+              "layout": "none",
+              "children": [
+                {
+                  "type": "rectangle",
+                  "cornerRadius": 8,
+                  "id": "ewvMM",
+                  "x": 0,
+                  "y": 0,
+                  "name": "Rectangle",
+                  "fill": "#f0f9ebff",
+                  "width": 78,
+                  "height": 31,
+                  "stroke": {
+                    "align": "center",
+                    "thickness": 1,
+                    "fill": "#72c74936"
+                  }
+                },
+                {
+                  "type": "text",
+                  "id": "6LcZn",
+                  "x": 12,
+                  "y": 6,
+                  "name": "For sale",
+                  "fill": "#72c749ff",
+                  "content": "For sale",
+                  "fontFamily": "Poppins",
+                  "fontSize": 14,
+                  "fontWeight": "500"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "nad0J",
+              "x": 16,
+              "y": 598,
+              "name": "Buy/sell history for",
+              "fill": "#808080ff",
+              "textGrowth": "fixed-width",
+              "width": 382,
+              "content": "Buy/sell history for 1 Renaissance Crt, Vaughan (Detached)",
+              "fontFamily": "Poppins",
+              "fontSize": 14,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "3JO1Q",
+              "x": 16,
+              "y": 692,
+              "name": "List: 2021-07-16",
+              "fill": "#808080ff",
+              "textGrowth": "fixed-width",
+              "width": 144,
+              "content": "List: 2021-07-16",
+              "textAlignVertical": "middle",
+              "fontFamily": "Poppins",
+              "fontSize": 14,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "SR9SB",
+              "x": 254,
+              "y": 692,
+              "name": "N5310389",
+              "fill": "#333333ff",
+              "textGrowth": "fixed-width",
+              "width": 144,
+              "content": "N5310389",
+              "textAlign": "right",
+              "textAlignVertical": "middle",
+              "fontFamily": "Poppins",
+              "fontSize": 14,
+              "fontWeight": "600"
+            },
+            {
+              "type": "text",
+              "id": "2m4uV",
+              "x": 16,
+              "y": 750,
+              "name": "$4,150,000",
+              "fill": "#333333ff",
+              "content": "$4,150,000\t\n",
+              "fontFamily": "Poppins",
+              "fontSize": 16,
+              "fontWeight": "500"
+            },
+            {
+              "type": "rectangle",
+              "cornerRadius": 8,
+              "id": "BTpEb",
+              "x": 116,
+              "y": 746,
+              "name": "Rectangle",
+              "fill": "#f0f9ebff",
+              "width": 78,
+              "height": 31,
+              "stroke": {
+                "align": "center",
+                "thickness": 1,
+                "fill": "#72c74936"
+              }
+            },
+            {
+              "type": "text",
+              "id": "bV2i2",
+              "x": 128,
+              "y": 751,
+              "name": "Expired",
+              "fill": "#72c749ff",
+              "content": "Expired",
+              "fontFamily": "Poppins",
+              "fontSize": 14,
+              "fontWeight": "500"
+            },
+            {
+              "type": "frame",
+              "id": "RvvWE",
+              "x": 331,
+              "y": 746,
+              "name": "Group 335",
+              "clip": true,
+              "width": 67,
+              "height": 31,
+              "fill": {
+                "type": "color",
+                "color": "#ffffffff",
+                "enabled": false
+              },
+              "stroke": {
+                "align": "inside",
+                "thickness": 1
+              },
+              "layout": "none",
+              "children": [
+                {
+                  "type": "rectangle",
+                  "cornerRadius": 8,
+                  "id": "DcW1m",
+                  "x": 0,
+                  "y": 0,
+                  "name": "Rectangle",
+                  "fill": "#28a3b3ff",
+                  "width": 67,
+                  "height": 31
+                },
+                {
+                  "type": "text",
+                  "id": "1HY5z",
+                  "x": 17,
+                  "y": 5,
+                  "name": "View",
+                  "fill": "#ffffffff",
+                  "content": "View",
+                  "fontFamily": "Poppins",
+                  "fontSize": 14,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "kwXZS",
+              "x": 16,
+              "y": 797,
+              "name": "List: 2021-07-16 | E",
+              "fill": "#808080ff",
+              "textGrowth": "fixed-width",
+              "width": 232,
+              "content": "List: 2021-07-16 | End: 2021-07-10",
+              "textAlignVertical": "middle",
+              "fontFamily": "Poppins",
+              "fontSize": 14,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "vIRCT",
+              "x": 254,
+              "y": 797,
+              "name": "N4828990",
+              "fill": "#333333ff",
+              "textGrowth": "fixed-width",
+              "width": 144,
+              "content": "N4828990",
+              "textAlign": "right",
+              "textAlignVertical": "middle",
+              "fontFamily": "Poppins",
+              "fontSize": 14,
+              "fontWeight": "600"
+            },
+            {
+              "type": "text",
+              "id": "1doFS",
+              "x": 16,
+              "y": 855,
+              "name": "$4,800,000",
+              "fill": "#333333ff",
+              "content": "$4,800,000\t\n",
+              "fontFamily": "Poppins",
+              "fontSize": 16,
+              "fontWeight": "500"
+            },
+            {
+              "type": "rectangle",
+              "cornerRadius": 8,
+              "id": "wCw4N",
+              "x": 116,
+              "y": 851,
+              "name": "Rectangle",
+              "fill": "#f0f9ebff",
+              "width": 106,
+              "height": 31,
+              "stroke": {
+                "align": "center",
+                "thickness": 1,
+                "fill": "#72c74936"
+              }
+            },
+            {
+              "type": "text",
+              "id": "ws2em",
+              "x": 128,
+              "y": 857,
+              "name": "Terminated",
+              "fill": "#72c749ff",
+              "content": "Terminated\n",
+              "fontFamily": "Poppins",
+              "fontSize": 14,
+              "fontWeight": "500"
+            },
+            {
+              "type": "frame",
+              "id": "vSRnp",
+              "x": 331,
+              "y": 851,
+              "name": "Group 336",
+              "clip": true,
+              "width": 67,
+              "height": 31,
+              "fill": {
+                "type": "color",
+                "color": "#ffffffff",
+                "enabled": false
+              },
+              "stroke": {
+                "align": "inside",
+                "thickness": 1
+              },
+              "layout": "none",
+              "children": [
+                {
+                  "type": "rectangle",
+                  "cornerRadius": 8,
+                  "id": "6xV4P",
+                  "x": 0,
+                  "y": 0,
+                  "name": "Rectangle",
+                  "fill": "#28a3b3ff",
+                  "width": 67,
+                  "height": 31
+                },
+                {
+                  "type": "text",
+                  "id": "wRaHO",
+                  "x": 17,
+                  "y": 5,
+                  "name": "View",
+                  "fill": "#ffffffff",
+                  "content": "View",
+                  "fontFamily": "Poppins",
+                  "fontSize": 14,
+                  "fontWeight": "600"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "2YZ6e",
+              "x": 16,
+              "y": 887,
+              "name": "List: 2021-07-16 | E",
+              "fill": "#808080ff",
+              "textGrowth": "fixed-width",
+              "width": 232,
+              "content": "List: 2021-07-16 | End: 2019-12-17",
+              "textAlignVertical": "middle",
+              "fontFamily": "Poppins",
+              "fontSize": 14,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "rB18H",
+              "x": 254,
+              "y": 887,
+              "name": "N4512760",
+              "fill": "#333333ff",
+              "textGrowth": "fixed-width",
+              "width": 144,
+              "content": "N4512760",
+              "textAlign": "right",
+              "textAlignVertical": "middle",
+              "fontFamily": "Poppins",
+              "fontSize": 14,
+              "fontWeight": "600"
+            },
+            {
+              "type": "text",
+              "id": "TxSse",
+              "x": 60,
+              "y": 996,
+              "name": "Similar Sold",
+              "fill": "#28a3b3ff",
+              "content": "Similar Sold",
+              "fontFamily": "Poppins",
+              "fontSize": 16,
+              "fontWeight": "500"
+            },
+            {
+              "type": "rectangle",
+              "cornerRadius": 10,
+              "id": "tZrrm",
+              "x": 16,
+              "y": 979,
+              "name": "Rectangle 5",
+              "fill": {
+                "type": "color",
+                "color": "#ffffffff",
+                "enabled": false
+              },
+              "width": 183,
+              "height": 57,
+              "stroke": {
+                "align": "inside",
+                "thickness": 2,
+                "fill": "#28a3b3ff"
+              },
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#373a4025",
+                "offset": {
+                  "x": 0,
+                  "y": 5
+                },
+                "blur": 21.875,
+                "spread": 0.5
+              }
+            },
+            {
+              "type": "text",
+              "id": "cz6EO",
+              "x": 251,
+              "y": 996,
+              "name": "Similar Rent",
+              "fill": "#28a3b3ff",
+              "content": "Similar Rented",
+              "fontFamily": "Poppins",
+              "fontSize": 16,
+              "fontWeight": "500"
+            },
+            {
+              "type": "rectangle",
+              "cornerRadius": 10,
+              "id": "vs5h6",
+              "x": 215,
+              "y": 979,
+              "name": "Rectangle 5",
+              "fill": {
+                "type": "color",
+                "color": "#ffffffff",
+                "enabled": false
+              },
+              "width": 183,
+              "height": 57,
+              "stroke": {
+                "align": "inside",
+                "thickness": 2,
+                "fill": "#28a3b3ff"
+              },
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#373a4025",
+                "offset": {
+                  "x": 0,
+                  "y": 5
+                },
+                "blur": 21.875,
+                "spread": 0.5
+              }
+            },
+            {
+              "type": "group",
+              "id": "KVH3f",
+              "x": 151,
+              "y": 941,
+              "name": "Group 333",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "PkmKY",
+                  "x": 24,
+                  "y": 0,
+                  "name": "View in full map",
+                  "fill": "#28a3b3ff",
+                  "content": "Show More",
+                  "fontFamily": "Poppins",
+                  "fontSize": 16,
+                  "fontWeight": "500"
+                },
+                {
+                  "type": "frame",
+                  "id": "EFWie",
+                  "x": 0,
+                  "y": 5,
+                  "name": "chevron-down-solid (1) 1",
+                  "clip": true,
+                  "width": 14,
+                  "height": 16,
+                  "fill": {
+                    "type": "color",
+                    "color": "#ffffffff",
+                    "enabled": false
+                  },
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1
+                  },
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "path",
+                      "id": "VKzEW",
+                      "x": 0.17578125,
+                      "y": 3.859375,
+                      "name": "Vector",
+                      "geometry": "M201.37276 257.98154l-194.34301-194.34402c-9.373-9.373-9.373-24.56901 0-33.94101l22.667-22.66699c9.357-9.357 24.522-9.37501 33.901-0.04001l154.746 154.02102 154.745-154.02102c9.37899-9.335 24.544-9.31699 33.901 0.04001l22.66699 22.66699c9.37298 9.373 9.37298 24.56901 0 33.94101l-194.342 194.34402c-9.373 9.37201-24.56898 9.37201-33.94198 0z",
+                      "fill": "#28a3b3ff",
+                      "width": 13.646452903747559,
+                      "height": 8.28157901763916,
+                      "stroke": {
+                        "align": "inside",
+                        "thickness": 1
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "id": "ZydBY",
+              "x": 66,
+              "y": 465,
+              "name": "bed-alt-light"
+            },
+            {
+              "type": "group",
+              "id": "hqqSb",
+              "x": 201,
+              "y": 465,
+              "name": "bath-light"
+            },
+            {
+              "type": "group",
+              "id": "zzOWx",
+              "x": 331,
+              "y": 465,
+              "name": "garage-car-light"
+            },
+            {
+              "type": "text",
+              "id": "9io2p",
+              "x": 16,
+              "y": 370,
+              "name": "Listed for: $ 3,900,",
+              "fill": "#000000ff",
+              "content": "Listed for: $3,900,000",
+              "textAlignVertical": "middle",
+              "fontFamily": "Poppins",
+              "fontSize": 16,
+              "fontWeight": "500"
+            },
+            {
+              "type": "text",
+              "id": "mzU58",
+              "x": 275,
+              "y": 376,
+              "name": "Listed 6 days ago",
+              "fill": "#808080ff",
+              "content": "Listed 6 days ago",
+              "textAlign": "right",
+              "textAlignVertical": "middle",
+              "fontFamily": "Poppins",
+              "fontSize": 14,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "amViW",
+              "x": 16,
+              "y": 411,
+              "name": "Estimated Price: $3,",
+              "fill": "#808080ff",
+              "content": "Estimated Price: $3,560,550",
+              "fontFamily": "Poppins",
+              "fontSize": 14,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "text",
+              "id": "ptUKq",
+              "x": 225,
+              "y": 411,
+              "name": "1%",
+              "fill": "#808080ff",
+              "content": "1%",
+              "fontFamily": "Poppins",
+              "fontSize": 14,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "path",
+              "id": "C7axP",
+              "x": 211,
+              "y": 418.65234375,
+              "name": "Path",
+              "geometry": "M8.2225 5l-7.62842 0c-0.52822 0-0.79274-0.63865-0.41924-1.01215l3.81421-3.8142c0.23153-0.23153 0.60696-0.23153 0.83848 0l3.81421 3.8142c0.37353 0.3735 0.10898 1.01215-0.41924 1.01215z",
+              "fill": "#55c227ff",
+              "width": 8.816604614257812,
+              "height": 4.95989990234375
+            },
+            {
+              "type": "frame",
+              "id": "21vDi",
+              "x": 16,
+              "y": 448,
+              "name": "Divider",
+              "width": 382,
+              "height": 1,
+              "fill": {
+                "type": "color",
+                "color": "#ffffffff",
+                "enabled": false
+              },
+              "stroke": {
+                "align": "inside",
+                "thickness": 1
+              },
+              "layout": "none",
+              "children": [
+                {
+                  "type": "path",
+                  "id": "FJ8uF",
+                  "x": 0,
+                  "y": 0,
+                  "name": "Line",
+                  "geometry": "M0 0.5l382 0",
+                  "fillRule": "evenodd",
+                  "width": 382,
+                  "height": 1,
+                  "stroke": {
+                    "align": "center",
+                    "thickness": 1,
+                    "cap": "square",
+                    "fill": "#e2e2e2ff"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "tPwjk",
+              "x": 16,
+              "y": 729,
+              "name": "Divider",
+              "width": 382,
+              "height": 1,
+              "fill": {
+                "type": "color",
+                "color": "#ffffffff",
+                "enabled": false
+              },
+              "stroke": {
+                "align": "inside",
+                "thickness": 1
+              },
+              "layout": "none",
+              "children": [
+                {
+                  "type": "path",
+                  "id": "O0mvB",
+                  "x": 0,
+                  "y": 0,
+                  "name": "Line",
+                  "geometry": "M0 0.5l382 0",
+                  "fillRule": "evenodd",
+                  "width": 382,
+                  "height": 1,
+                  "stroke": {
+                    "align": "center",
+                    "thickness": 1,
+                    "cap": "square",
+                    "fill": "#e2e2e2ff"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "Saio1",
+              "x": 16,
+              "y": 834,
+              "name": "Divider",
+              "width": 382,
+              "height": 1,
+              "fill": {
+                "type": "color",
+                "color": "#ffffffff",
+                "enabled": false
+              },
+              "stroke": {
+                "align": "inside",
+                "thickness": 1
+              },
+              "layout": "none",
+              "children": [
+                {
+                  "type": "path",
+                  "id": "61QPw",
+                  "x": 0,
+                  "y": 0,
+                  "name": "Line",
+                  "geometry": "M0 0.5l382 0",
+                  "fillRule": "evenodd",
+                  "width": 382,
+                  "height": 1,
+                  "stroke": {
+                    "align": "center",
+                    "thickness": 1,
+                    "cap": "square",
+                    "fill": "#e2e2e2ff"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "ZYnpj",
+              "x": 16,
+              "y": 924,
+              "name": "Divider",
+              "width": 382,
+              "height": 1,
+              "fill": {
+                "type": "color",
+                "color": "#ffffffff",
+                "enabled": false
+              },
+              "stroke": {
+                "align": "inside",
+                "thickness": 1
+              },
+              "layout": "none",
+              "children": [
+                {
+                  "type": "path",
+                  "id": "xb35M",
+                  "x": 0,
+                  "y": 0,
+                  "name": "Line",
+                  "geometry": "M0 0.5l382 0",
+                  "fillRule": "evenodd",
+                  "width": 382,
+                  "height": 1,
+                  "stroke": {
+                    "align": "center",
+                    "thickness": 1,
+                    "cap": "square",
+                    "fill": "#e2e2e2ff"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "id": "cvS2T",
+              "x": -91,
+              "y": 857,
+              "name": "Group 299",
+              "children": [
+                {
+                  "type": "rectangle",
+                  "cornerRadius": 10,
+                  "id": "Espti",
+                  "x": 107,
+                  "y": 405,
+                  "name": "Rectangle 7",
+                  "fill": "#e9f6f7ff",
+                  "width": 382,
+                  "height": 57,
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 2
+                  }
+                },
+                {
+                  "type": "frame",
+                  "id": "TlYPd",
+                  "x": 409,
+                  "y": 418,
+                  "name": "Group 208",
+                  "clip": true,
+                  "width": 67,
+                  "height": 31,
+                  "fill": {
+                    "type": "color",
+                    "color": "#ffffffff",
+                    "enabled": false
+                  },
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1
+                  },
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "rectangle",
+                      "cornerRadius": 8,
+                      "id": "0rIyb",
+                      "x": 0,
+                      "y": 0,
+                      "name": "Rectangle",
+                      "fill": "#28a3b3ff",
+                      "width": 67,
+                      "height": 31
+                    },
+                    {
+                      "type": "text",
+                      "id": "l34s2",
+                      "x": 10,
+                      "y": 5,
+                      "name": "Watch",
+                      "fill": "#ffffffff",
+                      "content": "Watch",
+                      "fontFamily": "Poppins",
+                      "fontSize": 14,
+                      "fontWeight": "600"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "e3mL1",
+                  "x": 148,
+                  "y": 418,
+                  "name": "Receive updates on D",
+                  "fill": "#333333ff",
+                  "textGrowth": "fixed-width",
+                  "width": 252,
+                  "content": "Receive updates on Detached homes in Beverley Glen - Vaughan",
+                  "lineHeight": 1.1428571428571428,
+                  "fontFamily": "Poppins",
+                  "fontSize": 14,
+                  "fontWeight": "500"
+                },
+                {
+                  "type": "group",
+                  "id": "7h7LO",
+                  "x": 0,
+                  "y": 0,
+                  "name": "Group 19709",
+                  "children": [
+                    {
+                      "type": "group",
+                      "id": "DM8Rm",
+                      "x": 0,
+                      "y": 0,
+                      "name": "Mask group",
+                      "children": [
+                        {
+                          "type": "rectangle",
+                          "id": "sejD0",
+                          "x": 107,
+                          "y": 195,
+                          "name": "Map",
+                          "fill": {
+                            "type": "image",
+                            "enabled": true,
+                            "url": "",
+                            "mode": "fill"
+                          },
+                          "width": 382,
+                          "height": 194,
+                          "stroke": {
+                            "align": "inside",
+                            "thickness": 1
+                          }
+                        },
+                        {
+                          "type": "rectangle",
+                          "id": "ctBgO",
+                          "x": 0,
+                          "y": 0,
+                          "name": "Rectangle 51",
+                          "fill": {
+                            "type": "image",
+                            "enabled": true,
+                            "url": "",
+                            "mode": "fill"
+                          },
+                          "width": 1246,
+                          "height": 549,
+                          "stroke": {
+                            "align": "inside",
+                            "thickness": 1
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "group",
+                      "id": "AkGZj",
+                      "x": 271,
+                      "y": 283,
+                      "name": "My location",
+                      "children": [
+                        {
+                          "type": "ellipse",
+                          "id": "yTVym",
+                          "x": 0,
+                          "y": 0,
+                          "name": "Background",
+                          "fill": "#ffffffff",
+                          "width": 21,
+                          "height": 21,
+                          "effect": {
+                            "type": "shadow",
+                            "shadowType": "outer",
+                            "color": "#28a3b3",
+                            "offset": {
+                              "x": 0,
+                              "y": 1
+                            },
+                            "blur": 26.25
+                          }
+                        },
+                        {
+                          "type": "ellipse",
+                          "id": "gE1OI",
+                          "x": 3.150390625,
+                          "y": 3.150390625,
+                          "name": "Circle",
+                          "fill": "#28a3b3ff",
+                          "width": 15.01956558227539,
+                          "height": 15.01956558227539
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "EO9AQ",
+                      "x": 220,
+                      "y": 247,
+                      "name": "1 Renaissance Crt",
+                      "fill": "#333333ff",
+                      "content": "1 Renaissance Crt",
+                      "lineHeight": 1.1428571428571428,
+                      "textAlign": "center",
+                      "fontFamily": "Poppins",
+                      "fontSize": 14,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "group",
+                      "id": "VSj76",
+                      "x": 373,
+                      "y": 348,
+                      "name": "Group 472",
+                      "children": [
+                        {
+                          "type": "group",
+                          "id": "CZKkB",
+                          "x": 0,
+                          "y": 0,
+                          "name": "Group 473",
+                          "children": [
+                            {
+                              "type": "rectangle",
+                              "cornerRadius": 5,
+                              "id": "McNI9",
+                              "x": 0,
+                              "y": 0,
+                              "name": "Rectangle",
+                              "fill": "#ffffffff",
+                              "width": 106,
+                              "height": 31,
+                              "effect": {
+                                "type": "shadow",
+                                "shadowType": "outer",
+                                "color": "#373a4025",
+                                "offset": {
+                                  "x": 0,
+                                  "y": 5
+                                },
+                                "blur": 21.875,
+                                "spread": 1
+                              }
+                            },
+                            {
+                              "type": "frame",
+                              "id": "mWrx8",
+                              "x": 10,
+                              "y": 7,
+                              "name": "diamond-turn-right-solid 1",
+                              "clip": true,
+                              "width": 16,
+                              "height": 16,
+                              "fill": {
+                                "type": "color",
+                                "color": "#ffffffff",
+                                "enabled": false
+                              },
+                              "stroke": {
+                                "align": "inside",
+                                "thickness": 1
+                              },
+                              "layout": "none",
+                              "children": [
+                                {
+                                  "type": "path",
+                                  "id": "90uJq",
+                                  "x": 0,
+                                  "y": 0,
+                                  "name": "Vector",
+                                  "geometry": "M497.09961 222.13002l-208.10001-208.1c-9.36401-9.364-21.61999-14.04-33.89-14.03-11.41 0.0392-23.61 4.716-33.00999 14.06l-208.07001 208.07c-9.354 9.39999-14.0298 21.60001-14.0296 33 0.0002 12.25999 4.676 24.52 14.03 33.87001l208.1 208.10001c9.3696 10.23001 21.5696 14.03 33.8696 14.03 12.26001 0 24.51999-4.67701 33.87-14.03l208.1-208.10001c9.35199-9.353 14.03-21.61002 14.03-33.87001-0.89999-11.39999-4.69998-23.60001-14.89999-33z m-86.60001 29.89999l-96 84.00002c-10.79001 9.54501-26.53 0.98239-26.53-12.03l0-51.97-64.86999 0-0.00011 48c0.00011 17.60001-13.49989 32-31.99989 32-18.5 0-32-14.39999-32-32l0-80.00002c0-17.6 14.39999-32 32-32l95.10001 0 0-52c0-13.85 16.38998-20.99 26.52999-12.02999l96 84c5.26999 3.02999 6.37 7.42999 6.37 12.02999 0 4.60001-1.10001 9-4.60001 12z",
+                                  "fill": "#28a3b3ff",
+                                  "width": 15.999987602233887,
+                                  "height": 15.972813606262207,
+                                  "stroke": {
+                                    "align": "inside",
+                                    "thickness": 1
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "type": "text",
+                              "id": "6OpJZ",
+                              "x": 31,
+                              "y": 5,
+                              "name": "View",
+                              "fill": "#28a3b3ff",
+                              "textGrowth": "fixed-width-height",
+                              "width": 65,
+                              "height": 21,
+                              "content": "Navigate",
+                              "lineHeight": 1.1428571428571428,
+                              "textAlignVertical": "middle",
+                              "fontFamily": "Poppins",
+                              "fontSize": 14,
+                              "fontWeight": "500"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "group",
+                      "id": "P7AeF",
+                      "x": 117,
+                      "y": 348,
+                      "name": "Group 20041",
+                      "children": [
+                        {
+                          "type": "group",
+                          "id": "b0u6y",
+                          "x": 0,
+                          "y": 0,
+                          "name": "Group 471",
+                          "children": [
+                            {
+                              "type": "group",
+                              "id": "crYCz",
+                              "x": 0,
+                              "y": 0,
+                              "name": "Group 473",
+                              "children": [
+                                {
+                                  "type": "rectangle",
+                                  "cornerRadius": 5,
+                                  "id": "9Mhyt",
+                                  "x": 0,
+                                  "y": 0,
+                                  "name": "Rectangle",
+                                  "fill": "#ffffffff",
+                                  "width": 151,
+                                  "height": 31,
+                                  "effect": {
+                                    "type": "shadow",
+                                    "shadowType": "outer",
+                                    "color": "#373a4025",
+                                    "offset": {
+                                      "x": 0,
+                                      "y": 5
+                                    },
+                                    "blur": 21.875,
+                                    "spread": 1
+                                  }
+                                },
+                                {
+                                  "type": "text",
+                                  "id": "9YTaz",
+                                  "x": 29,
+                                  "y": 7,
+                                  "name": "View",
+                                  "fill": "#28a3b3ff",
+                                  "textGrowth": "fixed-width",
+                                  "width": 113,
+                                  "content": "View in Full Map",
+                                  "lineHeight": 1.1428571428571428,
+                                  "textAlignVertical": "middle",
+                                  "fontFamily": "Poppins",
+                                  "fontSize": 14,
+                                  "fontWeight": "500"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "EGppC",
+                          "x": 10,
+                          "y": 7,
+                          "name": "expand-solid 1",
+                          "clip": true,
+                          "width": 14,
+                          "height": 16,
+                          "fill": {
+                            "type": "color",
+                            "color": "#ffffffff",
+                            "enabled": false
+                          },
+                          "stroke": {
+                            "align": "inside",
+                            "thickness": 1
+                          },
+                          "layout": "none",
+                          "children": [
+                            {
+                              "type": "path",
+                              "id": "hosWt",
+                              "x": 0,
+                              "y": 1,
+                              "name": "Vector",
+                              "geometry": "M128 0l-96 0c-17.69 0-32 14.31-32 32l0 96c0 17.69 14.31 32 32 32 17.69 0 32-14.31 32-32l0-64 64 0c17.69 0 32-14.31 32-32 0-17.69-14.3-32-32-32z m288 0l-96 0c-17.69 0-32 14.31-32 32 0 17.69 14.31 32 32 32l64 0 0 64c0 17.69 14.31 32 32 32 17.69 0 32-14.31 32-32l0-96c0-17.69-14.29999-32-32-32z m-288 384l-64 0 0-64c0-17.69-14.31-32-32-32-17.69 0-32 14.31-32 32l0 96c0 17.69 14.31 32 32 32l96 0c17.69 0 32-14.31 32-32 0-17.69-14.3-32-32-32z m288-96c-17.69 0-32 14.31-32 32l0 64-64 0c-17.69 0-32 14.31-32 32 0 17.69 14.31 32 32 32l96 0c17.69 0 32-14.31 32-32l0-96c0-17.70001-14.29999-32-32-32z",
+                              "fill": "#28a3b3ff",
+                              "width": 14,
+                              "height": 14,
+                              "stroke": {
+                                "align": "inside",
+                                "thickness": 1
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "SX5mU",
+              "x": 375,
+              "y": 276,
+              "name": "map-marked-alt-regular (2) 1",
+              "clip": true,
+              "width": 22.5,
+              "height": 20,
+              "fill": {
+                "type": "color",
+                "color": "#ffffffff",
+                "enabled": false
+              },
+              "stroke": {
+                "align": "inside",
+                "thickness": 1
+              },
+              "layout": "none",
+              "children": [
+                {
+                  "type": "path",
+                  "id": "gPPoG",
+                  "x": 0,
+                  "y": 0,
+                  "name": "Vector",
+                  "geometry": "M344 126c0-13.3-10.70001-24-24-24-13.29999 0-24 10.7-24 24 0 13.2 10.70001 24 24 24 13.29999 0 24-10.8 24-24z m-24 226c5 0 10-2 13.5-6.10001 35.29999-40 127.29999-150.09999 127.29999-210.59999 0-74.69999-63-135.3-140.79999-135.3-77.8 0-140.8 60.60001-140.8 135.3 0 60.40001 92.00001 170.59999 127.3 210.59999 3.5 4.10001 8.5 6.10001 13.5 6.10001z m0-304c51.20001 0 92.79999 39.20001 92.79999 87.3 0 21.4-31.79999 79.09999-92.79999 152.59999-61-73.5-92.8-131.19999-92.8-152.59999 0-48.1 41.59999-87.3 92.8-87.3l0 0z m240 112c-2 0-4 0.39999-6 1.2l-73.5 27.19999c-8.20001 20.4-20.20001 42-34.20001 63.80001l81.70001-30.2 0 193-128 44.5 0-143.20001c-13.70001 17.29999-27.89999 34.30002-42.5 50.80002-1.70001 1.89999-3.60001 3.5-5.5 5.1l0 81.4-128-45.20002 0-113c-18.10001-24.1-34.8-48.79998-48-72.79998l0 180.19998-0.60001 0.20001-127.39999 47 0-193 123.60001-43c-8-15.39999-14.10001-30.3-18.30001-44.5l-133.2 46.5c-12.1 4.8-20.1 16.59999-20.1 29.7l0 250.3c0 9.20001 7.5 16 16 16 2 0 4-0.40002 6-1.20001l170-62.79999 172 60.70001c13 4.29999 27 4.39997 40 0.19998l151.90002-52.89999c12.20002-4.89999 20.09998-16.60001 20.09998-29.70001l0-250.29999c0-9.2-7.5-16-16-16z",
+                  "fill": "#ffffffff",
+                  "width": 22.5,
+                  "height": 20,
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1
+                  }
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "HRJC9",
+              "x": 328,
+              "y": 339,
+              "name": "Detached",
+              "fill": "#28a3b3ff",
+              "content": "Detached",
+              "textAlign": "right",
+              "textAlignVertical": "middle",
+              "fontFamily": "Poppins",
+              "fontSize": 14,
+              "fontWeight": "600"
+            },
+            {
+              "type": "group",
+              "id": "rZ6mr",
+              "x": -3,
+              "y": 0,
+              "name": "Header",
+              "children": [
+                {
+                  "type": "group",
+                  "id": "QPosj",
+                  "x": 0,
+                  "y": 0,
+                  "name": "Property image",
+                  "children": [
+                    {
+                      "type": "rectangle",
+                      "id": "NSA7R",
+                      "x": 3,
+                      "y": 0,
+                      "name": "Mask",
+                      "fill": "#ffffffff",
+                      "width": 414.66387939453125,
+                      "height": 346,
+                      "effect": {
+                        "type": "shadow",
+                        "shadowType": "outer",
+                        "enabled": false,
+                        "color": "#373a4025",
+                        "offset": {
+                          "x": 0,
+                          "y": 5
+                        },
+                        "blur": 21.875,
+                        "spread": 1
+                      }
+                    },
+                    {
+                      "type": "rectangle",
+                      "id": "oG9MQ",
+                      "x": 3,
+                      "y": 0,
+                      "name": "Mask",
+                      "fill": "#ffffffff",
+                      "width": 414.66387939453125,
+                      "height": 346,
+                      "effect": {
+                        "type": "shadow",
+                        "shadowType": "outer",
+                        "enabled": false,
+                        "color": "#373a4025",
+                        "offset": {
+                          "x": 0,
+                          "y": 5
+                        },
+                        "blur": 21.875,
+                        "spread": 1
+                      }
+                    },
+                    {
+                      "type": "rectangle",
+                      "id": "2A75R",
+                      "x": 0,
+                      "y": 73,
+                      "name": "Bitmap",
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "",
+                        "mode": "stretch"
+                      },
+                      "width": 421,
+                      "height": 280
+                    },
+                    {
+                      "type": "rectangle",
+                      "id": "Gk84u",
+                      "x": 3.408203125,
+                      "y": 208,
+                      "name": "Rectangle",
+                      "fill": {
+                        "type": "gradient",
+                        "gradientType": "linear",
+                        "enabled": true,
+                        "rotation": -180,
+                        "size": {
+                          "height": 0.7933642932310824
+                        },
+                        "colors": [
+                          {
+                            "color": "#00000000",
+                            "position": 0
+                          },
+                          {
+                            "color": "#000000fa",
+                            "position": 0.7870422005653381
+                          },
+                          {
+                            "color": "#000000ff",
+                            "position": 1
+                          }
+                        ],
+                        "center": {
+                          "x": 0.10331785338445881,
+                          "y": 0.4422650601794322
+                        }
+                      },
+                      "width": 414,
+                      "height": 132
+                    }
+                  ]
+                },
+                {
+                  "type": "path",
+                  "id": "QSssT",
+                  "x": 3,
+                  "y": 318,
+                  "name": "Rectangle",
+                  "geometry": "M0 0l414 0 0 36-24.38916 0-389.61084 0 0-36z",
+                  "fillRule": "evenodd",
+                  "fill": "#ffffffff",
+                  "width": 414,
+                  "height": 36
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "XcPO6",
+              "x": 16,
+              "y": 334,
+              "name": "Group 3",
+              "clip": true,
+              "width": 78,
+              "height": 31,
+              "fill": {
+                "type": "color",
+                "color": "#ffffffff",
+                "enabled": false
+              },
+              "stroke": {
+                "align": "inside",
+                "thickness": 1
+              },
+              "layout": "none",
+              "children": [
+                {
+                  "type": "rectangle",
+                  "cornerRadius": 8,
+                  "id": "fEyYL",
+                  "x": 0,
+                  "y": 0,
+                  "name": "Rectangle",
+                  "fill": "#e9f6f7ff",
+                  "width": 78,
+                  "height": 31
+                },
+                {
+                  "type": "text",
+                  "id": "l4vPt",
+                  "x": 12,
+                  "y": 6,
+                  "name": "For sale",
+                  "fill": "#28a3b3ff",
+                  "content": "For sale",
+                  "textAlignVertical": "middle",
+                  "fontFamily": "Poppins",
+                  "fontSize": 14,
+                  "fontWeight": "500"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "zQDa5",
+              "x": 16,
+              "y": 261,
+              "name": "1 Renaissance Crt Be",
+              "fill": "#ffffffff",
+              "content": "1 Renaissance Crt \nVaughan - Beverley Glen Neighbourhood",
+              "textAlignVertical": "middle",
+              "fontFamily": "Poppins",
+              "fontSize": 16,
+              "fontWeight": "600"
+            },
+            {
+              "type": "frame",
+              "id": "0TzQ0",
+              "x": 375,
+              "y": 276,
+              "name": "map-marked-alt-regular (2) 2",
+              "clip": true,
+              "width": 22.5,
+              "height": 20,
+              "fill": {
+                "type": "color",
+                "color": "#ffffffff",
+                "enabled": false
+              },
+              "stroke": {
+                "align": "inside",
+                "thickness": 1
+              },
+              "layout": "none",
+              "children": [
+                {
+                  "type": "path",
+                  "id": "IE0Mm",
+                  "x": 0,
+                  "y": 0,
+                  "name": "Vector",
+                  "geometry": "M344 126c0-13.3-10.70001-24-24-24-13.29999 0-24 10.7-24 24 0 13.2 10.70001 24 24 24 13.29999 0 24-10.8 24-24z m-24 226c5 0 10-2 13.5-6.10001 35.29999-40 127.29999-150.09999 127.29999-210.59999 0-74.69999-63-135.3-140.79999-135.3-77.8 0-140.8 60.60001-140.8 135.3 0 60.40001 92.00001 170.59999 127.3 210.59999 3.5 4.10001 8.5 6.10001 13.5 6.10001z m0-304c51.20001 0 92.79999 39.20001 92.79999 87.3 0 21.4-31.79999 79.09999-92.79999 152.59999-61-73.5-92.8-131.19999-92.8-152.59999 0-48.1 41.59999-87.3 92.8-87.3l0 0z m240 112c-2 0-4 0.39999-6 1.2l-73.5 27.19999c-8.20001 20.4-20.20001 42-34.20001 63.80001l81.70001-30.2 0 193-128 44.5 0-143.20001c-13.70001 17.29999-27.89999 34.30002-42.5 50.80002-1.70001 1.89999-3.60001 3.5-5.5 5.1l0 81.4-128-45.20002 0-113c-18.10001-24.1-34.8-48.79998-48-72.79998l0 180.19998-0.60001 0.20001-127.39999 47 0-193 123.60001-43c-8-15.39999-14.10001-30.3-18.30001-44.5l-133.2 46.5c-12.1 4.8-20.1 16.59999-20.1 29.7l0 250.3c0 9.20001 7.5 16 16 16 2 0 4-0.40002 6-1.20001l170-62.79999 172 60.70001c13 4.29999 27 4.39997 40 0.19998l151.90002-52.89999c12.20002-4.89999 20.09998-16.60001 20.09998-29.70001l0-250.29999c0-9.2-7.5-16-16-16z",
+                  "fill": "#ffffffff",
+                  "width": 22.5,
+                  "height": 20,
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1
+                  }
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "dP0IG",
+              "x": 0,
+              "y": 0,
+              "name": "Header",
+              "width": 414,
+              "height": 82,
+              "stroke": {
+                "align": "inside",
+                "thickness": 1
+              },
+              "layout": "none",
+              "children": [
+                {
+                  "type": "rectangle",
+                  "id": "OTicV",
+                  "x": 0,
+                  "y": 0.000091552734375,
+                  "name": "Background",
+                  "fill": "#28a3b3ff",
+                  "width": 414,
+                  "height": 82,
+                  "effect": {
+                    "type": "shadow",
+                    "shadowType": "outer",
+                    "enabled": false,
+                    "color": "#373a4025",
+                    "offset": {
+                      "x": 0,
+                      "y": 5
+                    },
+                    "blur": 21.875,
+                    "spread": 1
+                  }
+                },
+                {
+                  "type": "path",
+                  "id": "BykFF",
+                  "x": 16,
+                  "y": 49,
+                  "name": "Path Copy 16",
+                  "geometry": "M3.62132 10.5l7.93934-7.93934c0.58579-0.58579 0.58579-1.53553 0-2.12132-0.58579-0.58579-1.53553-0.58579-2.12132 0l-9 9c-0.58579 0.58579-0.58579 1.53553 0 2.12132l9 9c0.58579 0.58579 1.53553 0.58579 2.12132 0 0.58579-0.58579 0.58579-1.53553 0-2.12132l-7.93934-7.93934z",
+                  "fill": "#ffffffff",
+                  "width": 12,
+                  "height": 21
+                },
+                {
+                  "type": "frame",
+                  "id": "3LJTF",
+                  "x": 0,
+                  "y": 0.000091552734375,
+                  "name": "iPhone X/Status Bars/Status Bar (Black)",
+                  "clip": true,
+                  "width": 414,
+                  "height": 49.49494934082031,
+                  "fill": {
+                    "type": "color",
+                    "color": "#ffffffff",
+                    "enabled": false
+                  },
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1
+                  },
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "rectangle",
+                      "id": "ny5BO",
+                      "x": 0,
+                      "y": 0,
+                      "name": "Rectangle",
+                      "width": 414,
+                      "height": 49.49494934082031
+                    },
+                    {
+                      "type": "group",
+                      "id": "DkABv",
+                      "x": 375,
+                      "y": 17.33333396911621,
+                      "name": "Battery",
+                      "children": [
+                        {
+                          "type": "rectangle",
+                          "cornerRadius": 2.6666667461395264,
+                          "id": "Kf7QH",
+                          "x": 0,
+                          "y": 0,
+                          "name": "Border",
+                          "opacity": 0.3499999940395355,
+                          "width": 22,
+                          "height": 11.333333015441895,
+                          "stroke": {
+                            "align": "inside",
+                            "thickness": 1,
+                            "fill": "#ffffffff"
+                          }
+                        },
+                        {
+                          "type": "path",
+                          "id": "3K3CG",
+                          "x": 23,
+                          "y": 3.6666667461395264,
+                          "name": "Cap",
+                          "opacity": 0.4000000059604645,
+                          "geometry": "M0 0l0 4c0.80473-0.33878 1.32804-1.12687 1.32804-2 0-0.87313-0.52331-1.66122-1.32804-2",
+                          "fill": "#ffffffff",
+                          "width": 1.328037977218628,
+                          "height": 4
+                        },
+                        {
+                          "type": "rectangle",
+                          "cornerRadius": 1.3333333730697632,
+                          "id": "2lyEJ",
+                          "x": 2,
+                          "y": 1.9999998807907104,
+                          "name": "Capacity",
+                          "fill": "#ffffffff",
+                          "width": 18,
+                          "height": 7.333333492279053
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "vjrgq",
+                      "x": 34,
+                      "y": 16,
+                      "name": "9:41",
+                      "fill": "#ffffffff",
+                      "content": "9:41",
+                      "textAlign": "center",
+                      "fontFamily": "Helvetica",
+                      "fontSize": 14,
+                      "fontWeight": "normal",
+                      "letterSpacing": -0.2800000011920929
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "id": "Mf48n",
+                  "x": 141,
+                  "y": 48.000091552734375,
+                  "name": "Copy of HouseSigma logo [horizontal] [white] (1)",
+                  "children": [
+                    {
+                      "type": "path",
+                      "id": "YCBC2",
+                      "x": 0,
+                      "y": 0,
+                      "name": "logogmark",
+                      "geometry": "M16.92963 8.01246l-7.12096 0c-1.80643 0-3.43493 1.08834-4.12592 2.75739-0.69099 1.66905-0.30835 3.59 0.96946 4.86688 1.2778 1.27688 3.19903 1.65813 4.86758 0.96593 1.66855-0.69219 2.75571-2.32148 2.75441-4.12791 0.00038-0.39236-0.0517-0.783-0.15488-1.16155-0.06708-0.32645-0.30962-0.58879-0.62981-0.68123-0.32019-0.09244-0.66524 0.00025-0.89599 0.24071-0.23075 0.24046-0.30917 0.58903-0.20362 0.90514 0.29866 1.1052-0.14008 2.27785-1.09084 2.9156-0.95076 0.63775-2.20218 0.59882-3.11147-0.09678-0.90929-0.69561-1.27429-1.89325-0.90752-2.97776 0.36676-1.08451 1.38376-1.81477 2.5286-1.8157l7.12096 0c0.49413 0 0.8952 0.39962 0.89698 0.89375l0 8.87943c-0.00177 0.49465-0.40233 0.89521-0.89698 0.89698l-14.24193 0c-0.49465-0.00177-0.89521-0.40233-0.89697-0.89698l0-10.74114c0.00292-0.26226 0.12089-0.51 0.32265-0.67757l7.11129-6.15623c0.33754-0.28734 0.83369-0.28734 1.17123 0l5.06889 4.37518c0.24207 0.20864 0.57707 0.27229 0.87879 0.16698 0.30173-0.10532 0.52435-0.36361 0.58401-0.67757 0.05965-0.31396-0.05272-0.6359-0.2948-0.84455l-5.06566-4.37841c-1.00944-0.8574-2.49135-0.8574-3.50079 0l-7.1371 6.15946c-0.5905 0.51028-0.9297 1.25228-0.92924 2.03271l0 10.74114c0.00355 1.48238 1.20532 2.68271 2.6877 2.68448l14.24193 0c1.48438 0 2.6877-1.20332 2.68771-2.68771l0-8.8762c-0.00178-1.48312-1.20458-2.68448-2.68771-2.68447z",
+                      "fill": "#ffffffff",
+                      "width": 19.617338180541992,
+                      "height": 22.260839462280273
+                    },
+                    {
+                      "type": "group",
+                      "id": "SGoEC",
+                      "x": 26.715717315673828,
+                      "y": 4.852404534816742,
+                      "name": "HouseSigma",
+                      "children": [
+                        {
+                          "type": "path",
+                          "id": "BoxTo",
+                          "x": 0,
+                          "y": 0.19163906574249268,
+                          "name": "Path",
+                          "geometry": "M0 13.30946l0-13.30946 1.61327 0 0 5.92392 7.09838 0 0-5.92392 1.61327 0 0 13.30946-1.61327 0 0-5.95296-7.09838 0 0 5.95296-1.61327 0z",
+                          "fill": "#ffffffff",
+                          "width": 10.324914932250977,
+                          "height": 13.309460639953613
+                        },
+                        {
+                          "type": "path",
+                          "id": "l3Vnf",
+                          "x": 23.521724700927734,
+                          "y": 3.534330189228058,
+                          "name": "Path",
+                          "geometry": "M6.29147 5.8852l0-5.8852 1.54873 0 0 9.96677-1.54873 0 0-1.69071-0.10648 0c-0.24347 0.51877-0.61969 0.964-1.09057 1.29062-0.55225 0.36961-1.20736 0.55485-1.87139 0.52915-0.58176 0.00881-1.15572-0.13468-1.66489-0.41622-0.49724-0.28995-0.89449-0.72433-1.13897-1.24545-0.29945-0.66079-0.44191-1.38191-0.41622-2.10692l0-6.32724 1.5326 0 0 6.22399c-0.0316 0.63824 0.18985 1.26317 0.61627 1.7391 0.40523 0.4311 0.97681 0.66632 1.5681 0.64531 0.40687-0.00573 0.8068-0.10626 1.168-0.29362 0.40674-0.20546 0.75184-0.51494 1.00023-0.89697 0.2845-0.45912 0.42497-0.99292 0.40332-1.53261z",
+                          "fill": "#ffffffff",
+                          "width": 7.840204238891602,
+                          "height": 10.098184585571289
+                        },
+                        {
+                          "type": "path",
+                          "id": "nfBF8",
+                          "x": 33.346248626708984,
+                          "y": 3.398961842060089,
+                          "name": "Path",
+                          "geometry": "M7.51138 2.35523l-1.37774 0.39041c-0.09157-0.24166-0.21763-0.4688-0.37427-0.67435-0.18128-0.23027-0.41312-0.41574-0.67758-0.54206-0.34564-0.15418-0.72204-0.22703-1.10024-0.21295-0.54211-0.01644-1.07612 0.13452-1.52938 0.43236-0.37396 0.22494-0.60379 0.62837-0.60659 1.06475-0.0136 0.35035 0.14108 0.6861 0.41622 0.90343 0.38846 0.26931 0.82752 0.45701 1.29062 0.55174l1.4842 0.3646c0.74976 0.13583 1.4469 0.4777 2.01336 0.98732 0.4399 0.4591 0.67303 1.07806 0.64531 1.71329 0.00234 0.54436-0.17077 1.07499-0.49366 1.51325-0.35129 0.47215-0.8241 0.84015-1.36805 1.06475-0.64453 0.27265-1.33951 0.40571-2.03917 0.39041-0.89016 0.03546-1.77074-0.19479-2.52961-0.66144-0.66812-0.44567-1.12505-1.14505-1.2648-1.93592l1.45517-0.36137c0.10454 0.48644 0.38632 0.91658 0.7905 1.20672 0.45373 0.28867 0.98579 0.42957 1.52292 0.40332 0.60308 0.03161 1.20066-0.1288 1.70684-0.45817 0.38762-0.23373 0.63051-0.64785 0.64531-1.10025 0.00695-0.3282-0.12415-0.64425-0.36137-0.87116-0.31807-0.27311-0.70361-0.45585-1.11638-0.52915l-1.68103-0.37428c-0.75396-0.13411-1.45248-0.48506-2.01013-1.00991-0.43276-0.46616-0.66458-1.08396-0.64531-1.71974-0.0077-0.53667 0.15996-1.06119 0.47753-1.49389 0.33449-0.44683 0.77918-0.79925 1.29061-1.02281 0.59419-0.25349 1.23516-0.37882 1.88107-0.36782 0.82647-0.04799 1.64558 0.17891 2.32956 0.6453 0.57332 0.4291 1.00125 1.0237 1.22609 1.70362l0 0z",
+                          "fill": "#ffffffff",
+                          "width": 7.697506427764893,
+                          "height": 10.305741310119629
+                        },
+                        {
+                          "type": "path",
+                          "id": "jQGXj",
+                          "x": 52.70546340942383,
+                          "y": 0,
+                          "name": "Path",
+                          "geometry": "M7.71465 3.85698c-0.04104-0.53419-0.32079-1.02139-0.76146-1.3261-0.51834-0.33585-1.12853-0.50165-1.74556-0.4743-0.44094-0.01128-0.87971 0.06551-1.29062 0.22585-0.32646 0.12296-0.61317 0.33269-0.82922 0.60659-0.19017 0.25782-0.29202 0.57016-0.29038 0.89053-0.00745 0.2532 0.05868 0.50313 0.19036 0.71951 0.13362 0.20886 0.3122 0.38523 0.5227 0.51625 0.23031 0.147 0.47725 0.26614 0.73565 0.35492 0.26566 0.09438 0.53597 0.17515 0.80986 0.24199l1.24867 0.32265c0.49724 0.11417 0.98319 0.27291 1.45194 0.4743 0.45195 0.19109 0.87453 0.44529 1.25512 0.75501 0.7903 0.63053 1.23742 1.5965 1.20673 2.60704 0.01671 0.72672-0.1881 1.44132-0.58723 2.04885-0.43163 0.62273-1.03462 1.10691-1.73588 1.39387-0.86445 0.35314-1.79297 0.52237-2.72642 0.49689-0.92217 0.01529-1.83811-0.15364-2.69416-0.49689-0.71755-0.28467-1.33651-0.77243-1.78104-1.40355-0.44455-0.67004-0.68549-1.45451-0.69371-2.25857l2.37473 0c0.01749 0.42167 0.16767 0.82705 0.42913 1.15833 0.2556 0.3113 0.5898 0.54858 0.96796 0.68725 0.43635 0.1578 0.89763 0.23541 1.3616 0.22908 0.47129 0.0087 0.93994-0.07233 1.38096-0.23876 0.362-0.12967 0.68356-0.35221 0.93247-0.64531 0.22357-0.28425 0.34516-0.63537 0.34523-0.997 0.00192-0.31705-0.11294-0.6237-0.32265-0.86148-0.23223-0.25138-0.51776-0.44761-0.83567-0.57433-0.40651-0.16844-0.82496-0.30648-1.2519-0.41299l-1.51324-0.38719c-0.95728-0.21421-1.84846-0.65703-2.59736-1.29061-0.63864-0.58654-0.98677-1.42443-0.95183-2.29084-0.01377-0.73899 0.21267-1.46249 0.6453-2.06176 0.44821-0.60496 1.04965-1.07943 1.74233-1.3745 0.79097-0.33726 1.64404-0.50436 2.5038-0.49044 0.85383-0.01772 1.70138 0.14959 2.48443 0.49044 0.67164 0.29447 1.25211 0.76353 1.68102 1.35837 0.42116 0.58506 0.65107 1.28606 0.65822 2.0069l-2.31988 0z",
+                          "fill": "#ffffffff",
+                          "width": 10.21992301940918,
+                          "height": 13.71332836151123
+                        },
+                        {
+                          "type": "path",
+                          "id": "EgxDQ",
+                          "x": 80.0826187133789,
+                          "y": 3.386576473712921,
+                          "name": "Path",
+                          "geometry": "M0 10.11452l0-9.96677 2.25858 0 0 1.69716 0.11615 0c0.18909-0.54776 0.55156-1.01897 1.03249-1.34224 0.5124-0.33133 1.11299-0.50003 1.72297-0.48398 0.60838-0.02013 1.20771 0.15142 1.71329 0.49044 0.46508 0.32587 0.81071 0.79502 0.9841 1.33578l0.10325 0c0.21223-0.55626 0.59951-1.02847 1.10347-1.34546 0.5642-0.34218 1.215-0.51468 1.87462-0.49689 0.84095-0.03449 1.65861 0.28089 2.25857 0.87116 0.58078 0.58078 0.87116 1.4272 0.87117 2.53929l0 6.70151-2.36183 0 0-6.33691c0.04784-0.50841-0.13447-1.01153-0.49688-1.37128-0.334-0.28998-0.76456-0.44425-1.20673-0.43236-0.4993-0.02725-0.98535 0.16622-1.32933 0.52915-0.32834 0.38068-0.49912 0.87225-0.47753 1.37451l0 6.22721-2.30697 0 0-6.4079c0.03131-0.45558-0.13468-0.90264-0.45572-1.22738-0.32104-0.32475-0.76617-0.49586-1.22208-0.46977-0.32582-0.00294-0.64579 0.08656-0.92279 0.25812-0.28155 0.17554-0.51016 0.42423-0.66144 0.71952-0.17136 0.33405-0.25675 0.70554-0.24844 1.08089l0 6.0562-2.34892 0z",
+                          "fill": "#ffffffff",
+                          "width": 14.038658142089844,
+                          "height": 10.114522933959961
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "NS9hO",
+              "x": 328,
+              "y": 339,
+              "name": "Detached",
+              "fill": "#28a3b3ff",
+              "content": "Detached",
+              "textAlign": "right",
+              "textAlignVertical": "middle",
+              "fontFamily": "Poppins",
+              "fontSize": 14,
+              "fontWeight": "600"
+            },
+            {
+              "type": "group",
+              "id": "rqXkD",
+              "x": 351,
+              "y": 99.25,
+              "name": "Group 961",
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#00000059",
+                "offset": {
+                  "x": 0,
+                  "y": 1
+                },
+                "blur": 3.5
+              },
+              "children": [
+                {
+                  "type": "group",
+                  "id": "dh0OD",
+                  "x": 30,
+                  "y": 0.75,
+                  "name": "Group 495",
+                  "effect": {
+                    "type": "shadow",
+                    "shadowType": "outer",
+                    "enabled": false,
+                    "color": "#00000040",
+                    "offset": {
+                      "x": 0,
+                      "y": 4
+                    },
+                    "blur": 3.5
+                  },
+                  "children": [
+                    {
+                      "type": "group",
+                      "id": "OkrWL",
+                      "x": 0,
+                      "y": 0,
+                      "name": "Group 512",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "gPSBN",
+                          "x": 0,
+                          "y": 0,
+                          "name": "22",
+                          "fill": "#ffffffff",
+                          "content": "22",
+                          "lineHeight": 1.1428571428571428,
+                          "textAlign": "center",
+                          "textAlignVertical": "middle",
+                          "fontFamily": "Poppins",
+                          "fontSize": 14,
+                          "fontWeight": "500"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "path",
+                  "id": "Gs8kH",
+                  "x": 0,
+                  "y": 0,
+                  "name": "Vector",
+                  "geometry": "M480 384l0 16c0 26.51001-21.48999 48-48 48l-384 0c-26.51 0-48-21.48999-48-48l0-256c0-26.51 21.49-48 48-48l16 0 0 48-10 0c-1.5913 0-3.11742 0.63214-4.24264 1.75735-1.12522 1.12522-1.75736 2.65136-1.75736 4.24265l0 244c0 1.59131 0.63214 3.11743 1.75736 4.24265 1.12522 1.12521 2.65134 1.75735 4.24264 1.75735l372 0c1.59131 0 3.11743-0.63214 4.24265-1.75735 1.12521-1.12522 1.75735-2.65134 1.75735-4.24265l0-10 48 0z m42-336l-372 0c-1.59129 0-3.11743 0.63215-4.24265 1.75736-1.12521 1.12522-1.75735 2.65134-1.75735 4.24264l0 244c0 1.59131 0.63214 3.11743 1.75735 4.24265 1.12522 1.12521 2.65136 1.75735 4.24265 1.75735l372 0c1.59131 0 3.11737-0.63214 4.24261-1.75735 1.12525-1.12522 1.75739-2.65134 1.75739-4.24265l0-244c0-1.5913-0.63214-3.11742-1.75739-4.24264-1.12524-1.12522-2.6513-1.75736-4.24261-1.75736z m6-48c26.51001 0 48 21.49 48 48l0 256c0 26.51001-21.48999 48-48 48l-384 0c-26.51 0-48-21.48999-48-48l0-256c0-26.51 21.49-48 48-48l384 0z m-264 112c0 22.091-17.909 40-40 40-22.091 0-40-17.909-40-40 0-22.091 17.909-40 40-40 22.091 0 40 17.909 40 40z m-72 96l39.515-39.515c4.686-4.686 12.284-4.686 16.97099 0l39.51401 39.515 103.51501-103.515c4.68601-4.686 12.28397-4.686 16.97098 0l71.51401 71.515 0 80-288 0 0-48z",
+                  "fill": "#ffffffff",
+                  "width": 22.5,
+                  "height": 17.5,
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1
+                  }
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "id": "8UPUS",
+              "x": 0,
+              "y": 1360,
+              "name": "Group 19885",
+              "children": [
+                {
+                  "type": "group",
+                  "id": "JxxJ7",
+                  "x": 0,
+                  "y": 0,
+                  "name": "Group 654",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "StmEV",
+                      "x": 16,
+                      "y": 50,
+                      "name": "Key facts for 1 Rena",
+                      "fill": "#808080ff",
+                      "textGrowth": "fixed-width-height",
+                      "width": 390,
+                      "height": 20,
+                      "content": "Key facts for 1 Renaissance Crt, Beverley Glen, Vaughan",
+                      "fontFamily": "Poppins",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "pLYqV",
+                      "x": 16,
+                      "y": 86,
+                      "name": "Tax:",
+                      "fill": "#808080ff",
+                      "content": "Tax:",
+                      "fontFamily": "Poppins",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "rectangle",
+                      "cornerRadius": 13.5,
+                      "id": "tUDHA",
+                      "x": 16,
+                      "y": 550,
+                      "name": "Rectangle",
+                      "fill": {
+                        "type": "gradient",
+                        "gradientType": "linear",
+                        "enabled": true,
+                        "rotation": -270,
+                        "size": {
+                          "height": 1
+                        },
+                        "colors": [
+                          {
+                            "color": "#ff0300ff",
+                            "position": 0
+                          },
+                          {
+                            "color": "#ee5554ff",
+                            "position": 0.3139781355857849
+                          },
+                          {
+                            "color": "#4cae20ff",
+                            "position": 0.33659061789512634
+                          },
+                          {
+                            "color": "#4cae20ff",
+                            "position": 0.668671190738678
+                          },
+                          {
+                            "color": "#3b99feff",
+                            "position": 0.7048208713531494
+                          },
+                          {
+                            "color": "#3b9afeff",
+                            "position": 1
+                          }
+                        ],
+                        "center": {
+                          "y": -5.551115123125783e-17
+                        }
+                      },
+                      "width": 382,
+                      "height": 12
+                    },
+                    {
+                      "type": "group",
+                      "id": "EAIHt",
+                      "x": 359,
+                      "y": 529,
+                      "name": "map-marker-solid",
+                      "effect": {
+                        "type": "shadow",
+                        "shadowType": "outer",
+                        "enabled": false,
+                        "color": "#8c8c8c4d",
+                        "offset": {
+                          "x": 0,
+                          "y": 2
+                        },
+                        "blur": 3.5
+                      },
+                      "children": [
+                        {
+                          "type": "path",
+                          "id": "5YPYY",
+                          "x": 0,
+                          "y": 0,
+                          "name": "Path",
+                          "geometry": "M5.38337 15.67718c-4.54056-6.58247-5.38337-7.25803-5.38337-9.67718 0-3.31372 2.68628-6 6-6 3.31372 0 6 2.68628 6 6 0 2.41916-0.84281 3.09472-5.38338 9.67718-0.29797 0.43044-0.93531 0.43041-1.23325 0z",
+                          "fill": "#28a3b3ff",
+                          "width": 11.99999713897705,
+                          "height": 16
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "bfpiv",
+                      "x": 16,
+                      "y": 514,
+                      "name": "Market Demand:",
+                      "fill": "#808080ff",
+                      "content": "Market Demand:",
+                      "fontFamily": "Poppins",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "p4Z8m",
+                      "x": 16,
+                      "y": 127,
+                      "name": "Type:",
+                      "fill": "#808080ff",
+                      "content": "Type:",
+                      "textAlignVertical": "middle",
+                      "fontFamily": "Poppins",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "fxWq4",
+                      "x": 16,
+                      "y": 165,
+                      "name": "Building Age:",
+                      "fill": "#808080ff",
+                      "content": "Building Age:",
+                      "fontFamily": "Poppins",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "Cfwve",
+                      "x": 16,
+                      "y": 203,
+                      "name": "Size",
+                      "fill": "#808080ff",
+                      "content": "Size",
+                      "fontFamily": "Poppins",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "dfyGu",
+                      "x": 16,
+                      "y": 242,
+                      "name": "Lot Size:",
+                      "fill": "#808080ff",
+                      "content": "Lot Size:",
+                      "fontFamily": "Poppins",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "uACJF",
+                      "x": 16,
+                      "y": 281,
+                      "name": "Parking:",
+                      "fill": "#808080ff",
+                      "content": "Parking:",
+                      "fontFamily": "Poppins",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "ERP6o",
+                      "x": 16,
+                      "y": 320,
+                      "name": "Listing #:",
+                      "fill": "#808080ff",
+                      "content": "Listing #:",
+                      "textAlignVertical": "middle",
+                      "fontFamily": "Poppins",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "MTn5e",
+                      "x": 16,
+                      "y": 359,
+                      "name": "Data Source:",
+                      "fill": "#808080ff",
+                      "content": "Data Source:",
+                      "textAlignVertical": "middle",
+                      "fontFamily": "Poppins",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "ZKkCK",
+                      "x": 16,
+                      "y": 398,
+                      "name": "Date Listed:",
+                      "fill": "#808080ff",
+                      "content": "Date Listed:",
+                      "textAlignVertical": "middle",
+                      "fontFamily": "Poppins",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "ku0Bl",
+                      "x": 16,
+                      "y": 437,
+                      "name": "Updated On:",
+                      "fill": "#808080ff",
+                      "content": "Updated On:",
+                      "fontFamily": "Poppins",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "3F5l1",
+                      "x": 16,
+                      "y": 476,
+                      "name": "Basement:",
+                      "fill": "#808080ff",
+                      "content": "Basement:",
+                      "fontFamily": "Poppins",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "kGY6d",
+                      "x": 37,
+                      "y": 0,
+                      "name": "Key Facts",
+                      "fill": "#28a3b3ff",
+                      "content": "Key Facts",
+                      "fontFamily": "Poppins",
+                      "fontSize": 16,
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "rectangle",
+                      "id": "THIQL",
+                      "x": 16,
+                      "y": 30,
+                      "name": "Rectangle",
+                      "fill": "#28a3b3ff",
+                      "width": 120,
+                      "height": 3
+                    },
+                    {
+                      "type": "text",
+                      "id": "UBBWC",
+                      "x": 179,
+                      "y": 4,
+                      "name": "Details",
+                      "fill": "#333333ff",
+                      "content": "Details",
+                      "lineHeight": 1.1428571428571428,
+                      "fontFamily": "Poppins",
+                      "fontSize": 14,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "text",
+                      "id": "oYN5u",
+                      "x": 307,
+                      "y": 4,
+                      "name": "Rooms",
+                      "fill": "#333333ff",
+                      "content": "Rooms",
+                      "lineHeight": 1.1428571428571428,
+                      "fontFamily": "Poppins",
+                      "fontSize": 14,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "path",
+                      "id": "HZi9d",
+                      "x": 16,
+                      "y": 33,
+                      "name": "Line",
+                      "geometry": "M0 0.5l382 0",
+                      "fillRule": "evenodd",
+                      "width": 382,
+                      "height": 1,
+                      "stroke": {
+                        "align": "center",
+                        "thickness": 1,
+                        "cap": "square",
+                        "fill": "#f6f6f6ff"
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "id": "d8J7C",
+                      "x": 16,
+                      "y": 571,
+                      "name": "Buyer’s Market",
+                      "fill": "#333333ff",
+                      "content": "Buyer’s Market",
+                      "fontFamily": "Poppins",
+                      "fontSize": 16,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "text",
+                      "id": "rOCfH",
+                      "x": 169,
+                      "y": 571,
+                      "name": "Balanced",
+                      "fill": "#333333ff",
+                      "content": "Balanced",
+                      "fontFamily": "Poppins",
+                      "fontSize": 16,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "text",
+                      "id": "MOh6h",
+                      "x": 276,
+                      "y": 571,
+                      "name": "Seller’s Market",
+                      "fill": "#333333ff",
+                      "content": "Seller’s Market",
+                      "fontFamily": "Poppins",
+                      "fontSize": 16,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "text",
+                      "id": "SrHM8",
+                      "x": 16,
+                      "y": 611,
+                      "name": "Parking:",
+                      "fill": "#808080ff",
+                      "content": "Description:",
+                      "fontFamily": "Poppins",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "2mMcL",
+                      "x": 16,
+                      "y": 637,
+                      "name": "Built-In 3 garage, 2",
+                      "fill": "#333333ff",
+                      "textGrowth": "fixed-width",
+                      "width": 382,
+                      "content": "One Of Thornhill's Most Exclusive Enclaves. Custom Built By The Current Owner For His Family. Additional Land At Front Of Prop, See Survey Attached. Mature Landscaping Front & Rear Yards, South Facing Private Lot At The End Of A Cul De Sac, Siding Onto Forest. Pool, Hot Tub & Kids Playground, Entertaining Paradise. ",
+                      "fontFamily": "Poppins",
+                      "fontSize": 16,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "rectangle",
+                      "id": "mKXm8",
+                      "x": 0,
+                      "y": 751,
+                      "name": "Rectangle",
+                      "fill": {
+                        "type": "gradient",
+                        "gradientType": "linear",
+                        "enabled": true,
+                        "rotation": -179.9999999636942,
+                        "size": {
+                          "height": 0.28205128549980857
+                        },
+                        "colors": [
+                          {
+                            "color": "#ffffff00",
+                            "position": 0
+                          },
+                          {
+                            "color": "#ffffffff",
+                            "position": 1
+                          }
+                        ],
+                        "center": {
+                          "x": 0.36123853905064685,
+                          "y": 0.14102564255529967
+                        }
+                      },
+                      "width": 413,
+                      "height": 75
+                    },
+                    {
+                      "type": "group",
+                      "id": "PyJey",
+                      "x": 151,
+                      "y": 786,
+                      "name": "Group 333",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "PAkiN",
+                          "x": 24,
+                          "y": 0,
+                          "name": "View in full map",
+                          "fill": "#28a3b3ff",
+                          "content": "Show More",
+                          "fontFamily": "Poppins",
+                          "fontSize": 16,
+                          "fontWeight": "500"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "DuUzY",
+                          "x": 0,
+                          "y": 5,
+                          "name": "chevron-down-solid (1) 1",
+                          "clip": true,
+                          "width": 14,
+                          "height": 16,
+                          "fill": {
+                            "type": "color",
+                            "color": "#ffffffff",
+                            "enabled": false
+                          },
+                          "stroke": {
+                            "align": "inside",
+                            "thickness": 1
+                          },
+                          "layout": "none",
+                          "children": [
+                            {
+                              "type": "path",
+                              "id": "QwbGc",
+                              "x": 0.17578125,
+                              "y": 3.859375,
+                              "name": "Vector",
+                              "geometry": "M201.37276 257.98154l-194.34301-194.34402c-9.373-9.373-9.373-24.56901 0-33.94101l22.667-22.66699c9.357-9.357 24.522-9.37501 33.901-0.04001l154.746 154.02102 154.745-154.02102c9.37899-9.335 24.544-9.31699 33.901 0.04001l22.66699 22.66699c9.37298 9.373 9.37298 24.56901 0 33.94101l-194.342 194.34402c-9.373 9.37201-24.56898 9.37201-33.94198 0z",
+                              "fill": "#28a3b3ff",
+                              "width": 13.646452903747559,
+                              "height": 8.28157901763916,
+                              "stroke": {
+                                "align": "inside",
+                                "thickness": 1
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "id": "LPkzD",
+                  "x": 85,
+                  "y": 85,
+                  "name": "Group 19154",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "OzdcZ",
+                      "x": 248,
+                      "y": 0,
+                      "name": "$ 19,445",
+                      "fill": "#333333ff",
+                      "content": "$ 19,445",
+                      "textAlign": "right",
+                      "fontFamily": "Poppins",
+                      "fontSize": 16,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "text",
+                      "id": "UEhOH",
+                      "x": 156,
+                      "y": 40,
+                      "name": "Detached, 2-Storey",
+                      "fill": "#333333ff",
+                      "content": "Detached, 2-Storey",
+                      "textAlign": "right",
+                      "textAlignVertical": "middle",
+                      "fontFamily": "Poppins",
+                      "fontSize": 16,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "text",
+                      "id": "8lX0a",
+                      "x": 268,
+                      "y": 79,
+                      "name": "16-30",
+                      "fill": "#333333ff",
+                      "content": "16-30",
+                      "textAlign": "right",
+                      "fontFamily": "Poppins",
+                      "fontSize": 16,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "text",
+                      "id": "lg7gM",
+                      "x": 220,
+                      "y": 117,
+                      "name": "5000+ feet²",
+                      "fill": "#333333ff",
+                      "content": "5000+ feet²",
+                      "textAlign": "right",
+                      "fontFamily": "Poppins",
+                      "fontSize": 16,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "text",
+                      "id": "CfrrW",
+                      "x": 177,
+                      "y": 155,
+                      "name": "98.4 x 216.00 feet",
+                      "fill": "#333333ff",
+                      "content": "98.4 x 216.00 feet",
+                      "textAlign": "right",
+                      "fontFamily": "Poppins",
+                      "fontSize": 16,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "text",
+                      "id": "AMONI",
+                      "x": 0,
+                      "y": 194,
+                      "name": "Built-In 3 garage, 3",
+                      "fill": "#333333ff",
+                      "textGrowth": "fixed-width",
+                      "width": 313,
+                      "content": "Built-In 3 garage, 10 parking",
+                      "textAlign": "right",
+                      "fontFamily": "Poppins",
+                      "fontSize": 16,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "text",
+                      "id": "jkC6K",
+                      "x": 236,
+                      "y": 233,
+                      "name": "N5310389",
+                      "fill": "#333333ff",
+                      "content": "N5310389",
+                      "textAlign": "right",
+                      "textAlignVertical": "middle",
+                      "fontFamily": "Poppins",
+                      "fontSize": 16,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "text",
+                      "id": "ZZkKt",
+                      "x": 265,
+                      "y": 272,
+                      "name": "TRREB",
+                      "fill": "#333333ff",
+                      "content": "TRREB",
+                      "textAlign": "right",
+                      "textAlignVertical": "middle",
+                      "fontFamily": "Poppins",
+                      "fontSize": 16,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "text",
+                      "id": "0ffTm",
+                      "x": 224,
+                      "y": 311,
+                      "name": "2021-07-16",
+                      "fill": "#333333ff",
+                      "content": "2021-07-16",
+                      "textAlign": "right",
+                      "textAlignVertical": "middle",
+                      "fontFamily": "Poppins",
+                      "fontSize": 16,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "text",
+                      "id": "2KMph",
+                      "x": 224,
+                      "y": 350,
+                      "name": "2021-07-16",
+                      "fill": "#333333ff",
+                      "content": "2021-07-16",
+                      "textAlign": "right",
+                      "fontFamily": "Poppins",
+                      "fontSize": 16,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "text",
+                      "id": "Ke1VP",
+                      "x": 211,
+                      "y": 389,
+                      "name": "Finished, Full",
+                      "fill": "#333333ff",
+                      "content": "Finished, Full",
+                      "textAlign": "right",
+                      "fontFamily": "Poppins",
+                      "fontSize": 16,
+                      "fontWeight": "500"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "path",
+              "id": "ZYjuD",
+              "x": 419,
+              "y": 554,
+              "name": "Rectangle 40",
+              "rotation": 180,
+              "geometry": "M0 0l59 0 0 10-59 0 0-10z",
+              "fillRule": "evenodd",
+              "fill": "#ecececff",
+              "width": 428,
+              "height": 9
+            },
+            {
+              "type": "path",
+              "id": "0ZEmP",
+              "x": 419,
+              "y": 1344,
+              "name": "Rectangle 44",
+              "rotation": 180,
+              "geometry": "M0 0l59 0 0 10-59 0 0-10z",
+              "fillRule": "evenodd",
+              "fill": "#ecececff",
+              "width": 428,
+              "height": 9
+            },
+            {
+              "type": "path",
+              "id": "gudEf",
+              "x": 421,
+              "y": 2195,
+              "name": "Rectangle 45",
+              "rotation": 180,
+              "geometry": "M0 0l59 0 0 10-59 0 0-10z",
+              "fillRule": "evenodd",
+              "fill": "#ecececff",
+              "width": 428,
+              "height": 9
+            },
+            {
+              "type": "text",
+              "id": "AU28k",
+              "x": 16,
+              "y": 2243,
+              "name": "Key facts for 1 Rena",
+              "fill": "#333333ff",
+              "content": "Fully renovated",
+              "textAlign": "right",
+              "fontFamily": "Poppins",
+              "fontSize": 16,
+              "fontWeight": "500"
+            },
+            {
+              "type": "text",
+              "id": "uG6US",
+              "x": 16,
+              "y": 2211,
+              "name": "SigmaEstimate®",
+              "fill": "#000000ff",
+              "content": "Renovation Level",
+              "fontFamily": "Poppins",
+              "fontSize": 18,
+              "fontWeight": "600"
+            },
+            {
+              "type": "group",
+              "id": "3jwna",
+              "x": -3,
+              "y": 2283,
+              "name": "Group 44079",
+              "children": [
+                {
+                  "type": "path",
+                  "id": "HZYwA",
+                  "x": 428,
+                  "y": 9,
+                  "name": "Rectangle 46",
+                  "rotation": 180,
+                  "geometry": "M0 0l59 0 0 10-59 0 0-10z",
+                  "fillRule": "evenodd",
+                  "fill": "#ecececff",
+                  "width": 428,
+                  "height": 9
+                },
+                {
+                  "type": "text",
+                  "id": "6Ew0a",
+                  "x": 19,
+                  "y": 25,
+                  "name": "SigmaEstimate®",
+                  "fill": "#000000ff",
+                  "content": "Listing Popularity",
+                  "fontFamily": "Poppins",
+                  "fontSize": 18,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "group",
+                  "id": "Sjnmu",
+                  "x": 377,
+                  "y": 26,
+                  "name": "Group 44055",
+                  "children": [
+                    {
+                      "type": "rectangle",
+                      "cornerRadius": 7,
+                      "id": "M3hJx",
+                      "x": 0,
+                      "y": 0,
+                      "name": "Rectangle",
+                      "fill": "#e9f6f7ff",
+                      "width": 24,
+                      "height": 24
+                    },
+                    {
+                      "type": "path",
+                      "id": "KvAPA",
+                      "x": 6,
+                      "y": 6,
+                      "name": "Path",
+                      "geometry": "M11.5 5l-4.5 0 0-4.5c0-0.27625-0.22375-0.5-0.5-0.5l-1 0c-0.27625 0-0.5 0.22375-0.5 0.5l0 4.5-4.5 0c-0.27625 0-0.5 0.22375-0.5 0.5l0 1c0 0.27625 0.22375 0.5 0.5 0.5l4.5 0 0 4.5c0 0.27625 0.22375 0.5 0.5 0.5l1 0c0.27625 0 0.5-0.22375 0.5-0.5l0-4.5 4.5 0c0.27625 0 0.5-0.22375 0.5-0.5l0-1c0-0.27625-0.22375-0.5-0.5-0.5z",
+                      "fill": "#28a3b3ff",
+                      "width": 12,
+                      "height": 12
+                    }
+                  ]
+                },
+                {
+                  "type": "path",
+                  "id": "hz9Tk",
+                  "x": 428,
+                  "y": 75,
+                  "name": "Rectangle 1309",
+                  "rotation": 180,
+                  "geometry": "M0 0l59 0 0 10-59 0 0-10z",
+                  "fillRule": "evenodd",
+                  "fill": "#ecececff",
+                  "width": 428,
+                  "height": 9
+                },
+                {
+                  "type": "text",
+                  "id": "Q7U9h",
+                  "x": 19,
+                  "y": 424,
+                  "name": "Rental Analysis",
+                  "fill": "#000000ff",
+                  "content": "Rental Analysis",
+                  "fontFamily": "Poppins",
+                  "fontSize": 18,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "0zCal",
+                  "x": 19,
+                  "y": 489,
+                  "name": "Mortage Calculator",
+                  "fill": "#000000ff",
+                  "content": "Mortage Calculator",
+                  "fontFamily": "Poppins",
+                  "fontSize": 18,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "F9HCX",
+                  "x": 19,
+                  "y": 555,
+                  "name": "Cash Flow Analysis",
+                  "fill": "#333333ff",
+                  "content": "Cash Flow Analysis",
+                  "fontFamily": "Poppins",
+                  "fontSize": 18,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "lqdjG",
+                  "x": 19,
+                  "y": 91,
+                  "name": "Home Value",
+                  "fill": "#000000ff",
+                  "content": "My Notes",
+                  "fontFamily": "Poppins",
+                  "fontSize": 18,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "uVf1E",
+                  "x": 19,
+                  "y": 756,
+                  "name": "Demographics by Stat",
+                  "fill": "#000000ff",
+                  "content": "Demographics by Statistics Canada",
+                  "fontFamily": "Poppins",
+                  "fontSize": 18,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "group",
+                  "id": "F2SyH",
+                  "x": 377,
+                  "y": 758,
+                  "name": "Group 203",
+                  "children": [
+                    {
+                      "type": "rectangle",
+                      "cornerRadius": 7,
+                      "id": "yUcC0",
+                      "x": 0,
+                      "y": 0,
+                      "name": "Rectangle",
+                      "fill": "#e9f6f7ff",
+                      "width": 24,
+                      "height": 24
+                    },
+                    {
+                      "type": "path",
+                      "id": "lmMo6",
+                      "x": 6,
+                      "y": 6,
+                      "name": "Path",
+                      "geometry": "M11.5 5l-4.5 0 0-4.5c0-0.27625-0.22375-0.5-0.5-0.5l-1 0c-0.27625 0-0.5 0.22375-0.5 0.5l0 4.5-4.5 0c-0.27625 0-0.5 0.22375-0.5 0.5l0 1c0 0.27625 0.22375 0.5 0.5 0.5l4.5 0 0 4.5c0 0.27625 0.22375 0.5 0.5 0.5l1 0c0.27625 0 0.5-0.22375 0.5-0.5l0-4.5 4.5 0c0.27625 0 0.5-0.22375 0.5-0.5l0-1c0-0.27625-0.22375-0.5-0.5-0.5z",
+                      "fill": "#28a3b3ff",
+                      "width": 12,
+                      "height": 12
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "id": "NHBm0",
+                  "x": 377,
+                  "y": 691,
+                  "name": "Group 199",
+                  "children": [
+                    {
+                      "type": "rectangle",
+                      "cornerRadius": 7,
+                      "id": "fPcNc",
+                      "x": 0,
+                      "y": 0,
+                      "name": "Rectangle",
+                      "fill": "#e9f6f7ff",
+                      "width": 24,
+                      "height": 24
+                    },
+                    {
+                      "type": "path",
+                      "id": "oIcKW",
+                      "x": 6,
+                      "y": 6,
+                      "name": "Path",
+                      "geometry": "M11.5 5l-4.5 0 0-4.5c0-0.27625-0.22375-0.5-0.5-0.5l-1 0c-0.27625 0-0.5 0.22375-0.5 0.5l0 4.5-4.5 0c-0.27625 0-0.5 0.22375-0.5 0.5l0 1c0 0.27625 0.22375 0.5 0.5 0.5l4.5 0 0 4.5c0 0.27625 0.22375 0.5 0.5 0.5l1 0c0.27625 0 0.5-0.22375 0.5-0.5l0-4.5 4.5 0c0.27625 0 0.5-0.22375 0.5-0.5l0-1c0-0.27625-0.22375-0.5-0.5-0.5z",
+                      "fill": "#28a3b3ff",
+                      "width": 12,
+                      "height": 12
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "id": "Czh2O",
+                  "x": 377,
+                  "y": 624,
+                  "name": "Group 19896",
+                  "children": [
+                    {
+                      "type": "rectangle",
+                      "cornerRadius": 7,
+                      "id": "hJ1F1",
+                      "x": 0,
+                      "y": 0,
+                      "name": "Rectangle",
+                      "fill": "#e9f6f7ff",
+                      "width": 24,
+                      "height": 24
+                    },
+                    {
+                      "type": "path",
+                      "id": "aQL0I",
+                      "x": 6,
+                      "y": 6,
+                      "name": "Path",
+                      "geometry": "M11.5 5l-4.5 0 0-4.5c0-0.27625-0.22375-0.5-0.5-0.5l-1 0c-0.27625 0-0.5 0.22375-0.5 0.5l0 4.5-4.5 0c-0.27625 0-0.5 0.22375-0.5 0.5l0 1c0 0.27625 0.22375 0.5 0.5 0.5l4.5 0 0 4.5c0 0.27625 0.22375 0.5 0.5 0.5l1 0c0.27625 0 0.5-0.22375 0.5-0.5l0-4.5 4.5 0c0.27625 0 0.5-0.22375 0.5-0.5l0-1c0-0.27625-0.22375-0.5-0.5-0.5z",
+                      "fill": "#28a3b3ff",
+                      "width": 12,
+                      "height": 12
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "20YID",
+                  "x": 19,
+                  "y": 689,
+                  "name": "Community Statistics",
+                  "fill": "#000000ff",
+                  "content": "Community Statistics",
+                  "fontFamily": "Poppins",
+                  "fontSize": 18,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "XxHBn",
+                  "x": 19,
+                  "y": 623,
+                  "name": "School Info",
+                  "fill": "#333333ff",
+                  "content": "School Nearby",
+                  "fontFamily": "Poppins",
+                  "fontSize": 18,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "group",
+                  "id": "EoN0S",
+                  "x": 377,
+                  "y": 490,
+                  "name": "Group 19897",
+                  "children": [
+                    {
+                      "type": "rectangle",
+                      "cornerRadius": 7,
+                      "id": "rgDVK",
+                      "x": 0,
+                      "y": 0,
+                      "name": "Rectangle",
+                      "fill": "#e9f6f7ff",
+                      "width": 24,
+                      "height": 24
+                    },
+                    {
+                      "type": "path",
+                      "id": "xMvs5",
+                      "x": 6,
+                      "y": 6,
+                      "name": "Path",
+                      "geometry": "M11.5 5l-4.5 0 0-4.5c0-0.27625-0.22375-0.5-0.5-0.5l-1 0c-0.27625 0-0.5 0.22375-0.5 0.5l0 4.5-4.5 0c-0.27625 0-0.5 0.22375-0.5 0.5l0 1c0 0.27625 0.22375 0.5 0.5 0.5l4.5 0 0 4.5c0 0.27625 0.22375 0.5 0.5 0.5l1 0c0.27625 0 0.5-0.22375 0.5-0.5l0-4.5 4.5 0c0.27625 0 0.5-0.22375 0.5-0.5l0-1c0-0.27625-0.22375-0.5-0.5-0.5z",
+                      "fill": "#28a3b3ff",
+                      "width": 12,
+                      "height": 12
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "id": "P0xw6",
+                  "x": 377,
+                  "y": 424,
+                  "name": "Group 19898",
+                  "children": [
+                    {
+                      "type": "rectangle",
+                      "cornerRadius": 7,
+                      "id": "xbL6g",
+                      "x": 0,
+                      "y": 0,
+                      "name": "Rectangle",
+                      "fill": "#e9f6f7ff",
+                      "width": 24,
+                      "height": 24
+                    },
+                    {
+                      "type": "path",
+                      "id": "XA9zS",
+                      "x": 6,
+                      "y": 6,
+                      "name": "Path",
+                      "geometry": "M11.5 5l-4.5 0 0-4.5c0-0.27625-0.22375-0.5-0.5-0.5l-1 0c-0.27625 0-0.5 0.22375-0.5 0.5l0 4.5-4.5 0c-0.27625 0-0.5 0.22375-0.5 0.5l0 1c0 0.27625 0.22375 0.5 0.5 0.5l4.5 0 0 4.5c0 0.27625 0.22375 0.5 0.5 0.5l1 0c0.27625 0 0.5-0.22375 0.5-0.5l0-4.5 4.5 0c0.27625 0 0.5-0.22375 0.5-0.5l0-1c0-0.27625-0.22375-0.5-0.5-0.5z",
+                      "fill": "#28a3b3ff",
+                      "width": 12,
+                      "height": 12
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "id": "cVLAe",
+                  "x": 377,
+                  "y": 93,
+                  "name": "Group 19899",
+                  "children": [
+                    {
+                      "type": "rectangle",
+                      "cornerRadius": 7,
+                      "id": "OUKp0",
+                      "x": 0,
+                      "y": 0,
+                      "name": "Rectangle",
+                      "fill": "#e9f6f7ff",
+                      "width": 24,
+                      "height": 24
+                    },
+                    {
+                      "type": "path",
+                      "id": "WuLGF",
+                      "x": 6,
+                      "y": 6,
+                      "name": "Path",
+                      "geometry": "M11.5 5l-4.5 0 0-4.5c0-0.27625-0.22375-0.5-0.5-0.5l-1 0c-0.27625 0-0.5 0.22375-0.5 0.5l0 4.5-4.5 0c-0.27625 0-0.5 0.22375-0.5 0.5l0 1c0 0.27625 0.22375 0.5 0.5 0.5l4.5 0 0 4.5c0 0.27625 0.22375 0.5 0.5 0.5l1 0c0.27625 0 0.5-0.22375 0.5-0.5l0-4.5 4.5 0c0.27625 0 0.5-0.22375 0.5-0.5l0-1c0-0.27625-0.22375-0.5-0.5-0.5z",
+                      "fill": "#28a3b3ff",
+                      "width": 12,
+                      "height": 12
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "id": "8x21m",
+                  "x": 377,
+                  "y": 558,
+                  "name": "Group 19900",
+                  "children": [
+                    {
+                      "type": "rectangle",
+                      "cornerRadius": 7,
+                      "id": "HBdvJ",
+                      "x": 0,
+                      "y": 0,
+                      "name": "Rectangle",
+                      "fill": "#e9f6f7ff",
+                      "width": 24,
+                      "height": 24
+                    },
+                    {
+                      "type": "path",
+                      "id": "Odtro",
+                      "x": 6,
+                      "y": 6,
+                      "name": "Path",
+                      "geometry": "M11.5 5l-4.5 0 0-4.5c0-0.27625-0.22375-0.5-0.5-0.5l-1 0c-0.27625 0-0.5 0.22375-0.5 0.5l0 4.5-4.5 0c-0.27625 0-0.5 0.22375-0.5 0.5l0 1c0 0.27625 0.22375 0.5 0.5 0.5l4.5 0 0 4.5c0 0.27625 0.22375 0.5 0.5 0.5l1 0c0.27625 0 0.5-0.22375 0.5-0.5l0-4.5 4.5 0c0.27625 0 0.5-0.22375 0.5-0.5l0-1c0-0.27625-0.22375-0.5-0.5-0.5z",
+                      "fill": "#28a3b3ff",
+                      "width": 12,
+                      "height": 12
+                    }
+                  ]
+                },
+                {
+                  "type": "path",
+                  "id": "612OG",
+                  "x": 428,
+                  "y": 142,
+                  "name": "Rectangle 1005",
+                  "rotation": 180,
+                  "geometry": "M0 0l59 0 0 10-59 0 0-10z",
+                  "fillRule": "evenodd",
+                  "fill": "#ecececff",
+                  "width": 428,
+                  "height": 9
+                },
+                {
+                  "type": "path",
+                  "id": "0zpOz",
+                  "x": 428,
+                  "y": 209,
+                  "name": "Rectangle 1006",
+                  "rotation": 180,
+                  "geometry": "M0 0l59 0 0 10-59 0 0-10z",
+                  "fillRule": "evenodd",
+                  "fill": "#ecececff",
+                  "width": 428,
+                  "height": 9
+                },
+                {
+                  "type": "path",
+                  "id": "h2t9B",
+                  "x": 428,
+                  "y": 276,
+                  "name": "Rectangle 1007",
+                  "rotation": 180,
+                  "geometry": "M0 0l59 0 0 10-59 0 0-10z",
+                  "fillRule": "evenodd",
+                  "fill": "#ecececff",
+                  "width": 428,
+                  "height": 9
+                },
+                {
+                  "type": "path",
+                  "id": "HwngJ",
+                  "x": 428,
+                  "y": 343,
+                  "name": "Rectangle 1008",
+                  "rotation": 180,
+                  "geometry": "M0 0l59 0 0 10-59 0 0-10z",
+                  "fillRule": "evenodd",
+                  "fill": "#ecececff",
+                  "width": 428,
+                  "height": 9
+                },
+                {
+                  "type": "path",
+                  "id": "MymlM",
+                  "x": 428,
+                  "y": 408,
+                  "name": "Rectangle 1009",
+                  "rotation": 180,
+                  "geometry": "M0 0l59 0 0 10-59 0 0-10z",
+                  "fillRule": "evenodd",
+                  "fill": "#ecececff",
+                  "width": 428,
+                  "height": 9
+                },
+                {
+                  "type": "path",
+                  "id": "jLAUt",
+                  "x": 428,
+                  "y": 474,
+                  "name": "Rectangle 1010",
+                  "rotation": 180,
+                  "geometry": "M0 0l59 0 0 10-59 0 0-10z",
+                  "fillRule": "evenodd",
+                  "fill": "#ecececff",
+                  "width": 428,
+                  "height": 9
+                },
+                {
+                  "type": "path",
+                  "id": "bHdxC",
+                  "x": 428,
+                  "y": 541,
+                  "name": "Rectangle 1011",
+                  "rotation": 180,
+                  "geometry": "M0 0l59 0 0 10-59 0 0-10z",
+                  "fillRule": "evenodd",
+                  "fill": "#ecececff",
+                  "width": 428,
+                  "height": 9
+                },
+                {
+                  "type": "path",
+                  "id": "FDgdn",
+                  "x": 428,
+                  "y": 607,
+                  "name": "Rectangle 1012",
+                  "rotation": 180,
+                  "geometry": "M0 0l59 0 0 10-59 0 0-10z",
+                  "fillRule": "evenodd",
+                  "fill": "#ecececff",
+                  "width": 428,
+                  "height": 9
+                },
+                {
+                  "type": "path",
+                  "id": "EIENl",
+                  "x": 428,
+                  "y": 675,
+                  "name": "Rectangle 1013",
+                  "rotation": 180,
+                  "geometry": "M0 0l59 0 0 10-59 0 0-10z",
+                  "fillRule": "evenodd",
+                  "fill": "#ecececff",
+                  "width": 428,
+                  "height": 9
+                },
+                {
+                  "type": "path",
+                  "id": "dIDq4",
+                  "x": 428,
+                  "y": 740,
+                  "name": "Rectangle 1014",
+                  "rotation": 180,
+                  "geometry": "M0 0l59 0 0 10-59 0 0-10z",
+                  "fillRule": "evenodd",
+                  "fill": "#ecececff",
+                  "width": 428,
+                  "height": 9
+                },
+                {
+                  "type": "path",
+                  "id": "LBQBy",
+                  "x": 428,
+                  "y": 808,
+                  "name": "Rectangle 1015",
+                  "rotation": 180,
+                  "geometry": "M0 0l59 0 0 10-59 0 0-10z",
+                  "fillRule": "evenodd",
+                  "fill": "#ecececff",
+                  "width": 428,
+                  "height": 9
+                },
+                {
+                  "type": "text",
+                  "id": "jLsJu",
+                  "x": 19,
+                  "y": 158,
+                  "name": "Home Value",
+                  "fill": "#000000ff",
+                  "content": "Touring Activities",
+                  "fontFamily": "Poppins",
+                  "fontSize": 18,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "group",
+                  "id": "WPEL5",
+                  "x": 377,
+                  "y": 160,
+                  "name": "Group 19899",
+                  "children": [
+                    {
+                      "type": "rectangle",
+                      "cornerRadius": 7,
+                      "id": "q2Kpi",
+                      "x": 0,
+                      "y": 0,
+                      "name": "Rectangle",
+                      "fill": "#e9f6f7ff",
+                      "width": 24,
+                      "height": 24
+                    },
+                    {
+                      "type": "path",
+                      "id": "I9if6",
+                      "x": 6,
+                      "y": 6,
+                      "name": "Path",
+                      "geometry": "M11.5 5l-4.5 0 0-4.5c0-0.27625-0.22375-0.5-0.5-0.5l-1 0c-0.27625 0-0.5 0.22375-0.5 0.5l0 4.5-4.5 0c-0.27625 0-0.5 0.22375-0.5 0.5l0 1c0 0.27625 0.22375 0.5 0.5 0.5l4.5 0 0 4.5c0 0.27625 0.22375 0.5 0.5 0.5l1 0c0.27625 0 0.5-0.22375 0.5-0.5l0-4.5 4.5 0c0.27625 0 0.5-0.22375 0.5-0.5l0-1c0-0.27625-0.22375-0.5-0.5-0.5z",
+                      "fill": "#28a3b3ff",
+                      "width": 12,
+                      "height": 12
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "1vOIV",
+                  "x": 19,
+                  "y": 225,
+                  "name": "Home Value",
+                  "fill": "#000000ff",
+                  "content": "SigmaEstimate®",
+                  "fontFamily": "Poppins",
+                  "fontSize": 18,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "group",
+                  "id": "jZioX",
+                  "x": 377,
+                  "y": 227,
+                  "name": "Group 19912",
+                  "children": [
+                    {
+                      "type": "rectangle",
+                      "cornerRadius": 7,
+                      "id": "L2Z3w",
+                      "x": 0,
+                      "y": 0,
+                      "name": "Rectangle",
+                      "fill": "#e9f6f7ff",
+                      "width": 24,
+                      "height": 24
+                    },
+                    {
+                      "type": "path",
+                      "id": "Vpbnq",
+                      "x": 6,
+                      "y": 6,
+                      "name": "Path",
+                      "geometry": "M11.5 5l-4.5 0 0-4.5c0-0.27625-0.22375-0.5-0.5-0.5l-1 0c-0.27625 0-0.5 0.22375-0.5 0.5l0 4.5-4.5 0c-0.27625 0-0.5 0.22375-0.5 0.5l0 1c0 0.27625 0.22375 0.5 0.5 0.5l4.5 0 0 4.5c0 0.27625 0.22375 0.5 0.5 0.5l1 0c0.27625 0 0.5-0.22375 0.5-0.5l0-4.5 4.5 0c0.27625 0 0.5-0.22375 0.5-0.5l0-1c0-0.27625-0.22375-0.5-0.5-0.5z",
+                      "fill": "#28a3b3ff",
+                      "width": 12,
+                      "height": 12
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "IejsP",
+                  "x": 19,
+                  "y": 292,
+                  "name": "Home Value",
+                  "fill": "#000000ff",
+                  "content": "Home Value",
+                  "fontFamily": "Poppins",
+                  "fontSize": 18,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "group",
+                  "id": "qNULw",
+                  "x": 377,
+                  "y": 294,
+                  "name": "Group 19911",
+                  "children": [
+                    {
+                      "type": "rectangle",
+                      "cornerRadius": 7,
+                      "id": "7UJBv",
+                      "x": 0,
+                      "y": 0,
+                      "name": "Rectangle",
+                      "fill": "#e9f6f7ff",
+                      "width": 24,
+                      "height": 24
+                    },
+                    {
+                      "type": "path",
+                      "id": "07kan",
+                      "x": 6,
+                      "y": 6,
+                      "name": "Path",
+                      "geometry": "M11.5 5l-4.5 0 0-4.5c0-0.27625-0.22375-0.5-0.5-0.5l-1 0c-0.27625 0-0.5 0.22375-0.5 0.5l0 4.5-4.5 0c-0.27625 0-0.5 0.22375-0.5 0.5l0 1c0 0.27625 0.22375 0.5 0.5 0.5l4.5 0 0 4.5c0 0.27625 0.22375 0.5 0.5 0.5l1 0c0.27625 0 0.5-0.22375 0.5-0.5l0-4.5 4.5 0c0.27625 0 0.5-0.22375 0.5-0.5l0-1c0-0.27625-0.22375-0.5-0.5-0.5z",
+                      "fill": "#28a3b3ff",
+                      "width": 12,
+                      "height": 12
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "1HNQd",
+                  "x": 19,
+                  "y": 357,
+                  "name": "Home Value",
+                  "fill": "#000000ff",
+                  "content": "Assessment History",
+                  "fontFamily": "Poppins",
+                  "fontSize": 18,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "group",
+                  "id": "MqFXv",
+                  "x": 377,
+                  "y": 359,
+                  "name": "Group 19910",
+                  "children": [
+                    {
+                      "type": "rectangle",
+                      "cornerRadius": 7,
+                      "id": "5QD4L",
+                      "x": 0,
+                      "y": 0,
+                      "name": "Rectangle",
+                      "fill": "#e9f6f7ff",
+                      "width": 24,
+                      "height": 24
+                    },
+                    {
+                      "type": "path",
+                      "id": "ZKrdu",
+                      "x": 6,
+                      "y": 6,
+                      "name": "Path",
+                      "geometry": "M11.5 5l-4.5 0 0-4.5c0-0.27625-0.22375-0.5-0.5-0.5l-1 0c-0.27625 0-0.5 0.22375-0.5 0.5l0 4.5-4.5 0c-0.27625 0-0.5 0.22375-0.5 0.5l0 1c0 0.27625 0.22375 0.5 0.5 0.5l4.5 0 0 4.5c0 0.27625 0.22375 0.5 0.5 0.5l1 0c0.27625 0 0.5-0.22375 0.5-0.5l0-4.5 4.5 0c0.27625 0 0.5-0.22375 0.5-0.5l0-1c0-0.27625-0.22375-0.5-0.5-0.5z",
+                      "fill": "#28a3b3ff",
+                      "width": 12,
+                      "height": 12
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "id": "5gCrk",
+                  "x": 1,
+                  "y": 823,
+                  "name": "Group 19909",
+                  "children": [
+                    {
+                      "type": "rectangle",
+                      "id": "z25Rg",
+                      "x": 0,
+                      "y": 223,
+                      "name": "Rectangle 43",
+                      "fill": "#f6f6f6ff",
+                      "width": 416,
+                      "height": 351,
+                      "stroke": {
+                        "align": "inside",
+                        "thickness": 1
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "id": "HQimh",
+                      "x": 16,
+                      "y": 239,
+                      "name": "* Source: Based on a",
+                      "fill": "#333333ff",
+                      "textGrowth": "fixed-width-height",
+                      "width": 382,
+                      "height": 218,
+                      "content": "Data is provided courtesy of ITSO\n© 2021 ITSO (https://www.itsosystems.ca/)\nThe information provided herein must only be used by consumers that have a bona fide interest in the purchase, sale, or lease of real state and may not be used for any commercial purpose or any other purpose.\nInformation deemed reliable but not guaranteed.\n",
+                      "fontFamily": "Poppins",
+                      "fontSize": 16,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "G5Kmf",
+                      "x": 16,
+                      "y": 474,
+                      "name": "* Source: Based on a",
+                      "fill": "#333333ff",
+                      "textGrowth": "fixed-width-height",
+                      "width": 382,
+                      "height": 49,
+                      "content": "Copyright: © 2022 HouseSigma Inc. All rights reseved. HouseSigma Inc. is a registered real estate brokerage in the Ontario Province",
+                      "fontFamily": "Poppins",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "0O7N8",
+                      "x": 16,
+                      "y": 539,
+                      "name": "* Source: Based on a",
+                      "fill": "#333333ff",
+                      "textGrowth": "fixed-width-height",
+                      "width": 358,
+                      "height": 20,
+                      "content": "HouseSigma Inc. Brokerage",
+                      "textAlign": "center",
+                      "fontFamily": "Poppins",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "group",
+                      "id": "XrEwy",
+                      "x": 18,
+                      "y": 0,
+                      "name": "Group 19905",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "u47J5",
+                          "x": 0,
+                          "y": 0,
+                          "name": "Agent",
+                          "fill": "#000000ff",
+                          "content": "Agent",
+                          "fontFamily": "Poppins",
+                          "fontSize": 18,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "group",
+                          "id": "mtGGD",
+                          "x": 0,
+                          "y": 104,
+                          "name": "Group 193",
+                          "children": [
+                            {
+                              "type": "rectangle",
+                              "cornerRadius": 10,
+                              "id": "fwUYV",
+                              "x": 0,
+                              "y": 0,
+                              "name": "Rectangle 5",
+                              "fill": "#e9f6f7ff",
+                              "width": 383,
+                              "height": 103,
+                              "stroke": {
+                                "align": "inside",
+                                "thickness": 2
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "rectangle",
+                          "cornerRadius": 5,
+                          "id": "jNqVw",
+                          "x": 132,
+                          "y": 160,
+                          "name": "Rectangle",
+                          "width": 118,
+                          "height": 31,
+                          "stroke": {
+                            "align": "center",
+                            "thickness": 2,
+                            "fill": "#28a3b3ff"
+                          }
+                        },
+                        {
+                          "type": "text",
+                          "id": "CEu4i",
+                          "x": 152,
+                          "y": 165,
+                          "name": "View",
+                          "fill": "#28a3b3ff",
+                          "textGrowth": "fixed-width",
+                          "width": 78,
+                          "content": "Apply here",
+                          "textAlign": "center",
+                          "fontFamily": "Poppins",
+                          "fontSize": 14,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "MMpYT",
+                          "x": 76,
+                          "y": 120,
+                          "name": "Listing History",
+                          "fill": "#28a3b3ff",
+                          "content": "Join HouseSigma Brokerage",
+                          "textAlign": "center",
+                          "fontFamily": "Poppins",
+                          "fontSize": 16,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "group",
+                          "id": "W0Jp9",
+                          "x": 0,
+                          "y": 43,
+                          "name": "Group 660",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "NKVXK",
+                              "x": 0,
+                              "y": 0,
+                              "name": "Estimated Rent:",
+                              "fill": "#808080ff",
+                              "content": "Listing brokerage:",
+                              "fontFamily": "Poppins",
+                              "fontSize": 14,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "UCVVb",
+                              "x": 0,
+                              "y": 21,
+                              "name": "4,123",
+                              "fill": "#333333ff",
+                              "content": "ALAN NEWTON REAL ESTATE LTD., BOKERAGE",
+                              "fontFamily": "Poppins",
+                              "fontSize": 16,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "id": "qcz1u",
+              "x": -7,
+              "y": 801,
+              "name": "Group 44193",
+              "children": [
+                {
+                  "type": "group",
+                  "id": "i6kgu",
+                  "x": 0,
+                  "y": 0,
+                  "name": "Botton buttons",
+                  "children": [
+                    {
+                      "type": "rectangle",
+                      "id": "jqhfe",
+                      "x": 0,
+                      "y": 0,
+                      "name": "Rectangle",
+                      "fill": {
+                        "type": "gradient",
+                        "gradientType": "linear",
+                        "enabled": true,
+                        "rotation": -180.00000000678872,
+                        "size": {
+                          "height": 0.12500000745058104
+                        },
+                        "colors": [
+                          {
+                            "color": "#ffffff00",
+                            "position": 0
+                          },
+                          {
+                            "color": "#ffffffff",
+                            "position": 1
+                          }
+                        ],
+                        "center": {
+                          "x": 0.3611294597232625,
+                          "y": 0.23897059200337323
+                        }
+                      },
+                      "width": 436,
+                      "height": 136
+                    },
+                    {
+                      "type": "rectangle",
+                      "cornerRadius": 10,
+                      "id": "vxHgW",
+                      "x": 23,
+                      "y": 44,
+                      "name": "Rectangle 6",
+                      "fill": {
+                        "type": "color",
+                        "color": "#ffffffff",
+                        "enabled": false
+                      },
+                      "width": 183,
+                      "height": 57,
+                      "stroke": {
+                        "align": "inside",
+                        "thickness": 2,
+                        "fill": "#28a3b3ff"
+                      },
+                      "effect": {
+                        "type": "shadow",
+                        "shadowType": "outer",
+                        "color": "#373a4025",
+                        "offset": {
+                          "x": 0,
+                          "y": 5
+                        },
+                        "blur": 21.875,
+                        "spread": 0.5
+                      }
+                    },
+                    {
+                      "type": "rectangle",
+                      "cornerRadius": 10,
+                      "id": "W6R7v",
+                      "x": 222,
+                      "y": 44,
+                      "name": "Rectangle 5",
+                      "fill": "#28a3b3ff",
+                      "width": 183,
+                      "height": 57,
+                      "effect": {
+                        "type": "shadow",
+                        "shadowType": "outer",
+                        "enabled": false,
+                        "color": "#28a3b380",
+                        "offset": {
+                          "x": 0,
+                          "y": 13
+                        },
+                        "blur": 8.75,
+                        "spread": -10
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "id": "OqFYu",
+                      "x": 242,
+                      "y": 60,
+                      "name": "Schedule Viewing",
+                      "fill": "#ffffffff",
+                      "content": "Schedule Viewing",
+                      "fontFamily": "Poppins",
+                      "fontSize": 16,
+                      "fontWeight": "500"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "jDZOW",
+                  "x": 27,
+                  "y": 89,
+                  "name": "iPhone X/Home Indicator/Home Indicator - On Light",
+                  "opacity": 0.11798007041215897,
+                  "width": 375,
+                  "height": 34,
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1
+                  },
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "rectangle",
+                      "cornerRadius": 100,
+                      "id": "Kz3B8",
+                      "x": 121,
+                      "y": 20,
+                      "name": "Rectangle 24",
+                      "fill": "#000000ff",
+                      "width": 134,
+                      "height": 5
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "id": "X4wuc",
+                  "x": 54,
+                  "y": 60,
+                  "name": "Group 919",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "IsiPa",
+                      "x": 30,
+                      "y": 0,
+                      "name": "Sold Watch",
+                      "fill": "#28a3b3ff",
+                      "content": "Sold Watch",
+                      "fontFamily": "Poppins",
+                      "fontSize": 16,
+                      "fontWeight": "500"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "ElQ0h",
+                      "x": 0,
+                      "y": 1,
+                      "name": "Light / Star",
+                      "width": 20,
+                      "height": 20,
+                      "fill": {
+                        "type": "color",
+                        "color": "#ffffffff",
+                        "enabled": false
+                      },
+                      "stroke": {
+                        "align": "inside",
+                        "thickness": 1
+                      },
+                      "layout": "none",
+                      "children": [
+                        {
+                          "type": "path",
+                          "id": "ecX6X",
+                          "x": 0,
+                          "y": 0,
+                          "name": "Vector",
+                          "geometry": "M507.60046 171.51268l-146.09997-21.3-65.29999-132.4c-11.70001-23.6-45.60004-23.9-57.40004 0l-65.29999 132.4-146.09999 21.3c-26.2 3.8-36.7 36.10001-17.70001 54.60001l105.7 102.99998-24.99999 145.5c-4.5 26.29999 23.20001 46 46.4 33.69998l130.70001-68.69998 130.70001 68.69998c23.20001 12.19998 50.89999-7.39999 46.39999-33.69998l-25-145.5 105.69999-102.99998c19-18.5 8.5-50.80001-17.70002-54.60001l0 0z m-122.29998 146.39998l27.80001 162-145.6-76.4-145.50002 76.5 27.80001-162-117.80001-114.89997 162.7-23.60001 72.80002-147.5 72.79999 147.5 162.70001 23.60001-117.70001 114.79997z",
+                          "fill": "#28a3b3ff",
+                          "width": 20,
+                          "height": 20,
+                          "stroke": {
+                            "align": "inside",
+                            "thickness": 1
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "id": "1XoqY",
+              "x": 0,
+              "y": 789,
+              "name": "Group 44206",
+              "children": [
+                {
+                  "type": "group",
+                  "id": "CZ3D7",
+                  "x": 0,
+                  "y": 0,
+                  "name": "Group 44204",
+                  "children": [
+                    {
+                      "type": "group",
+                      "id": "lJZ4j",
+                      "x": 0,
+                      "y": 0,
+                      "name": "Botton buttons",
+                      "children": [
+                        {
+                          "type": "rectangle",
+                          "id": "LwYpd",
+                          "x": 0,
+                          "y": 0,
+                          "name": "Rectangle",
+                          "fill": {
+                            "type": "gradient",
+                            "gradientType": "linear",
+                            "enabled": true,
+                            "rotation": -180.00000000678872,
+                            "size": {
+                              "height": 0.12500000745058104
+                            },
+                            "colors": [
+                              {
+                                "color": "#ffffff00",
+                                "position": 0
+                              },
+                              {
+                                "color": "#ffffffff",
+                                "position": 1
+                              }
+                            ],
+                            "center": {
+                              "x": 0.3611294597232625,
+                              "y": 0.23897059200337323
+                            }
+                          },
+                          "width": 414,
+                          "height": 136
+                        },
+                        {
+                          "type": "rectangle",
+                          "cornerRadius": 10,
+                          "id": "eC8pQ",
+                          "x": 22,
+                          "y": 44,
+                          "name": "Rectangle 6",
+                          "fill": {
+                            "type": "color",
+                            "color": "#ffffffff",
+                            "enabled": false
+                          },
+                          "width": 124,
+                          "height": 57,
+                          "stroke": {
+                            "align": "inside",
+                            "thickness": 2,
+                            "fill": "#28a3b3ff"
+                          },
+                          "effect": {
+                            "type": "shadow",
+                            "shadowType": "outer",
+                            "color": "#373a4025",
+                            "offset": {
+                              "x": 0,
+                              "y": 5
+                            },
+                            "blur": 21.875,
+                            "spread": 0.5
+                          }
+                        },
+                        {
+                          "type": "text",
+                          "id": "uQQB1",
+                          "x": 67,
+                          "y": 60,
+                          "name": "Sold Watch",
+                          "fill": "#28a3b3ff",
+                          "content": " Watch",
+                          "fontFamily": "Poppins",
+                          "fontSize": 16,
+                          "fontWeight": "500"
+                        },
+                        {
+                          "type": "rectangle",
+                          "cornerRadius": 10,
+                          "id": "9wQ1f",
+                          "x": 162,
+                          "y": 44,
+                          "name": "Rectangle 5",
+                          "fill": "#28a3b3ff",
+                          "width": 163,
+                          "height": 57,
+                          "effect": {
+                            "type": "shadow",
+                            "shadowType": "outer",
+                            "enabled": false,
+                            "color": "#28a3b380",
+                            "offset": {
+                              "x": 0,
+                              "y": 13
+                            },
+                            "blur": 8.75,
+                            "spread": -10
+                          }
+                        },
+                        {
+                          "type": "text",
+                          "id": "9sJno",
+                          "x": 176,
+                          "y": 61,
+                          "name": "Schedule Viewing",
+                          "fill": "#ffffffff",
+                          "content": "Schedule Viewing",
+                          "textAlign": "center",
+                          "fontFamily": "Poppins",
+                          "fontSize": 15,
+                          "fontWeight": "500"
+                        },
+                        {
+                          "type": "group",
+                          "id": "AuGKC",
+                          "x": 341,
+                          "y": 44,
+                          "name": "Group 44203",
+                          "children": [
+                            {
+                              "type": "rectangle",
+                              "cornerRadius": 10,
+                              "id": "JuQQQ",
+                              "x": 0,
+                              "y": 0,
+                              "name": "Rectangle 7",
+                              "fill": "#28a3b3ff",
+                              "width": 57,
+                              "height": 57,
+                              "effect": {
+                                "type": "shadow",
+                                "shadowType": "outer",
+                                "enabled": false,
+                                "color": "#28a3b380",
+                                "offset": {
+                                  "x": 0,
+                                  "y": 13
+                                },
+                                "blur": 8.75,
+                                "spread": -10
+                              }
+                            },
+                            {
+                              "type": "path",
+                              "id": "r2iUB",
+                              "x": 12,
+                              "y": 12,
+                              "name": "Vector",
+                              "geometry": "M33 16.5c0-0.39082-0.20335-0.86266-0.77209-1.02152-4.6531-1.30113-7.56834-2.78657-9.74502-4.96137-2.17651-2.17651-3.66509-5.09193-4.96137-9.74502-0.15887-0.56873-0.63072-0.77209-1.02152-0.77209-0.39082 0-0.86266 0.20335-1.02152 0.77209-1.30112 4.65309-2.78657 7.56835-4.96137 9.74502-2.17969 2.17969-5.09193 3.66509-9.74502 4.96137-0.56873 0.15887-0.77209 0.63072-0.77209 1.02152 0 0.3908 0.20335 0.86266 0.77209 1.02152 4.65309 1.30113 7.56835 2.78657 9.74502 4.96137 2.17969 2.17969 3.66509 5.09193 4.96137 9.74502 0.15887 0.56873 0.63072 0.77209 1.02152 0.77209 0.39082 0 0.86266-0.20335 1.02152-0.77209 1.30113-4.6531 2.78657-7.56834 4.96137-9.74502 2.17969-2.17969 5.09192-3.66509 9.74502-4.96137 0.56873-0.15887 0.77209-0.63072 0.77209-1.02152z",
+                              "fill": "#ffffffff",
+                              "width": 33,
+                              "height": 33,
+                              "stroke": {
+                                "align": "inside",
+                                "thickness": 1
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Rsqgi",
+                      "x": 20,
+                      "y": 101,
+                      "name": "iPhone X/Home Indicator/Home Indicator - On Light",
+                      "opacity": 0.11798007041215897,
+                      "width": 375,
+                      "height": 34,
+                      "stroke": {
+                        "align": "inside",
+                        "thickness": 1
+                      },
+                      "layout": "none",
+                      "children": [
+                        {
+                          "type": "rectangle",
+                          "cornerRadius": 100,
+                          "id": "qNIkV",
+                          "x": 121,
+                          "y": 20,
+                          "name": "Rectangle 24",
+                          "fill": "#000000ff",
+                          "width": 134,
+                          "height": 5
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "group",
+                  "id": "Sw1hF",
+                  "x": 44,
+                  "y": 61,
+                  "name": "Group 44205",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "b3u6K",
+                      "x": 0,
+                      "y": 0,
+                      "name": "Light / Star",
+                      "width": 20,
+                      "height": 20,
+                      "fill": {
+                        "type": "color",
+                        "color": "#ffffffff",
+                        "enabled": false
+                      },
+                      "stroke": {
+                        "align": "inside",
+                        "thickness": 1
+                      },
+                      "layout": "none",
+                      "children": [
+                        {
+                          "type": "path",
+                          "id": "amwbV",
+                          "x": 0,
+                          "y": 0,
+                          "name": "Vector",
+                          "geometry": "M507.60046 171.51268l-146.09997-21.3-65.29999-132.4c-11.70001-23.6-45.60004-23.9-57.40004 0l-65.29999 132.4-146.09999 21.3c-26.2 3.8-36.7 36.10001-17.70001 54.60001l105.7 102.99998-24.99999 145.5c-4.5 26.29999 23.20001 46 46.4 33.69998l130.70001-68.69998 130.70001 68.69998c23.20001 12.19998 50.89999-7.39999 46.39999-33.69998l-25-145.5 105.69999-102.99998c19-18.5 8.5-50.80001-17.70002-54.60001l0 0z m-122.29998 146.39998l27.80001 162-145.6-76.4-145.50002 76.5 27.80001-162-117.80001-114.89997 162.7-23.60001 72.80002-147.5 72.79999 147.5 162.70001 23.60001-117.70001 114.79997z",
+                          "fill": "#28a3b3ff",
+                          "width": 20,
+                          "height": 20,
+                          "stroke": {
+                            "align": "inside",
+                            "thickness": 1
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "6sl8F",
+      "x": -608,
+      "y": 1561,
+      "name": "wfSectionLabel",
+      "fill": "#666666",
+      "content": "Wireframes",
+      "fontFamily": "Inter",
+      "fontSize": 13,
+      "fontWeight": "600"
+    },
+    {
+      "type": "text",
+      "id": "9pDvS",
+      "x": -608,
+      "y": 1583,
+      "name": "wfEntryLabel",
+      "fill": "#999999",
+      "content": "Entry Hero",
+      "fontFamily": "Inter",
+      "fontSize": 11,
+      "fontWeight": "normal"
+    },
+    {
+      "type": "text",
+      "id": "qil9m",
+      "x": -158,
+      "y": 1583,
+      "name": "wfRetrvLabel",
+      "fill": "#999999",
+      "content": "Retrieving",
+      "fontFamily": "Inter",
+      "fontSize": 11,
+      "fontWeight": "normal"
+    },
+    {
+      "type": "frame",
+      "id": "DgfFx",
+      "x": -766,
+      "y": 1611,
+      "name": "wf_entry_hero",
+      "width": 390,
+      "height": 844,
+      "fill": "#FAFAFA",
+      "stroke": {
+        "align": "outside",
+        "thickness": 1,
+        "fill": "#DEDEDE"
+      },
+      "layout": "none",
+      "children": [
+        {
+          "type": "rectangle",
+          "id": "A0czS",
+          "x": 0,
+          "y": 0,
+          "name": "hero_bg",
+          "fill": "#E0E0E0",
+          "width": 390,
+          "height": 844
+        },
+        {
+          "type": "frame",
+          "id": "WWgi1",
+          "x": 0,
+          "y": 364,
+          "name": "card",
+          "width": 390,
+          "height": 480,
+          "fill": "#FFFFFF",
+          "cornerRadius": [
+            16,
+            16,
+            0,
+            0
+          ],
+          "layout": "vertical",
+          "children": [
+            {
+              "type": "frame",
+              "id": "GdKLZ",
+              "name": "grip_area",
+              "width": "fill_container",
+              "height": 28,
+              "layout": "vertical",
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "rectangle",
+                  "cornerRadius": 2,
+                  "id": "W0khO",
+                  "name": "grip_pill",
+                  "fill": "#C8C8C8",
+                  "width": 36,
+                  "height": 4
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "89pEJ",
+              "name": "content_area",
+              "width": "fill_container",
+              "height": 258,
+              "layout": "none",
+              "children": [
+                {
+                  "type": "ellipse",
+                  "id": "vEnUM",
+                  "x": 173,
+                  "y": 98,
+                  "name": "icon",
+                  "fill": "#D0D0D0",
+                  "width": 44,
+                  "height": 44
+                },
+                {
+                  "type": "rectangle",
+                  "cornerRadius": 4,
+                  "id": "2Ah64",
+                  "x": 55,
+                  "y": 157,
+                  "name": "title_bar",
+                  "fill": "#D0D0D0",
+                  "width": 280,
+                  "height": 20
+                },
+                {
+                  "type": "rectangle",
+                  "cornerRadius": 3,
+                  "id": "47Xbo",
+                  "x": 105,
+                  "y": 189,
+                  "name": "subtitle_bar",
+                  "fill": "#E0E0E0",
+                  "width": 180,
+                  "height": 13
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "HyovS",
+              "name": "chips_area",
+              "width": "fill_container",
+              "height": 114,
+              "layout": "none",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "IMP64",
+                  "x": 16,
+                  "y": 12,
+                  "name": "chips_grid",
+                  "width": 358,
+                  "height": 86,
+                  "layout": "vertical",
+                  "gap": 10,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "UquHg",
+                      "name": "row1",
+                      "width": "fill_container",
+                      "height": 38,
+                      "gap": 10,
+                      "children": [
+                        {
+                          "type": "rectangle",
+                          "cornerRadius": 19,
+                          "id": "hoDKx",
+                          "name": "chip1",
+                          "fill": "#EFEFEF",
+                          "width": 208,
+                          "height": 38,
+                          "stroke": {
+                            "align": "inside",
+                            "thickness": 1,
+                            "fill": "#E0E0E0"
+                          }
+                        },
+                        {
+                          "type": "rectangle",
+                          "cornerRadius": 19,
+                          "id": "NBxgH",
+                          "name": "chip2",
+                          "fill": "#EFEFEF",
+                          "width": 140,
+                          "height": 38,
+                          "stroke": {
+                            "align": "inside",
+                            "thickness": 1,
+                            "fill": "#E0E0E0"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Jm8UX",
+                      "name": "row2",
+                      "width": "fill_container",
+                      "height": 38,
+                      "gap": 10,
+                      "children": [
+                        {
+                          "type": "rectangle",
+                          "cornerRadius": 19,
+                          "id": "TFs7e",
+                          "name": "chip3",
+                          "fill": "#EFEFEF",
+                          "width": 158,
+                          "height": 38,
+                          "stroke": {
+                            "align": "inside",
+                            "thickness": 1,
+                            "fill": "#E0E0E0"
+                          }
+                        },
+                        {
+                          "type": "rectangle",
+                          "cornerRadius": 19,
+                          "id": "9qRwA",
+                          "name": "chip4",
+                          "fill": "#EFEFEF",
+                          "width": 190,
+                          "height": 38,
+                          "stroke": {
+                            "align": "inside",
+                            "thickness": 1,
+                            "fill": "#E0E0E0"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "LGcvE",
+              "name": "input_bar_e",
+              "width": "fill_container",
+              "height": 80,
+              "layout": "none",
+              "children": [
+                {
+                  "type": "rectangle",
+                  "cornerRadius": 24,
+                  "id": "NCU6T",
+                  "x": 16,
+                  "y": 12,
+                  "name": "input_field_e",
+                  "fill": "#EFEFEF",
+                  "width": 300,
+                  "height": 48,
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "#E0E0E0"
+                  }
+                },
+                {
+                  "type": "ellipse",
+                  "id": "TRd7C",
+                  "x": 326,
+                  "y": 12,
+                  "name": "send_btn_e",
+                  "fill": "#D0D0D0",
+                  "width": 48,
+                  "height": 48
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "kUyP4",
+          "x": 14,
+          "y": 12,
+          "fill": "#444444",
+          "content": "Map / Hero Background",
+          "fontFamily": "Inter",
+          "fontSize": 10,
+          "fontWeight": "600"
+        },
+        {
+          "type": "text",
+          "id": "7W9Pl",
+          "x": 230,
+          "y": 367,
+          "fill": "#444444",
+          "content": "Sheet Handle",
+          "fontFamily": "Inter",
+          "fontSize": 10,
+          "fontWeight": "600"
+        },
+        {
+          "type": "text",
+          "id": "Jvfqu",
+          "x": 228,
+          "y": 468,
+          "fill": "#444444",
+          "content": "App Icon",
+          "fontFamily": "Inter",
+          "fontSize": 10,
+          "fontWeight": "600"
+        },
+        {
+          "type": "text",
+          "id": "KmnHu",
+          "x": 14,
+          "y": 517,
+          "fill": "#444444",
+          "content": "H1 Title",
+          "fontFamily": "Inter",
+          "fontSize": 10,
+          "fontWeight": "600"
+        },
+        {
+          "type": "text",
+          "id": "1IMjl",
+          "x": 14,
+          "y": 557,
+          "fill": "#444444",
+          "content": "Address Label",
+          "fontFamily": "Inter",
+          "fontSize": 10,
+          "fontWeight": "600"
+        },
+        {
+          "type": "text",
+          "id": "Q56vt",
+          "x": 14,
+          "y": 653,
+          "fill": "#444444",
+          "content": "Suggestion Chip",
+          "fontFamily": "Inter",
+          "fontSize": 10,
+          "fontWeight": "600"
+        },
+        {
+          "type": "text",
+          "id": "T3Ib0",
+          "x": 20,
+          "y": 766,
+          "fill": "#444444",
+          "content": "Chat Input",
+          "fontFamily": "Inter",
+          "fontSize": 10,
+          "fontWeight": "600"
+        },
+        {
+          "type": "text",
+          "id": "3VSAU",
+          "x": 330,
+          "y": 760,
+          "fill": "#444444",
+          "content": "Send Button",
+          "fontFamily": "Inter",
+          "fontSize": 10,
+          "fontWeight": "600"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "HZXDF",
+      "x": -234,
+      "y": 1611,
+      "name": "wf_retrieving",
+      "width": 390,
+      "height": 844,
+      "fill": "#D0D0D0",
+      "stroke": {
+        "align": "outside",
+        "thickness": 1,
+        "fill": "#DEDEDE"
+      },
+      "layout": "none",
+      "children": [
+        {
+          "type": "frame",
+          "id": "uPYjb",
+          "x": 0,
+          "y": 70,
+          "name": "r_card",
+          "width": 390,
+          "height": 774,
+          "fill": "#FFFFFF",
+          "cornerRadius": [
+            20,
+            20,
+            0,
+            0
+          ],
+          "layout": "vertical",
+          "children": [
+            {
+              "type": "frame",
+              "id": "5XLQ7",
+              "name": "r_grip_area",
+              "width": "fill_container",
+              "height": 28,
+              "layout": "vertical",
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "rectangle",
+                  "cornerRadius": 2,
+                  "id": "CQx8M",
+                  "name": "r_grip",
+                  "fill": "#C8C8C8",
+                  "width": 36,
+                  "height": 4
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "TN7Im",
+              "name": "r_chat",
+              "width": "fill_container",
+              "height": 666,
+              "layout": "none",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "ZuLEJ",
+                  "x": 16,
+                  "y": 20,
+                  "name": "r_msg1_row",
+                  "width": 358,
+                  "height": 41,
+                  "justifyContent": "end",
+                  "children": [
+                    {
+                      "type": "rectangle",
+                      "cornerRadius": [
+                        20,
+                        20,
+                        4,
+                        20
+                      ],
+                      "id": "9XOP7",
+                      "name": "r_msg1",
+                      "fill": "#D9D9D9",
+                      "width": 232,
+                      "height": 41
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "TH0yY",
+                  "x": 16,
+                  "y": 81,
+                  "name": "r_ai_row",
+                  "width": 358,
+                  "height": 117,
+                  "children": [
+                    {
+                      "type": "rectangle",
+                      "cornerRadius": [
+                        4,
+                        20,
+                        20,
+                        20
+                      ],
+                      "id": "ihMZl",
+                      "name": "r_ai",
+                      "fill": "#EFEFEF",
+                      "width": 268,
+                      "height": 117
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "lLWSy",
+                  "x": 16,
+                  "y": 218,
+                  "name": "r_msg2_row",
+                  "width": 358,
+                  "height": 41,
+                  "justifyContent": "end",
+                  "children": [
+                    {
+                      "type": "rectangle",
+                      "cornerRadius": [
+                        20,
+                        20,
+                        4,
+                        20
+                      ],
+                      "id": "69FYM",
+                      "name": "r_msg2",
+                      "fill": "#D9D9D9",
+                      "width": 204,
+                      "height": 41
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "gQhVw",
+                  "x": 16,
+                  "y": 279,
+                  "name": "r_loading_row",
+                  "width": 358,
+                  "height": 43,
+                  "children": [
+                    {
+                      "type": "rectangle",
+                      "cornerRadius": 22,
+                      "id": "j4Da6",
+                      "name": "r_loading",
+                      "fill": "#EFEFEF",
+                      "width": 172,
+                      "height": 43
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "bqOuv",
+              "name": "r_input_bar",
+              "width": "fill_container",
+              "height": 80,
+              "layout": "none",
+              "children": [
+                {
+                  "type": "rectangle",
+                  "cornerRadius": 24,
+                  "id": "YyAsI",
+                  "x": 16,
+                  "y": 12,
+                  "name": "r_input_field",
+                  "fill": "#EFEFEF",
+                  "width": 300,
+                  "height": 48,
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": 1,
+                    "fill": "#E0E0E0"
+                  }
+                },
+                {
+                  "type": "ellipse",
+                  "id": "XxmvC",
+                  "x": 326,
+                  "y": 12,
+                  "name": "r_send",
+                  "fill": "#D0D0D0",
+                  "width": 48,
+                  "height": 48
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "I8fWq",
+          "x": 14,
+          "y": 12,
+          "fill": "#444444",
+          "content": "Background",
+          "fontFamily": "Inter",
+          "fontSize": 10,
+          "fontWeight": "600"
+        },
+        {
+          "type": "text",
+          "id": "AAEBR",
+          "x": 220,
+          "y": 74,
+          "fill": "#444444",
+          "content": "Sheet Handle",
+          "fontFamily": "Inter",
+          "fontSize": 10,
+          "fontWeight": "600"
+        },
+        {
+          "type": "text",
+          "id": "Md2ni",
+          "x": 14,
+          "y": 118,
+          "fill": "#444444",
+          "content": "User Message",
+          "fontFamily": "Inter",
+          "fontSize": 10,
+          "fontWeight": "600"
+        },
+        {
+          "type": "text",
+          "id": "KYnRd",
+          "x": 290,
+          "y": 179,
+          "fill": "#444444",
+          "content": "AI Response",
+          "fontFamily": "Inter",
+          "fontSize": 10,
+          "fontWeight": "600"
+        },
+        {
+          "type": "text",
+          "id": "1fp5q",
+          "x": 14,
+          "y": 316,
+          "fill": "#444444",
+          "content": "User Message",
+          "fontFamily": "Inter",
+          "fontSize": 10,
+          "fontWeight": "600"
+        },
+        {
+          "type": "text",
+          "id": "aXlqZ",
+          "x": 196,
+          "y": 379,
+          "fill": "#444444",
+          "content": "Loading Indicator",
+          "fontFamily": "Inter",
+          "fontSize": 10,
+          "fontWeight": "600"
+        },
+        {
+          "type": "text",
+          "id": "K2QdZ",
+          "x": 20,
+          "y": 766,
+          "fill": "#444444",
+          "content": "Chat Input",
+          "fontFamily": "Inter",
+          "fontSize": 10,
+          "fontWeight": "600"
+        },
+        {
+          "type": "text",
+          "id": "4PbBi",
+          "x": 330,
+          "y": 760,
+          "fill": "#444444",
+          "content": "Send Button",
+          "fontFamily": "Inter",
+          "fontSize": 10,
+          "fontWeight": "600"
         }
       ]
     }
