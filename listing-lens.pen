@@ -2078,18 +2078,6 @@
     },
     {
       "type": "text",
-      "id": "lWhy8",
-      "x": 147,
-      "y": 226,
-      "name": "lEn",
-      "fill": "#28A3B3",
-      "content": "Entry Point — Listing Detail",
-      "fontFamily": "Inter",
-      "fontSize": 16,
-      "fontWeight": "700"
-    },
-    {
-      "type": "text",
       "id": "pLwv3",
       "x": 597,
       "y": 226,
@@ -2147,20 +2135,6 @@
       "fontFamily": "Inter",
       "fontSize": 16,
       "fontWeight": "700"
-    },
-    {
-      "type": "rectangle",
-      "id": "FcBqX",
-      "x": 119,
-      "y": 266,
-      "fill": {
-        "type": "image",
-        "enabled": true,
-        "url": "#2.0.2 PROPERTY_DETAILS_ ALL EXTENDED.png",
-        "mode": "fill"
-      },
-      "width": 390,
-      "height": 844
     },
     {
       "type": "frame",
@@ -4057,32 +4031,6 @@
           "name": "labelB",
           "fill": "#28A3B3",
           "content": "lookup — entry · hero",
-          "fontFamily": "Inter",
-          "fontSize": 16,
-          "fontWeight": "700"
-        },
-        {
-          "type": "rectangle",
-          "id": "tczpF",
-          "x": 149,
-          "y": 116,
-          "fill": {
-            "type": "image",
-            "enabled": true,
-            "url": "#2.0.2 PROPERTY_DETAILS_ ALL EXTENDED.png",
-            "mode": "fill"
-          },
-          "width": 390,
-          "height": 844
-        },
-        {
-          "type": "text",
-          "id": "suROi",
-          "x": 177,
-          "y": 76,
-          "name": "lEn",
-          "fill": "#28A3B3",
-          "content": "Entry Point — Listing Detail",
           "fontFamily": "Inter",
           "fontSize": 16,
           "fontWeight": "700"
