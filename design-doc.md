@@ -367,6 +367,31 @@ Or inline field attribution:
 
 **Value:** Reduces frustration from irrelevant suggestions; improves first-interaction conversion.
 
+#### 5. Entry Bar — 嵌入 Listing Details（Proposed）
+
+**背景：** 当前入口为 ✦ FAB（浮动图标），可发现性依赖用户主动注意——如果用户视线没落到图标上，可能完全不知道该功能存在（见 design-decisions.md OQ-1）。
+
+**提议：** 将 ✦ star-four 入口替换为一个**直接嵌入 listing details 内容流的 entry bar**。该 bar 作为详情页的一个内联 section，用户在正常滚动浏览房源信息时自然经过。
+
+**Entry bar 设计：**
+- 全宽卡片，包含 ✦ 图标 + "Look up details in this listing" 文案 + 可点击的输入区域
+- 视觉权重与其他 listing detail section 对齐（非浮层覆盖，原生嵌入感）
+- 建议位置：关键参数区（卧室/面积/停车等）之后，自然出现在用户浏览路径上
+- 点击后：展开为完整底部 sheet 对话界面
+
+**取舍分析：**
+
+| | 现有 FAB | Entry Bar |
+|---|---|---|
+| 可发现性 | 低，依赖用户主动注意图标 | 高，浏览详情时自然遭遇 |
+| 持续可访问 | ✅ 始终可见 | ⚠️ 需滚动回到入口位置 |
+| 页面融合感 | ⚠️ 浮层感，与内容分离 | ✅ 原生嵌入，感觉是内容的一部分 |
+| 上下文关联 | 弱，图标与数据无关联 | 强，物理上紧邻它所引用的 listing 数据 |
+
+**待确认：** entry bar 的滚动位置如何确保第一屏可见性；是否与 sticky 方案并存（首屏可见后 entry bar 出现，FAB 消失）。
+
+---
+
 #### 4. Accessibility Completions
 - AI FAB missing text label → add `aria-label="Ask AI about this listing"`
 - During streaming, screen reader should announce "AI is generating a response"

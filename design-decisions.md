@@ -130,6 +130,10 @@
 - 是否考虑 sticky / floating 入口，始终可见？
 - 如何在不干扰详情页主体内容的前提下提高曝光？
 
+**方向提议 — Entry Bar 嵌入详情页**：
+将现有的 ✦ star-four 图标/FAB 入口替换为一个嵌入在 listing details 内容流中的 entry bar。
+具体见 design-doc.md § 6 — V1.1 提议 #5。
+
 ---
 
 ## 最终设计状态
