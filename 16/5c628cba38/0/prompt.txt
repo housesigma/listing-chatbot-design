@@ -1,0 +1,9 @@
+commit changes
+
+---
+
+<bash-input>code .</bash-input>
+
+---
+
+<bash-stdout></bash-stdout><bash-stderr></bash-stderr>
