@@ -1,0 +1,107 @@
+- **Scenario #1 (Poor entry point discoverability):** On the listing detail page, the bottom action bar includes buttons like Watch and Schedule Viewing. The AI assistant entry point (a small icon button in the bottom-right corner) looks similar to other action buttons, making it hard for users to recognize it as an AI chat entry. This leads to low feature visibility and insufficient click-through rates.
+- **Scenario #2 (Blank first screen with no guidance):** After tapping into the AI Assistant chat panel, users see a mostly blank page with only an input box and the placeholder text "Ask anything about the property." There is no welcome message, feature introduction, or guided prompts, leaving users unsure of what the chatbot can do and likely to drop off before asking a question.
+- **Scenario #3 (No suggested prompts):** The chat panel does not provide preset quick questions (e.g., "What is the historical sale price of this property?", "What schools are nearby?", "What is the estimated value?"). Users must think of and type questions on their own, raising the interaction barrier — especially for users unfamiliar with AI chat.
+- **Scenario #4 (Rough mobile interaction experience):** On mobile, the chat panel covers the listing detail page in full-screen mode, preventing users from viewing listing information and chat content simultaneously. The input box sits at the bottom of the screen, and when the keyboard appears, the visible area is limited. There are no shortcuts (e.g., voice input, one-tap return to the listing page), resulting in poor overall interaction fluency.
+- **Scenario #5 (Lack of contextual awareness during conversation):** Although the input box displays the current listing tag "1521 19th Ave," neither the top of the chat panel nor the conversation area shows any listing summary information (e.g., price, layout, address). Users lack contextual reference during the conversation and need to switch back and forth between pages to confirm details.
+- **Scenario #6 (Insufficient AI response status feedback):** After sending a message, only a static "AI is typing..." text is displayed — there is no typing animation, progress indicator, or estimated wait time. Users lack confidence during the wait and may mistakenly assume the system is frozen, causing them to leave.
+这个是当前设计要解决的几个问题：请按照问题描述，和当前的界面设计，给出单独的solution文档。
+solution使用以下模板
+**Problem Addressed:** Users cannot quickly determine if a property is priced fairly compared to similar homes in the neighborhood
+
+**User Stories:**
+1. User is able to see a property's price compared to similar homes sold in the neighborhood within the past 6 months
+2. User is able to filter comparable properties by specific criteria (bedrooms, bathrooms, square footage range)
+3. User is able to view a timeline of neighborhood price trends over the past 5 years
+4. User is able to understand if a property is priced above or below market average with a clear visual indicator
+5. User is able to save their price analysis to reference later when making offer decisions
+
+**Business Logic:**
+1. (User Story 1) When user views a property detail page, then the system displays up to 10 comparable properties sold within 1km radius in the past 6 months, ranked by similarity score (beds ±1, baths ±1, sqft ±20%)
+2. (User Story 1) If fewer than 3 comparable properties exist within 6 months, then expand the timeframe to 12 months and display a notice: "Limited recent sales - showing past 12 months"
+3. (User Story 2) When user adjusts filter sliders for bedrooms, bathrooms, or square footage, then the comparable list updates in real-time showing only matching properties
+4. (User Story 3) When user clicks "View Price Trends" button, then display an interactive line chart showing median sale prices by quarter for the neighborhood (postal code level) for the past 5 years
+5. (User Story 4) If the property asking price is >10% above the median comparable price, then display "Above Market" badge in orange with percentage difference
+6. (User Story 4) If the property asking price is within ±10% of median comparable price, then display "Market Rate" badge in green
+7. (User Story 4) If the property asking price is >10% below median comparable price, then display "Below Market" badge in blue with percentage difference
+8. (User Story 5) When user clicks "Save Analysis" icon, then create a snapshot of current comparables, filters applied, and price position that persists in user's "Saved Analyses" section
+solution文案完成后命名为solution.md 放到当前目录
+
+---
+
+<bash-input>code .</bash-input>
+
+---
+
+<bash-stdout>(Bash completed with no output)</bash-stdout><bash-stderr></bash-stderr>
+
+---
+
+solution文档的整体结构是这个
+**1) User Stories (What will be true for the user when this problem is solved?):**
+
+1. User is able to ...
+2. User is able to ...
+
+**2) Business Logic (How will the user stories become true?)**
+
+**US1:** 
+
+- X should be created
+- 
+
+**US2:** 
+
+- When Y happens, then Z
+现在的文档太细碎了
+
+---
+
+problem的模板应该是这样的
+**Problem Description:** Describe the problem to the users
+
+**Feedback:** Include screenshots of any user comments that mention this problem
+
+**User Journey:** Show where the problem would fall within the user journey
+
+**User Scenario & Segments:** Who are the impacted users and when they would experience this problem?
+
+- **Scenario #1:**
+- **Scenario #2:**
+- **Scenario #3:**
+
+调整下现有的problem
+
+---
+
+将现有的problem文档内容当作feedback,然后重新组织problem文档 按照以下格式
+**Problem Description:** Describe the problem to the users
+
+**Feedback:** Include screenshots of any user comments that mention this problem
+
+**User Journey:** Show where the problem would fall within the user journey
+
+**User Scenario & Segments:** Who are the impacted users and when they would experience this problem?
+
+- **Scenario #1:**
+- **Scenario #2:**
+- **Scenario #3:**
+
+---
+
+/Users/winter/Documents/prototypes/listing-lens/problem.md
+这个文档的内容可以认为是反馈，先把这个问题文档重新组织下 按照下面的结构，缺失内容你自己推断补充
+**Problem Description:** Describe the problem to the users
+
+**Feedback:** Include screenshots of any user comments that mention this problem
+
+**User Journey:** Show where the problem would fall within the user journey
+
+**User Scenario & Segments:** Who are the impacted users and when they would experience this problem?
+
+- **Scenario #1:**
+- **Scenario #2:**
+- **Scenario #3:**
+
+---
+
+我希望在listing detail中加入look-up entry bar 而不单单只有 bottom bar four-star.
