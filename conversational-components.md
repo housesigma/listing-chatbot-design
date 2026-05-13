@@ -15,7 +15,7 @@
 > family, and component composition.**
 >
 > Last updated: 2026-05-13.
-> Maintainer: Listing Lens design.
+> Maintainer: Listing Chatbot design.
 
 ---
 
@@ -411,4 +411,4 @@ listing page. Once the sheet opens, all chat-radii apply inside the sheet.
   - `packages/hook/ai/useAiAssistant.ts`
   - `packages/hook/ai/useChatStream.ts`
 - Sibling spec: `housesigma-design-system.md` (base platform DS)
-- Design canvas: `listing-lens.pen` — Frame 4 (Variant C — Chat-First)
+- Design canvas: `listing-chatbot-design.pen` — Frame 4 (Variant C — Chat-First)

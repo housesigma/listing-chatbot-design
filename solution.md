@@ -1,4 +1,4 @@
-# Listing Lens — Solution Document
+# Listing Chatbot — Solution Document
 
 > Version: MVP · Date: 2026-03-25
 

@@ -1,4 +1,4 @@
-# Design Decisions — Listing Lens
+# Design Decisions — Listing Chatbot
 
 设计变迁记录，按迭代顺序追溯每个关键决策的触发原因与最终结论。
 
