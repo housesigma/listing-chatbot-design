@@ -1,6 +1,8 @@
-# Conversational Components
+# Conversational Components — v2 NLQ&A Design Spec
 
-> Standalone spec for the chat / AI assistant surface of HouseSigma.
+> Component / visual spec for the chat / AI assistant surface of HouseSigma.
+> This document is the **design spec backing v2** ([`v2-nlqa.md`](v2-nlqa.md)).
+> v1 design intent (the fact-lookup origin) is preserved in [`v1-fact-lookup.md`](v1-fact-lookup.md).
 >
 > **Relationship to `housesigma-design-system.md`:** This document is a *sister*
 > spec, not a subset. Chat UI follows industry conversational conventions

@@ -1,6 +1,10 @@
-# HouseSigma AI Chat — Design Intent
+# HouseSigma AI Chat — v1: Fact Lookup (Design Intent)
 
-> Version: Revised · Last updated: 2026-03
+> Version: v1 (Fact Lookup) · Status: Superseded by v2 · Last updated: 2026-03
+>
+> Successor: see [`v2-nlqa.md`](v2-nlqa.md) for the repositioning to
+> Listing-aware natural-language Q&A, and [`v2-nlqa-spec.md`](v2-nlqa-spec.md)
+> for the chat-surface design spec backing v2.
 
 ---
 

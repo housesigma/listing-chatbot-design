@@ -1,13 +1,15 @@
-# Listing Chatbot — NLQ&A Evolution
+# Listing Chatbot — v2: Listing-aware NLQ&A (Design Intent)
 
 > Design direction and change spec for the positioning shift from
 > **"Look up facts from a listing"** to
 > **"Listing-aware natural language Q&A"**.
 >
-> Status: Proposal · Owner: Listing Chatbot design · Last updated: 2026-05-13
+> Version: v2 (NLQ&A) · Status: Proposal · Owner: Listing Chatbot design · Last updated: 2026-05-13
+>
+> Predecessor: [`v1-fact-lookup.md`](v1-fact-lookup.md) — original fact-retrieval intent.
 >
 > Companion documents:
-> - `conversational-components.md` — chat-first component spec
+> - [`v2-nlqa-spec.md`](v2-nlqa-spec.md) — chat-first component spec backing this v2 intent
 > - `housesigma-design-system.md` — base platform DS
 > - `listing-chatbot-design.pen` — Variant C canvas (current chat-first state)
 
@@ -131,7 +133,7 @@ streaming) stays — Variant C in the canvas is the visual foundation.
 ## 7. Design Changes
 
 Built on top of Variant C (canvas Frame 4) and
-`conversational-components.md` chat-radius tokens.
+[`v2-nlqa-spec.md`](v2-nlqa-spec.md) chat-radius tokens.
 
 ### 7.1 Entry hero — chip composition
 
@@ -168,7 +170,7 @@ label is never stuck at `Thinking…`.
 
 ## 8. New Design Patterns
 
-These are new components to add to `conversational-components.md`
+These are new components to add to [`v2-nlqa-spec.md`](v2-nlqa-spec.md)
 as additional sections (proposed §17-21).
 
 ### 8.1 Source / Grounding Label
@@ -370,7 +372,7 @@ trends up; abandonment after first answer trends down.
 - `packages/common/i18n/translation/en.ts` *(`aiChat.*` namespace)*
 
 ### Design artifacts
-- `conversational-components.md` — chat-first component spec
+- [`v2-nlqa-spec.md`](v2-nlqa-spec.md) — chat-first component spec
   (companion)
 - `housesigma-design-system.md` — base platform DS
 - `listing-chatbot-design.pen` — design canvas:
@@ -380,7 +382,7 @@ trends up; abandonment after first answer trends down.
   - Frame 4: Variant C (Chat-First — current canonical)
 
 ### Companion specs to author next
-- `conversational-components.md` §17-21: Source/Grounding Label,
+- [`v2-nlqa-spec.md`](v2-nlqa-spec.md) §17-21: Source/Grounding Label,
   Confidence Indicator, Follow-up Suggestion Chips, Abstain Pattern,
   New Chat Button
 - A separate **system prompt design doc** (AI team owns content;
