@@ -30,7 +30,7 @@
               "x": 0,
               "y": 0,
               "name": "tealBg",
-              "fill": "#28A3B3",
+              "fill": "$A:--primary",
               "width": 390,
               "height": 70
             },
@@ -43,7 +43,7 @@
               "clip": true,
               "width": 390,
               "height": 774,
-              "fill": "#FFFFFF",
+              "fill": "$A:--card",
               "cornerRadius": [
                 20,
                 20,
@@ -67,7 +67,7 @@
                       "x": 175,
                       "y": 12,
                       "name": "dragPill",
-                      "fill": "#E0E0E0",
+                      "fill": "$A:--border",
                       "width": 40,
                       "height": 4
                     }
@@ -97,18 +97,18 @@
                       "iconFontName": "star-four",
                       "iconFontFamily": "phosphor",
                       "weight": 700,
-                      "fill": "#28A3B3"
+                      "fill": "$A:--primary"
                     },
                     {
                       "type": "text",
                       "id": "sYYjN",
                       "name": "heroTitle",
-                      "fill": "#333333",
+                      "fill": "$A:--foreground",
                       "textGrowth": "fixed-width",
                       "width": 300,
                       "content": "Look up details in this listing",
                       "textAlign": "center",
-                      "fontFamily": "Inter",
+                      "fontFamily": "Poppins",
                       "fontSize": 20,
                       "fontWeight": "600"
                     },
@@ -116,12 +116,12 @@
                       "type": "frame",
                       "id": "3rtYD",
                       "name": "addressChip",
-                      "fill": "#F4F5F7",
+                      "fill": "$A:--muted",
                       "cornerRadius": 16,
                       "stroke": {
                         "align": "inside",
                         "thickness": 1,
-                        "fill": "#E8E8E8"
+                        "fill": "$A:--border-light"
                       },
                       "gap": 8,
                       "padding": [
@@ -138,7 +138,7 @@
                           "name": "pinIconBg",
                           "width": 22,
                           "height": 22,
-                          "fill": "#28A3B3",
+                          "fill": "$A:--primary",
                           "cornerRadius": 11,
                           "justifyContent": "center",
                           "alignItems": "center",
@@ -151,7 +151,7 @@
                               "height": 12,
                               "iconFontName": "map-pin",
                               "iconFontFamily": "lucide",
-                              "fill": "#FFFFFF"
+                              "fill": "$A:--primary-foreground"
                             }
                           ]
                         },
@@ -159,10 +159,10 @@
                           "type": "text",
                           "id": "A8maZ",
                           "name": "addrText",
-                          "fill": "#666666",
+                          "fill": "$A:--muted-foreground",
                           "content": "167 Tweedsdale Cres · Oakville",
-                          "fontFamily": "Inter",
-                          "fontSize": 13,
+                          "fontFamily": "Poppins",
+                          "fontSize": 12,
                           "fontWeight": "500"
                         }
                       ]
@@ -187,12 +187,12 @@
                       "type": "frame",
                       "id": "LAqpc",
                       "name": "chip1",
-                      "fill": "#FFFFFF",
+                      "fill": "$A:--card",
                       "cornerRadius": 18,
                       "stroke": {
                         "align": "inside",
                         "thickness": 1,
-                        "fill": "#E0E0E0"
+                        "fill": "$A:--border"
                       },
                       "padding": [
                         8,
@@ -203,10 +203,10 @@
                           "type": "text",
                           "id": "7pdrY",
                           "name": "chip1Text",
-                          "fill": "#333333",
+                          "fill": "$A:--foreground",
                           "content": "How many beds & baths?",
-                          "fontFamily": "Inter",
-                          "fontSize": 13,
+                          "fontFamily": "Poppins",
+                          "fontSize": 12,
                           "fontWeight": "normal"
                         }
                       ]
@@ -215,12 +215,12 @@
                       "type": "frame",
                       "id": "p4ln7",
                       "name": "chip2",
-                      "fill": "#FFFFFF",
+                      "fill": "$A:--card",
                       "cornerRadius": 18,
                       "stroke": {
                         "align": "inside",
                         "thickness": 1,
-                        "fill": "#E0E0E0"
+                        "fill": "$A:--border"
                       },
                       "padding": [
                         8,
@@ -231,10 +231,10 @@
                           "type": "text",
                           "id": "OLGh3",
                           "name": "chip2Text",
-                          "fill": "#333333",
+                          "fill": "$A:--foreground",
                           "content": "When was it built?",
-                          "fontFamily": "Inter",
-                          "fontSize": 13,
+                          "fontFamily": "Poppins",
+                          "fontSize": 12,
                           "fontWeight": "normal"
                         }
                       ]
@@ -259,12 +259,12 @@
                       "type": "frame",
                       "id": "ZIcVF",
                       "name": "chip3",
-                      "fill": "#FFFFFF",
+                      "fill": "$A:--card",
                       "cornerRadius": 18,
                       "stroke": {
                         "align": "inside",
                         "thickness": 1,
-                        "fill": "#E0E0E0"
+                        "fill": "$A:--border"
                       },
                       "padding": [
                         8,
@@ -275,10 +275,10 @@
                           "type": "text",
                           "id": "u2FUX",
                           "name": "chip3Text",
-                          "fill": "#333333",
+                          "fill": "$A:--foreground",
                           "content": "Square footage?",
-                          "fontFamily": "Inter",
-                          "fontSize": 13,
+                          "fontFamily": "Poppins",
+                          "fontSize": 12,
                           "fontWeight": "normal"
                         }
                       ]
@@ -287,12 +287,12 @@
                       "type": "frame",
                       "id": "h9jXg",
                       "name": "chip4",
-                      "fill": "#FFFFFF",
+                      "fill": "$A:--card",
                       "cornerRadius": 18,
                       "stroke": {
                         "align": "inside",
                         "thickness": 1,
-                        "fill": "#E0E0E0"
+                        "fill": "$A:--border"
                       },
                       "padding": [
                         8,
@@ -303,10 +303,10 @@
                           "type": "text",
                           "id": "oIpPN",
                           "name": "chip4Text",
-                          "fill": "#333333",
+                          "fill": "$A:--foreground",
                           "content": "Parking & garage?",
-                          "fontFamily": "Inter",
-                          "fontSize": 13,
+                          "fontFamily": "Poppins",
+                          "fontSize": 12,
                           "fontWeight": "normal"
                         }
                       ]
@@ -326,7 +326,14 @@
                   "name": "inputBar",
                   "width": "fill_container",
                   "height": 80,
-                  "fill": "#FFFFFF",
+                  "fill": "$A:--card",
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": {
+                      "top": 1
+                    },
+                    "fill": "#eaeaeaff"
+                  },
                   "gap": 10,
                   "padding": [
                     12,
@@ -342,7 +349,7 @@
                       "name": "inputField",
                       "width": "fill_container",
                       "height": 48,
-                      "fill": "#F7F7FC",
+                      "fill": "$A:--muted",
                       "cornerRadius": 24,
                       "padding": [
                         0,
@@ -354,9 +361,9 @@
                           "type": "text",
                           "id": "EREVa",
                           "name": "placeholder1",
-                          "fill": "#BBBBBB",
+                          "fill": "$A:--input-placeholder",
                           "content": "Look up details in this listing...",
-                          "fontFamily": "Inter",
+                          "fontFamily": "Poppins",
                           "fontSize": 14,
                           "fontWeight": "normal"
                         }
@@ -368,7 +375,7 @@
                       "name": "sendBtn",
                       "width": 48,
                       "height": 48,
-                      "fill": "#28A3B3",
+                      "fill": "$A:--primary",
                       "cornerRadius": 24,
                       "effect": {
                         "type": "shadow",
@@ -391,9 +398,74 @@
                           "height": 20,
                           "iconFontName": "arrow-up",
                           "iconFontFamily": "lucide",
-                          "fill": "#FFFFFF"
+                          "fill": "$A:--primary-foreground"
                         }
                       ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "uKWIS",
+              "x": 0,
+              "y": 0,
+              "name": "statusBar",
+              "width": 390,
+              "height": 54,
+              "padding": [
+                0,
+                28,
+                12,
+                28
+              ],
+              "justifyContent": "space_between",
+              "alignItems": "end",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "0zmna",
+                  "name": "time",
+                  "fill": "#ffffffff",
+                  "content": "9:41",
+                  "fontFamily": "Poppins",
+                  "fontSize": 15,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "frame",
+                  "id": "X8wQI",
+                  "name": "statusIcons",
+                  "gap": 5,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "RDiAa",
+                      "width": 16,
+                      "height": 16,
+                      "iconFontName": "cell-signal-full",
+                      "iconFontFamily": "phosphor",
+                      "fill": "#ffffffff"
+                    },
+                    {
+                      "type": "icon_font",
+                      "id": "xrzop",
+                      "width": 16,
+                      "height": 16,
+                      "iconFontName": "wifi-high",
+                      "iconFontFamily": "phosphor",
+                      "fill": "#ffffffff"
+                    },
+                    {
+                      "type": "icon_font",
+                      "id": "2Jpte",
+                      "width": 22,
+                      "height": 12,
+                      "iconFontName": "battery-full",
+                      "iconFontFamily": "phosphor",
+                      "fill": "#ffffffff"
                     }
                   ]
                 }
@@ -418,7 +490,7 @@
               "x": 0,
               "y": 0,
               "name": "tealBg",
-              "fill": "#28A3B3",
+              "fill": "$A:--primary",
               "width": 390,
               "height": 70
             },
@@ -431,7 +503,7 @@
               "clip": true,
               "width": 390,
               "height": 774,
-              "fill": "#FFFFFF",
+              "fill": "$A:--card",
               "cornerRadius": [
                 20,
                 20,
@@ -455,7 +527,7 @@
                       "x": 175,
                       "y": 12,
                       "name": "dragPill",
-                      "fill": "#E0E0E0",
+                      "fill": "$A:--border",
                       "width": 40,
                       "height": 4
                     }
@@ -482,7 +554,7 @@
                           "type": "frame",
                           "id": "vls6X",
                           "name": "userBubble",
-                          "fill": "#28A3B3",
+                          "fill": "$A:--primary",
                           "cornerRadius": [
                             16,
                             16,
@@ -498,9 +570,9 @@
                               "type": "text",
                               "id": "RnN25",
                               "name": "userText1",
-                              "fill": "#FFFFFF",
+                              "fill": "$A:--primary-foreground",
                               "content": "How many bedrooms and bathrooms?",
-                              "fontFamily": "Inter",
+                              "fontFamily": "Poppins",
                               "fontSize": 14,
                               "fontWeight": "normal"
                             }
@@ -520,7 +592,7 @@
                           "type": "frame",
                           "id": "0kGyG",
                           "name": "botBubble",
-                          "fill": "#F4F5F7",
+                          "fill": "$A:--muted",
                           "cornerRadius": [
                             16,
                             16,
@@ -538,11 +610,11 @@
                               "type": "text",
                               "id": "AtbMI",
                               "name": "botText1",
-                              "fill": "#333333",
+                              "fill": "$A:--foreground",
                               "textGrowth": "fixed-width",
                               "width": 280,
                               "content": "Based on the listing, this property has 5+1 bedrooms and 6 bathrooms.",
-                              "fontFamily": "Inter",
+                              "fontFamily": "Poppins",
                               "fontSize": 14,
                               "fontWeight": "normal"
                             },
@@ -550,10 +622,10 @@
                               "type": "text",
                               "id": "9ACqX",
                               "name": "sourceLabel1",
-                              "fill": "#28A3B3",
+                              "fill": "$A:--primary",
                               "content": "Bedrooms & bathrooms",
-                              "fontFamily": "Inter",
-                              "fontSize": 11,
+                              "fontFamily": "Poppins",
+                              "fontSize": 12,
                               "fontWeight": "500"
                             }
                           ]
@@ -571,7 +643,7 @@
                           "type": "frame",
                           "id": "bgdQD",
                           "name": "userBubble2",
-                          "fill": "#28A3B3",
+                          "fill": "$A:--primary",
                           "cornerRadius": [
                             16,
                             16,
@@ -587,9 +659,9 @@
                               "type": "text",
                               "id": "ibVC7",
                               "name": "userText2",
-                              "fill": "#FFFFFF",
+                              "fill": "$A:--primary-foreground",
                               "content": "What about parking?",
-                              "fontFamily": "Inter",
+                              "fontFamily": "Poppins",
                               "fontSize": 14,
                               "fontWeight": "normal"
                             }
@@ -609,7 +681,7 @@
                           "type": "frame",
                           "id": "cs96n",
                           "name": "botBubble2",
-                          "fill": "#F4F5F7",
+                          "fill": "$A:--muted",
                           "cornerRadius": [
                             16,
                             16,
@@ -627,11 +699,11 @@
                               "type": "text",
                               "id": "odu3O",
                               "name": "botText2",
-                              "fill": "#333333",
+                              "fill": "$A:--foreground",
                               "textGrowth": "fixed-width",
                               "width": 280,
                               "content": "The property includes a 2-car attached garage with direct indoor access.",
-                              "fontFamily": "Inter",
+                              "fontFamily": "Poppins",
                               "fontSize": 14,
                               "fontWeight": "normal"
                             },
@@ -639,10 +711,10 @@
                               "type": "text",
                               "id": "hZrQl",
                               "name": "sourceLabel2",
-                              "fill": "#28A3B3",
+                              "fill": "$A:--primary",
                               "content": "Parking",
-                              "fontFamily": "Inter",
-                              "fontSize": 11,
+                              "fontFamily": "Poppins",
+                              "fontSize": 12,
                               "fontWeight": "500"
                             }
                           ]
@@ -664,7 +736,14 @@
                   "name": "inputBar",
                   "width": "fill_container",
                   "height": 80,
-                  "fill": "#FFFFFF",
+                  "fill": "$A:--card",
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": {
+                      "top": 1
+                    },
+                    "fill": "#eaeaeaff"
+                  },
                   "gap": 10,
                   "padding": [
                     12,
@@ -680,7 +759,7 @@
                       "name": "inputField",
                       "width": "fill_container",
                       "height": 48,
-                      "fill": "#F7F7FC",
+                      "fill": "$A:--muted",
                       "cornerRadius": 24,
                       "padding": [
                         0,
@@ -692,9 +771,9 @@
                           "type": "text",
                           "id": "jeaXj",
                           "name": "placeholder2",
-                          "fill": "#BBBBBB",
+                          "fill": "$A:--input-placeholder",
                           "content": "Look up details in this listing...",
-                          "fontFamily": "Inter",
+                          "fontFamily": "Poppins",
                           "fontSize": 14,
                           "fontWeight": "normal"
                         }
@@ -706,7 +785,7 @@
                       "name": "sendBtn",
                       "width": 48,
                       "height": 48,
-                      "fill": "#28A3B3",
+                      "fill": "$A:--primary",
                       "cornerRadius": 24,
                       "effect": {
                         "type": "shadow",
@@ -729,9 +808,74 @@
                           "height": 20,
                           "iconFontName": "arrow-up",
                           "iconFontFamily": "lucide",
-                          "fill": "#FFFFFF"
+                          "fill": "$A:--primary-foreground"
                         }
                       ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "UN2I1",
+              "x": 0,
+              "y": 0,
+              "name": "statusBar",
+              "width": 390,
+              "height": 54,
+              "padding": [
+                0,
+                28,
+                12,
+                28
+              ],
+              "justifyContent": "space_between",
+              "alignItems": "end",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "Gf0PW",
+                  "name": "time",
+                  "fill": "#ffffffff",
+                  "content": "9:41",
+                  "fontFamily": "Poppins",
+                  "fontSize": 15,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "frame",
+                  "id": "FtIIN",
+                  "name": "statusIcons",
+                  "gap": 5,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "Zpz1m",
+                      "width": 16,
+                      "height": 16,
+                      "iconFontName": "cell-signal-full",
+                      "iconFontFamily": "phosphor",
+                      "fill": "#ffffffff"
+                    },
+                    {
+                      "type": "icon_font",
+                      "id": "JTTpK",
+                      "width": 16,
+                      "height": 16,
+                      "iconFontName": "wifi-high",
+                      "iconFontFamily": "phosphor",
+                      "fill": "#ffffffff"
+                    },
+                    {
+                      "type": "icon_font",
+                      "id": "O74cP",
+                      "width": 22,
+                      "height": 12,
+                      "iconFontName": "battery-full",
+                      "iconFontFamily": "phosphor",
+                      "fill": "#ffffffff"
                     }
                   ]
                 }
@@ -756,7 +900,7 @@
               "x": 0,
               "y": 0,
               "name": "tealBg",
-              "fill": "#28A3B3",
+              "fill": "$A:--primary",
               "width": 390,
               "height": 70
             },
@@ -769,7 +913,7 @@
               "clip": true,
               "width": 390,
               "height": 774,
-              "fill": "#FFFFFF",
+              "fill": "$A:--card",
               "cornerRadius": [
                 20,
                 20,
@@ -793,7 +937,7 @@
                       "x": 175,
                       "y": 12,
                       "name": "dragPill",
-                      "fill": "#E0E0E0",
+                      "fill": "$A:--border",
                       "width": 40,
                       "height": 4
                     }
@@ -820,7 +964,7 @@
                           "type": "frame",
                           "id": "U3FmU",
                           "name": "prevUserBubble",
-                          "fill": "#28A3B3",
+                          "fill": "$A:--primary",
                           "cornerRadius": [
                             16,
                             16,
@@ -836,9 +980,9 @@
                               "type": "text",
                               "id": "coWDs",
                               "name": "prevUserTxt",
-                              "fill": "#FFFFFF",
+                              "fill": "$A:--primary-foreground",
                               "content": "How many bedrooms and bathrooms?",
-                              "fontFamily": "Inter",
+                              "fontFamily": "Poppins",
                               "fontSize": 14,
                               "fontWeight": "normal"
                             }
@@ -858,7 +1002,7 @@
                           "type": "frame",
                           "id": "UWvLy",
                           "name": "prevBotBubble",
-                          "fill": "#F4F5F7",
+                          "fill": "$A:--muted",
                           "cornerRadius": [
                             16,
                             16,
@@ -876,11 +1020,11 @@
                               "type": "text",
                               "id": "z5dj6",
                               "name": "prevBotTxt",
-                              "fill": "#333333",
+                              "fill": "$A:--foreground",
                               "textGrowth": "fixed-width",
                               "width": 280,
                               "content": "Based on the listing, this property has 5+1 bedrooms and 6 bathrooms.",
-                              "fontFamily": "Inter",
+                              "fontFamily": "Poppins",
                               "fontSize": 14,
                               "fontWeight": "normal"
                             },
@@ -888,10 +1032,10 @@
                               "type": "text",
                               "id": "GkHOb",
                               "name": "prevSrcLbl",
-                              "fill": "#28A3B3",
+                              "fill": "$A:--primary",
                               "content": "Bedrooms & bathrooms",
-                              "fontFamily": "Inter",
-                              "fontSize": 11,
+                              "fontFamily": "Poppins",
+                              "fontSize": 12,
                               "fontWeight": "500"
                             }
                           ]
@@ -909,7 +1053,7 @@
                           "type": "frame",
                           "id": "PXmcH",
                           "name": "curUserBub3",
-                          "fill": "#28A3B3",
+                          "fill": "$A:--primary",
                           "cornerRadius": [
                             16,
                             16,
@@ -925,9 +1069,9 @@
                               "type": "text",
                               "id": "THWsQ",
                               "name": "curUserTxt3",
-                              "fill": "#FFFFFF",
+                              "fill": "$A:--primary-foreground",
                               "content": "What about parking?",
-                              "fontFamily": "Inter",
+                              "fontFamily": "Poppins",
                               "fontSize": 14,
                               "fontWeight": "normal"
                             }
@@ -947,7 +1091,7 @@
                           "type": "frame",
                           "id": "KzD3T",
                           "name": "streamBubble",
-                          "fill": "#F4F5F7",
+                          "fill": "$A:--muted",
                           "cornerRadius": [
                             16,
                             16,
@@ -965,7 +1109,7 @@
                               "type": "ellipse",
                               "id": "9ZcWA",
                               "name": "dot1",
-                              "fill": "#6B7280",
+                              "fill": "$A:--muted-foreground",
                               "width": 6,
                               "height": 6
                             },
@@ -973,7 +1117,7 @@
                               "type": "ellipse",
                               "id": "k3Pmf",
                               "name": "dot2",
-                              "fill": "#9CA3AF",
+                              "fill": "$A:--disabled-foreground",
                               "width": 6,
                               "height": 6
                             },
@@ -981,7 +1125,7 @@
                               "type": "ellipse",
                               "id": "KpnG2",
                               "name": "dot3",
-                              "fill": "#D1D5DB",
+                              "fill": "$A:--border",
                               "width": 6,
                               "height": 6
                             },
@@ -989,10 +1133,10 @@
                               "type": "text",
                               "id": "Z7lBr",
                               "name": "streamLabel",
-                              "fill": "#6B7280",
+                              "fill": "$A:--muted-foreground",
                               "content": "Looking up details...",
-                              "fontFamily": "Inter",
-                              "fontSize": 13,
+                              "fontFamily": "Poppins",
+                              "fontSize": 12,
                               "fontWeight": "normal"
                             }
                           ]
@@ -1014,7 +1158,14 @@
                   "name": "inputBar",
                   "width": "fill_container",
                   "height": 80,
-                  "fill": "#FFFFFF",
+                  "fill": "$A:--card",
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": {
+                      "top": 1
+                    },
+                    "fill": "#eaeaeaff"
+                  },
                   "gap": 10,
                   "padding": [
                     12,
@@ -1031,7 +1182,7 @@
                       "opacity": 0.6,
                       "width": "fill_container",
                       "height": 48,
-                      "fill": "#EEEEEE",
+                      "fill": "$A:--muted",
                       "cornerRadius": 24,
                       "padding": [
                         0,
@@ -1043,9 +1194,9 @@
                           "type": "text",
                           "id": "dc7TL",
                           "name": "placeholder3",
-                          "fill": "#BBBBBB",
+                          "fill": "$A:--input-placeholder",
                           "content": "Look up details in this listing...",
-                          "fontFamily": "Inter",
+                          "fontFamily": "Poppins",
                           "fontSize": 14,
                           "fontWeight": "normal"
                         }
@@ -1058,7 +1209,7 @@
                       "opacity": 0.4,
                       "width": 48,
                       "height": 48,
-                      "fill": "#28A3B3",
+                      "fill": "$A:--primary",
                       "cornerRadius": 24,
                       "effect": {
                         "type": "shadow",
@@ -1081,9 +1232,74 @@
                           "height": 20,
                           "iconFontName": "arrow-up",
                           "iconFontFamily": "lucide",
-                          "fill": "#FFFFFF"
+                          "fill": "$A:--primary-foreground"
                         }
                       ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "tmxxL",
+              "x": 0,
+              "y": 0,
+              "name": "statusBar",
+              "width": 390,
+              "height": 54,
+              "padding": [
+                0,
+                28,
+                12,
+                28
+              ],
+              "justifyContent": "space_between",
+              "alignItems": "end",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "3tw3s",
+                  "name": "time",
+                  "fill": "#ffffffff",
+                  "content": "9:41",
+                  "fontFamily": "Poppins",
+                  "fontSize": 15,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "frame",
+                  "id": "45TmH",
+                  "name": "statusIcons",
+                  "gap": 5,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "yOsHC",
+                      "width": 16,
+                      "height": 16,
+                      "iconFontName": "cell-signal-full",
+                      "iconFontFamily": "phosphor",
+                      "fill": "#ffffffff"
+                    },
+                    {
+                      "type": "icon_font",
+                      "id": "bgDgu",
+                      "width": 16,
+                      "height": 16,
+                      "iconFontName": "wifi-high",
+                      "iconFontFamily": "phosphor",
+                      "fill": "#ffffffff"
+                    },
+                    {
+                      "type": "icon_font",
+                      "id": "WzAXZ",
+                      "width": 22,
+                      "height": 12,
+                      "iconFontName": "battery-full",
+                      "iconFontFamily": "phosphor",
+                      "fill": "#ffffffff"
                     }
                   ]
                 }
@@ -1108,7 +1324,7 @@
               "x": 0,
               "y": 0,
               "name": "tealBg",
-              "fill": "#28A3B3",
+              "fill": "$A:--primary",
               "width": 390,
               "height": 70
             },
@@ -1121,7 +1337,7 @@
               "clip": true,
               "width": 390,
               "height": 774,
-              "fill": "#FFFFFF",
+              "fill": "$A:--card",
               "cornerRadius": [
                 20,
                 20,
@@ -1145,7 +1361,7 @@
                       "x": 175,
                       "y": 12,
                       "name": "dragPill",
-                      "fill": "#E0E0E0",
+                      "fill": "$A:--border",
                       "width": 40,
                       "height": 4
                     }
@@ -1172,7 +1388,7 @@
                           "type": "frame",
                           "id": "l0D9y",
                           "name": "userBub4",
-                          "fill": "#28A3B3",
+                          "fill": "$A:--primary",
                           "cornerRadius": [
                             16,
                             16,
@@ -1188,9 +1404,9 @@
                               "type": "text",
                               "id": "AUjNt",
                               "name": "userTxt4",
-                              "fill": "#FFFFFF",
+                              "fill": "$A:--primary-foreground",
                               "content": "What school district is this in?",
-                              "fontFamily": "Inter",
+                              "fontFamily": "Poppins",
                               "fontSize": 14,
                               "fontWeight": "normal"
                             }
@@ -1210,7 +1426,7 @@
                           "type": "frame",
                           "id": "CxjH0",
                           "name": "noResultBubble",
-                          "fill": "#F4F5F7",
+                          "fill": "$A:--muted",
                           "cornerRadius": [
                             16,
                             16,
@@ -1218,7 +1434,7 @@
                             4
                           ],
                           "layout": "vertical",
-                          "gap": 8,
+                          "gap": 4,
                           "padding": [
                             12,
                             16
@@ -1228,11 +1444,11 @@
                               "type": "text",
                               "id": "lfVXx",
                               "name": "noResultTxt",
-                              "fill": "#333333",
+                              "fill": "$A:--foreground",
                               "textGrowth": "fixed-width",
                               "width": 280,
                               "content": "School district information isn't included in the listing. Try asking about bedrooms, bathrooms, square footage, or HOA fees.",
-                              "fontFamily": "Inter",
+                              "fontFamily": "Poppins",
                               "fontSize": 14,
                               "fontWeight": "normal"
                             }
@@ -1255,7 +1471,14 @@
                   "name": "inputBar",
                   "width": "fill_container",
                   "height": 80,
-                  "fill": "#FFFFFF",
+                  "fill": "$A:--card",
+                  "stroke": {
+                    "align": "inside",
+                    "thickness": {
+                      "top": 1
+                    },
+                    "fill": "#eaeaeaff"
+                  },
                   "gap": 10,
                   "padding": [
                     12,
@@ -1271,7 +1494,7 @@
                       "name": "inputField",
                       "width": "fill_container",
                       "height": 48,
-                      "fill": "#F7F7FC",
+                      "fill": "$A:--muted",
                       "cornerRadius": 24,
                       "padding": [
                         0,
@@ -1283,9 +1506,9 @@
                           "type": "text",
                           "id": "OYLgU",
                           "name": "placeholder4",
-                          "fill": "#BBBBBB",
+                          "fill": "$A:--input-placeholder",
                           "content": "Look up details in this listing...",
-                          "fontFamily": "Inter",
+                          "fontFamily": "Poppins",
                           "fontSize": 14,
                           "fontWeight": "normal"
                         }
@@ -1297,7 +1520,7 @@
                       "name": "sendBtn",
                       "width": 48,
                       "height": 48,
-                      "fill": "#28A3B3",
+                      "fill": "$A:--primary",
                       "cornerRadius": 24,
                       "effect": {
                         "type": "shadow",
@@ -1320,9 +1543,74 @@
                           "height": 20,
                           "iconFontName": "arrow-up",
                           "iconFontFamily": "lucide",
-                          "fill": "#FFFFFF"
+                          "fill": "$A:--primary-foreground"
                         }
                       ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "skbbQ",
+              "x": 0,
+              "y": 0,
+              "name": "statusBar",
+              "width": 390,
+              "height": 54,
+              "padding": [
+                0,
+                28,
+                12,
+                28
+              ],
+              "justifyContent": "space_between",
+              "alignItems": "end",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "cY77o",
+                  "name": "time",
+                  "fill": "#ffffffff",
+                  "content": "9:41",
+                  "fontFamily": "Poppins",
+                  "fontSize": 15,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "frame",
+                  "id": "3quXa",
+                  "name": "statusIcons",
+                  "gap": 5,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "wmyIS",
+                      "width": 16,
+                      "height": 16,
+                      "iconFontName": "cell-signal-full",
+                      "iconFontFamily": "phosphor",
+                      "fill": "#ffffffff"
+                    },
+                    {
+                      "type": "icon_font",
+                      "id": "uYxWh",
+                      "width": 16,
+                      "height": 16,
+                      "iconFontName": "wifi-high",
+                      "iconFontFamily": "phosphor",
+                      "fill": "#ffffffff"
+                    },
+                    {
+                      "type": "icon_font",
+                      "id": "Gb0tf",
+                      "width": 22,
+                      "height": 12,
+                      "iconFontName": "battery-full",
+                      "iconFontFamily": "phosphor",
+                      "fill": "#ffffffff"
                     }
                   ]
                 }
@@ -1990,5 +2278,8 @@
         }
       ]
     }
-  ]
+  ],
+  "imports": {
+    "A": "../pencil-poc/housesigma.lib.pen"
+  }
 }
