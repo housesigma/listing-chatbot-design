@@ -1,25 +1,23 @@
 # HouseSigma Chat Design System
 
-> This file is a plain-English specification of HouseSigma's chat / AI
-> surface design system. It is readable by any AI agent (coding agents,
-> design agents, or documentation tools).
+> **Status: Sister-spec proposal.**
 >
-> It is a **sister specification** to `housesigma-design-system.md`
-> (which lives in `prototypes/pencil-poc/`), not a subset. The base DS
-> covers transactional surfaces (listings, filters, forms); this
-> document covers conversational surfaces (chat bubbles, composers, AI
-> sheets). Where the two disagree, **this document wins inside any
-> chat / AI surface**.
+> This document proposes a chat / AI surface design system for
+> HouseSigma. It is a **sister specification** to
+> `housesigma-design-system.md` (the base platform DS, living in
+> `prototypes/pencil-poc/`), not a subset.
 >
-> **Location note**: This spec currently lives in `listing-chatbot-design/`
-> (its incubation project) rather than in `pencil-poc/` alongside the
-> base DS. It is intended to be adopted as a formal sister spec once
-> reviewed, at which point it should be moved to `pencil-poc/`. Until
-> then, treat it as the canonical chat-surface reference but understand
-> its location reflects its draft status.
+> The base DS covers transactional surfaces (listings, filters, forms);
+> this document covers conversational surfaces (chat bubbles,
+> composers, AI sheets). **Where the two disagree, this document wins
+> inside any chat / AI surface.**
 >
-> It supplements (but does not replace) the `chat-system-design.pen` file
-> which contains the actual component definitions.
+> Companion canvas: `chat-system-design.pen` (Variant C — Chat-First).
+> The markdown spec and the canvas together are the chat-system design
+> proposal in this repo.
+>
+> First implementing surface: Listing Chatbot — see
+> [`v2-nlqa.md`](v2-nlqa.md).
 >
 > Last generated from: `chat-system-design.pen` (Variant C — Chat-First)
 > Date: 2026-05-14
@@ -726,9 +724,9 @@ look here or in base DS.
   spacing tokens referenced throughout this document)
 
 ### Implementation references (per chat surface)
-- Listing Chatbot: `prototypes/listing-chatbot-design/` — v1 & v2
-  design intents, NLQ&A positioning shift proposal, web-hybrid
-  implementation docs in `listing-chatbot-local-ops/`
+- Listing Chatbot: [`v2-nlqa.md`](v2-nlqa.md) in this repo — v2 NLQ&A
+  design intent + proposal. Web-hybrid implementation docs in
+  `listing-chatbot-local-ops/`.
 
 ### Out-of-scope (for this document)
 - Product-specific positioning (mental model shift, copy table, system

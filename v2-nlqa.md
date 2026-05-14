@@ -1,17 +1,14 @@
-# Listing Chatbot — v2: Listing-aware NLQ&A (Design Intent)
+# Listing Chatbot — v2: Listing-aware NLQ&A
 
-> Design direction and change spec for the positioning shift from
+> Design intent + proposal for the positioning shift from
 > **"Look up facts from a listing"** to
-> **"Listing-aware natural language Q&A"**.
+> **"Listing-aware natural-language Q&A"**.
 >
-> Version: v2 (NLQ&A) · Status: Proposal · Owner: Listing Chatbot design · Last updated: 2026-05-13
+> Version: v2 (NLQ&A) · Status: Proposal · Owner: Listing Chatbot design · Last updated: 2026-05-14
 >
-> Predecessor: [`v1-fact-lookup.md`](v1-fact-lookup.md) — original fact-retrieval intent.
->
-> Companion documents:
-> - [`v2-nlqa-spec.md`](v2-nlqa-spec.md) — chat-first component spec backing this v2 intent
-> - `housesigma-design-system.md` — base platform DS
-> - `listing-chatbot-design.pen` — Variant C canvas (current chat-first state)
+> Companion artifacts (this repo):
+> - `listing-chatbot-design.pen` — design canvas (Variants A/B/C, Variant C is canonical)
+> - `chat-design-system.md` + `chat-system-design.pen` — Chat Design System proposal that this doc adopts as the visual baseline
 
 ---
 
@@ -27,7 +24,9 @@ buyer perspective, and common-sense advice.
 This document captures every layer that needs to move for the shift to
 land: **copy**, **modules**, **design patterns**, in priority order
 P0 → P2. The base interaction shell (sheet, bubbles, composer,
-streaming) stays — Variant C in the canvas is the visual foundation.
+streaming) stays — Variant C in `listing-chatbot-design.pen` is the
+visual foundation, and the component spec lives in
+[`chat-design-system.md`](chat-design-system.md).
 
 ---
 
@@ -45,7 +44,50 @@ streaming) stays — Variant C in the canvas is the visual foundation.
 
 ---
 
-## 3. Why Now
+## 3. Variants Explored
+
+Three visual variants were explored on the canvas
+(`listing-chatbot-design.pen`). They are kept side-by-side for
+contrast, not as alternates.
+
+- **Variant A — Production Mirror.** Faithful copy of current
+  production. Baseline reference; not a forward proposal.
+- **Variant B — DS-Compliant.** Forced every chat element through
+  base DS radii / button shapes / icon family. Result: composer becomes
+  a search form, send becomes a generic submit button, bubbles become
+  cards, suggestion chips become filter badges. **Rejected** — the
+  surface no longer reads as chat.
+- **Variant C — Chat-First.** Canonical. Follows the Chat Design System
+  ([`chat-design-system.md`](chat-design-system.md)). Visually almost
+  identical to Variant A but every value comes from a named token,
+  every shape from a documented rule, every icon from an explicit
+  decision. **Variant C codifies what production already intuitively
+  does right** and provides the spec foundation for further evolution.
+
+The rejection of Variant B is the clearest case for treating chat as a
+sister surface to the base DS rather than a strict subset — see
+`chat-design-system.md` §1 for the full sister-DS argument.
+
+---
+
+## 4. Design Principles
+
+| Principle | Manifestation |
+|---|---|
+| **Conversational over transactional** | Soft radii (16-24) over tight radii (5-13). Pill inputs over rectangular forms. Circular send button over square submit. |
+| **Assistant-active, not system-passive voice** | "Thinking…" not "Looking up…". "Something tripped me up" not "Generation failed." |
+| **Redirect, don't refuse** | Every limitation copy ends with a useful next step (alternate path / agent / comparable sales). |
+| **Trust through transparency** | Source / Grounding Label visible on every assistant bubble — users see whether the answer is from listing data, market context, or general advice. |
+| **Multi-turn by default** | Follow-up chips after every assistant response. Sheet auto-expands when the conversation starts. |
+| **Brand-identifiable AI mark** | Phosphor `star-four` (the GenAI category convention) — one explicit deviation from base DS icon library. |
+
+These principles mirror `chat-design-system.md` §2 because the chat
+DS is the source of truth for visual / interaction stance. They are
+restated here so the listing-chatbot proposal can be read on its own.
+
+---
+
+## 5. Why Now
 
 - **LLM capability** has crossed the bar for grounded reasoning on
   property-specific questions, not just keyword retrieval.
@@ -62,9 +104,9 @@ streaming) stays — Variant C in the canvas is the visual foundation.
 
 ---
 
-## 4. Scope
+## 6. Scope
 
-### 4.1 What changes
+### 6.1 What changes
 - All entry-point copy (hero / placeholder / coachmark)
 - Loading and progress copy
 - Suggestion chip composition
@@ -75,7 +117,7 @@ streaming) stays — Variant C in the canvas is the visual foundation.
   `groundingType`)
 - 3 new UI patterns (follow-up chips, source label, abstain pattern)
 
-### 4.2 What stays
+### 6.2 What stays
 - Sheet structure (half-snap → full-snap auto-expand)
 - Bubble geometry, composer pill input, circular send/stop
 - Streaming protocol (`useChatStream.ts` is already general-purpose)
@@ -85,7 +127,7 @@ streaming) stays — Variant C in the canvas is the visual foundation.
 
 ---
 
-## 5. Copy Changes
+## 7. Copy Changes
 
 | Module | Today (lookup) | Target (NLQ&A) | Source / i18n key |
 |---|---|---|---|
@@ -114,7 +156,7 @@ streaming) stays — Variant C in the canvas is the visual foundation.
 
 ---
 
-## 6. Module / Code Changes
+## 8. Module / Code Changes
 
 | Layer | Change | File / Owner |
 |---|---|---|
@@ -123,35 +165,36 @@ streaming) stays — Variant C in the canvas is the visual foundation.
 | **Revive `sourceLabel`** | Schema and render hook exist (`AppAiChatMessages.vue:46-51`); state machine never writes. Add server-side emission + `useAiAssistant.ts:255-262` `onDone` writes `m.sourceLabel` | `useAiAssistant.ts` ChatMessage + `useChatStream.ts` `DonePayload` |
 | **New field `followUps`** | Server emits 2-3 follow-up question strings on `onDone`. Frontend renders as Follow-up Suggestion Chips below assistant bubble | `useChatStream.ts` `DonePayload` + new `AppAiChatFollowUps.vue` |
 | **New field `groundingType`** | Enum: `from_listing` / `from_market_context` / `general_advice` / `assumption`. Drives Source Label rendering + Confidence Indicator | `useChatStream.ts` `ChunkPayload` |
-| **Activate `abstained` UI** | Schema is wired through end-to-end (`useAiAssistant.ts:42-44`, `258-259`) but no UI consumes it. Add Abstain Pattern (see §8.4) | `AppAiChatMessages.vue` |
+| **Activate `abstained` UI** | Schema is wired through end-to-end (`useAiAssistant.ts:42-44`, `258-259`) but no UI consumes it. Add Abstain Pattern (see §10.4) | `AppAiChatMessages.vue` |
 | **New Chat reset** | `useAiAssistant.ts` already exposes `setMessages([])` — no UI entry today. Add header button | `AppAiChatSheet.vue` — sheet header |
 | **GA additive events** | `ai_chat_follow_up_click` (with chip text label), `ai_chat_new_conversation`, `ai_chat_grounding_seen` (with type) | `ga.service` |
 | **Stop-button aria-label** | "Stop generating" → keep (still accurate) | `AppAiChatComposer.vue:17` |
 
 ---
 
-## 7. Design Changes
+## 9. Design Changes
 
-Built on top of Variant C (canvas Frame 4) and
-[`v2-nlqa-spec.md`](v2-nlqa-spec.md) chat-radius tokens.
+Built on top of Variant C (canvas) and `chat-design-system.md`
+chat-radius tokens. The visual stack does not change — only the listing-
+chatbot's *use* of it does.
 
-### 7.1 Entry hero — chip composition
+### 9.1 Entry hero — chip composition
 
 | Today | Target |
 |---|---|
 | 3 factual chips | 1 broad + 1 comparative + 1 advisory:<br>• Tell me about this home<br>• Compare to nearby listings<br>• Things to watch out for |
 
-Chip *shape* stays — full pill, `--card` fill, 1px `--border`,
+Chip *shape* stays — full pill, `--card` fill, 1 px `--border`,
 cornerRadius `chat-radius-pill`. Only the labels (and i18n keys)
 change.
 
-### 7.2 Hero sparkle and headline
+### 9.2 Hero sparkle and headline
 
 No visual change. Copy update only ("Ask anything about this home"
 replaces the headline). Phosphor `star-four` AI Brand Mark continues
 to serve as the persistent visual identity.
 
-### 7.3 Loading bubble — stage-aware progress label
+### 9.3 Loading bubble — stage-aware progress label
 
 The typing-dots bubble already accepts a `progressLabel` prop. Visual
 unchanged; copy becomes stage-aware:
@@ -168,32 +211,32 @@ label is never stuck at `Thinking…`.
 
 ---
 
-## 8. New Design Patterns
+## 10. New / Revived UI Patterns
 
-These are new components to add to [`v2-nlqa-spec.md`](v2-nlqa-spec.md)
-as additional sections (proposed §17-21).
+Component specs are owned by `chat-design-system.md`. The sub-sections
+below are the **listing-chatbot-specific activation notes**: which
+hooks to revive, which strings to emit, which enums map to what.
 
-### 8.1 Source / Grounding Label
+### 10.1 Source / Grounding Label
 
-A small italic teal label rendered as a sibling **below** the
-assistant bubble. Tells the user *what kind of source* the answer is
-grounded in.
+Revives the dead `sourceLabel` hook (`AppAiChatMessages.vue:46-51`).
+Replaces the free-form string with the structured `groundingType`
+enum below.
 
-| Property | Value |
+| `groundingType` | Rendered copy |
 |---|---|
-| Position | Sibling of `messageBubble`, inside `messageGroup` |
-| Layout | Inline-block, margin-top 4, margin-left 16 |
-| Font | Poppins 13 Italic, `--primary` |
-| Content map | `from_listing` → "Based on this listing"<br>`from_market_context` → "Based on market comparison"<br>`general_advice` → "General guidance"<br>`assumption` → "Inferred — verify before relying" |
-| Visibility | Render only when `groundingType` is set; render only on `done` (no flicker during streaming) |
+| `from_listing` | "Based on this listing" |
+| `from_market_context` | "Based on market comparison" |
+| `general_advice` | "General guidance" |
+| `assumption` | "Inferred — verify before relying" |
 
-Implementation: revives the dead `sourceLabel` hook with a richer
-schema (`groundingType` enum instead of free-form string).
+Visibility: render only on `done` (no flicker during streaming).
+Full visual spec: `chat-design-system.md` §5.8.
 
-### 8.2 Confidence Indicator (optional, P2)
+### 10.2 Confidence Indicator *(P2, optional)*
 
-Tiny inline indicator at the start of the source label, distinguishing
-verifiable claims from advisory opinion.
+Tiny inline indicator at the start of the source label,
+distinguishing verifiable claims from advisory opinion.
 
 | Glyph | When |
 |---|---|
@@ -201,67 +244,55 @@ verifiable claims from advisory opinion.
 | ○ (outlined dot, muted) | `from_market_context` — derived |
 | △ (triangle, amber) | `general_advice` / `assumption` |
 
-Only ship if user research shows source label alone is insufficient.
+Ship only if user research shows source label alone is insufficient.
+Not yet in `chat-design-system.md` — this is a listing-chatbot
+proposal that may graduate to the chat DS later.
 
-### 8.3 Follow-up Suggestion Chips
-
-Rendered below the **most-recent** assistant bubble (only the most
-recent — past bubbles' follow-ups disappear once a new round starts).
-
-| Property | Value |
-|---|---|
-| Container | Horizontal flex, wrap, gap 8, padding-top 8 |
-| Chip count | 2-3 (server returns up to 3) |
-| Shape | Same as entry-hero Suggestion Chip but smaller |
-| Size | Height 28-30 (vs entry hero 32-36) |
-| Font | Poppins 12 Regular, `--foreground` |
-| Background | `--card` |
-| Border | 1px `--border` |
-| Radius | `chat-radius-pill` (half-height for full pill) |
-| Behavior | Tap → injects chip text as new user message; chips fade out as round starts |
-| GA | `ai_chat_follow_up_click` with chip text |
+### 10.3 Follow-up Suggestion Chips
 
 Server contract: `onDone.followUps?: string[]` (up to 3 strings).
+Rendered below the most-recent assistant bubble; past bubbles' chips
+disappear on the next round.
 
-### 8.4 Abstain Pattern (revived)
+GA: `ai_chat_follow_up_click` with chip text.
 
-When `abstained: true` arrives, render the assistant bubble with a
-small inline marker above the content.
+Full visual spec: `chat-design-system.md` §5.3.
 
-| Element | Spec |
-|---|---|
-| Marker row | Above bubble content, inside bubble padding-top |
-| Marker icon | Lucide `info` 12×12, `--muted-foreground` |
-| Marker text | "Outside my listing knowledge" — Poppins 11 Medium, `--muted-foreground` |
-| Bubble content | LLM-generated redirect text (per §5 abstain copy direction) |
-| Optional `nullReason` | Rendered as Poppins 10 italic below bubble if non-null and human-readable |
+### 10.4 Abstain Pattern *(revived)*
 
-This explicitly differs from §6's *error* bubble — abstain means the
-assistant chose not to answer; error means the system failed.
+When `abstained: true` arrives, render the assistant bubble with the
+"Outside my listing knowledge" inline marker above the content. The
+LLM-generated body follows the abstain copy direction in §7 (redirect,
+don't dead-end).
 
-### 8.5 New Chat Button
+Optional `nullReason` rendered below the bubble if non-null and
+human-readable.
 
-Sheet-header trailing action to clear history and return to entry
-hero.
+Full visual spec: `chat-design-system.md` §5.9. Distinct from the error
+bubble (chat DS §5.14): abstain means the assistant *chose* not to
+answer; error means the system failed.
 
-| Property | Value |
-|---|---|
-| Position | Top-right of sheet, outside drag-grabber area |
-| Tap target | 32 × 32 |
-| Icon | Lucide `message-circle-plus` 18×18, `--primary` |
-| Visibility | Hidden when `messages.length === 0` |
-| Action | Clears `messages`, resets snap to `half`, focuses composer |
-| GA | `ai_chat_new_conversation` |
+### 10.5 New Chat Button
 
-### 8.6 Idle Re-engagement Prompt (P2)
+Activates `useAiAssistant.ts`'s existing `setMessages([])`. Add a
+sheet-header trailing action, hidden when `messages.length === 0`.
+
+GA: `ai_chat_new_conversation`.
+
+Full visual spec: `chat-design-system.md` §5.16.
+
+### 10.6 Idle Re-engagement Prompt *(P2)*
 
 After 30 s of conversation idleness with `hasMessages === true`, show
 a muted "Still curious?" line above the composer with 2-3 fresh
 follow-up chips. Dismisses on any user action.
 
+Not yet in `chat-design-system.md` — listing-chatbot-specific until
+a second chat surface needs the same behavior.
+
 ---
 
-## 9. System Prompt Direction
+## 11. System Prompt Direction
 
 (Owner: AI team — design provides intent, not the prompt text.)
 
@@ -282,7 +313,7 @@ Shift the worker's system message to:
 
 ---
 
-## 10. Priority Tiers & Roadmap
+## 12. Priority Tiers & Roadmap
 
 ### P0 — Cognitive Reframing (Week 1)
 Users see this surface as conversational starting day 1.
@@ -302,10 +333,10 @@ Users can tell where answers come from; conversations don't
 dead-end.
 
 - [ ] `sourceLabel` + `groundingType` end-to-end: server emit → state
-  machine write → UI render (§8.1)
-- [ ] Follow-up Suggestion Chips (§8.3)
-- [ ] Abstain Pattern revival (§8.4)
-- [ ] Server stage-specific progress labels (§7.3)
+  machine write → UI render (§10.1)
+- [ ] Follow-up Suggestion Chips (§10.3)
+- [ ] Abstain Pattern revival (§10.4)
+- [ ] Server stage-specific progress labels (§9.3)
 
 **Acceptance:** Every assistant bubble carries a Source Label;
 non-trivial answers carry ≥2 follow-up chips; abstained rounds
@@ -313,9 +344,9 @@ redirect instead of dead-ending.
 
 ### P2 — Deep Conversation Support (Week 4+)
 
-- [ ] New Chat Button (§8.5)
-- [ ] Idle Re-engagement Prompt (§8.6)
-- [ ] Confidence Indicator (§8.2) — gate on user research
+- [ ] New Chat Button (§10.5)
+- [ ] Idle Re-engagement Prompt (§10.6)
+- [ ] Confidence Indicator (§10.2) — gate on user research
 - [ ] Half-snap min-height bumped 450 → 500 to fit longer answers
 - [ ] Markdown rich-content validation (lists, tables, inline links in
   long answers)
@@ -325,7 +356,7 @@ trends up; abandonment after first answer trends down.
 
 ---
 
-## 11. Open Questions
+## 13. Open Questions
 
 - **Source label granularity**: 4 enum values enough? Or do we need a
   separate "verified by HouseSigma data" tier for things like
@@ -345,7 +376,7 @@ trends up; abandonment after first answer trends down.
 
 ---
 
-## 12. Risk & Mitigation
+## 14. Risk & Mitigation
 
 | Risk | Likelihood | Impact | Mitigation |
 |---|---|---|---|
@@ -357,9 +388,14 @@ trends up; abandonment after first answer trends down.
 
 ---
 
-## 13. References
+## 15. References
 
-### Production code
+### Design artifacts in this repo
+- `listing-chatbot-design.pen` — Variants A / B / C canvas
+- [`chat-design-system.md`](chat-design-system.md) — Chat Design System (sister-spec proposal) backing Variant C
+- `chat-system-design.pen` — chat DS canvas (12 chat states + reusable components)
+
+### Production source of truth
 - `packages/app/src/pages/listing/components/AppAiChatSheet.vue`
 - `packages/app/src/pages/listing/components/AppAiChatHero.vue`
 - `packages/app/src/pages/listing/components/AppAiChatMessages.vue`
@@ -371,19 +407,8 @@ trends up; abandonment after first answer trends down.
   `DonePayload`, `ProgressFieldPayload`)*
 - `packages/common/i18n/translation/en.ts` *(`aiChat.*` namespace)*
 
-### Design artifacts
-- [`v2-nlqa-spec.md`](v2-nlqa-spec.md) — chat-first component spec
-  (companion)
-- `housesigma-design-system.md` — base platform DS
-- `listing-chatbot-design.pen` — design canvas:
-  - Frame 1: Variant A (Production Mirror — current)
-  - Frame 2: Variant B (DS-Compliant — rejected path)
-  - Frame 3: Chat Wireframe Annotation Reference
-  - Frame 4: Variant C (Chat-First — current canonical)
-
-### Companion specs to author next
-- [`v2-nlqa-spec.md`](v2-nlqa-spec.md) §17-21: Source/Grounding Label,
-  Confidence Indicator, Follow-up Suggestion Chips, Abstain Pattern,
-  New Chat Button
-- A separate **system prompt design doc** (AI team owns content;
-  design owns intent / tone direction)
+### Companion work to author after acceptance
+- System prompt design intent doc *(AI team owns content; design
+  owns intent / tone direction)*
+- AI Avatar persona mark spec *(if open question on bubble-prefix
+  resolves toward yes)*
