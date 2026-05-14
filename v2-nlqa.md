@@ -302,7 +302,7 @@ a second chat surface needs the same behavior.
 > are **already satisfied by the current production prompt set** (IC /
 > STP / RR analytical). For the engineering delta breakdown
 > (✅ already-on-track / ⚠️ tune / 🆕 truly new), see
-> `listing-chatbot-local-ops/v2-nlqa-proposals.md §12.1`.
+> [`v2-nlqa-proposals.md §12.1`](v2-nlqa-proposals.md) (same directory).
 
 Shift the worker's system message to:
 

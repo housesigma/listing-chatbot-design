@@ -167,8 +167,7 @@ chat-stream events.
 | **12** | `error` | `onError` with structured `error.code` | Assistant Bubble (§5.14) with code-specific copy from the chat surface's i18n error namespace |
 
 State names above are **logical names**, not symbol names. Each
-implementing product may map these to its own state machine identifiers
-(e.g. listing-chatbot uses `lookup_*` prefix for historical reasons).
+implementing product may map these to its own state machine identifiers.
 
 ---
 
@@ -724,9 +723,10 @@ look here or in base DS.
   spacing tokens referenced throughout this document)
 
 ### Implementation references (per chat surface)
-- Listing Chatbot: [`v2-nlqa.md`](v2-nlqa.md) in this repo — v2 NLQ&A
-  design intent + proposal. Web-hybrid implementation docs in
-  `listing-chatbot-local-ops/`.
+- Listing Chatbot: [`v2-nlqa.md`](v2-nlqa.md) — v2 NLQ&A design intent.
+  Engineering proposals in [`v2-nlqa-proposals.md`](v2-nlqa-proposals.md)
+  and [`v2-nlqa-surface-changes.md`](v2-nlqa-surface-changes.md) (same
+  directory).
 
 ### Out-of-scope (for this document)
 - Product-specific positioning (mental model shift, copy table, system
