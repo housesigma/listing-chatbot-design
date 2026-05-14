@@ -296,6 +296,14 @@ a second chat surface needs the same behavior.
 
 (Owner: AI team — design provides intent, not the prompt text.)
 
+> **Reading note for engineers**: this section describes the **design-level
+> positioning shift** (v1 lookup-tool framing → v2 conversation-partner
+> framing) — not a literal worker prompt rewrite. Several intents below
+> are **already satisfied by the current production prompt set** (IC /
+> STP / RR analytical). For the engineering delta breakdown
+> (✅ already-on-track / ⚠️ tune / 🆕 truly new), see
+> `listing-chatbot-local-ops/v2-nlqa-proposals.md §12.1`.
+
 Shift the worker's system message to:
 
 - **Frame the assistant as a knowledgeable conversation partner**, not
