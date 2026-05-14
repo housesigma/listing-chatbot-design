@@ -1,52 +1,70 @@
-# Listing Chatbot — Chat System Design Proposal
+# Listing Chatbot — v2 NLQ&A System Design Proposal
 
 > **Type:** Design Proposal · System Design submission
 > **Project codename:** Listing Chatbot
-> **Product positioning:** Listing-aware natural-language Q&A
+> **Product positioning shift:** fact lookup → listing-aware natural-language Q&A
 > **Status:** Proposal · ready for review
-> **Date:** 2026-05-13
+> **Date:** 2026-05-13 (renamed 2026-05-14)
 > **Owner:** Listing Chatbot design
 > **Canvas:** `chat-system-design.pen` (Variant C — 12 states · `hm8Iu` appHeader reusable)
 > **i18n namespace:** `aiChat.*`
 > **Production source:** `packages/app/src/pages/listing/components/AppAiChat*.vue` · `packages/hook/ai/useAiAssistant.ts` · `packages/hook/ai/useChatStream.ts`
 
+> **Document history**: This file was previously `chat-system-design.md`
+> and combined two concerns:
+> 1. A reusable Chat Design System (system-design baseline, cross-feature)
+> 2. The Listing Chatbot v2 NLQ&A positioning proposal (listing-specific)
+>
+> On 2026-05-14 the **system-design portion was extracted** into
+> [`../pencil-poc/housesigma-chat-design-system.md`](../pencil-poc/housesigma-chat-design-system.md)
+> as a sister spec to `housesigma-design-system.md`. **That document is
+> now the authoritative reference** for: design tokens, 12-state state
+> machine, 15+ chat components, composition rules — reusable across any
+> future AI / chat surface.
+>
+> **What remains here** is the Listing Chatbot v2 NLQ&A proposal: the
+> positioning shift, copy table, schema additions, system prompt
+> direction, rollout roadmap, open questions, and risks. §3-§6 below
+> are kept as a narrative reference but **defer authoritative spec to
+> the sister DS via cross-reference** (`chat-DS §X`).
+
 ---
 
 ## 1. Executive Summary
 
-This proposal codifies the **first canonical design system for AI chat
-surfaces** inside the HouseSigma product. It does two things:
+This proposal documents the Listing Chatbot's evolution from a
+**fact-retrieval surface** to a **listing-aware natural-language Q&A
+conversation partner**. It depends on, but does not redefine, the Chat
+Design System (sister DS) — see
+[`../pencil-poc/housesigma-chat-design-system.md`](../pencil-poc/housesigma-chat-design-system.md).
 
-1. **Establishes a sister design system** (`Conversational Components`)
-   alongside the existing base DS (`housesigma-design-system.md`).
-   Chat / AI surfaces follow industry conversational conventions
-   (iMessage / WhatsApp / ChatGPT / Claude / Gemini family) which
-   intentionally diverge from the listing-platform DS on radius, fill,
-   shape, and icon family.
+This document does two things:
 
-2. **Specifies 12 chat states** that cover the entire listing-chatbot
-   interaction state machine (entry → in-flight → terminal outcomes),
-   plus a 13th-state set of new patterns required for the product
-   positioning shift from *fact lookup* to *listing-aware natural-
-   language Q&A*.
+1. **Adopts the Chat Design System** as the canonical visual baseline
+   for Listing Chatbot (Variant C — Chat-First). §3-§6 summarize the
+   relevant sister-DS sections; for authoritative spec see the sister
+   DS itself.
 
-The 12 states are visually realized in `chat-system-design.pen`
-(Variant C — Chat-First). Every state references this document by
-section number for spec-precise design adjustments.
+2. **Specifies the v2 NLQ&A positioning shift** (§7 onward) — the
+   product evolution from fact lookup to NLQ&A, including copy table,
+   schema additions, system prompt direction, rollout phases, open
+   questions, and risks.
 
 ### What this proposal asks of System Design
 
-- **Adopt** Conversational Components (§5) as a sister spec to the
-  base DS, with the explicit override rule: *inside any AI chat
-  surface, this document wins over the base DS where they collide.*
+- **Adopt** the Chat Design System (`housesigma-chat-design-system.md`)
+  as a sister spec to base DS, with the explicit override rule:
+  *inside any chat surface, the chat DS wins over base DS where they
+  collide.*
 - **Acknowledge the icon-family departure**: Phosphor `star-four` for
-  the AI Brand Mark (§5.7) is the one place we use a non-Lucide,
-  non-custom-SVG icon. This is calibrated to the 2024-25 GenAI
-  category convention; reverting to Lucide loses brand legibility.
-- **Co-author the Q&A evolution roadmap** (§8) — particularly the
-  Source/Grounding Label (§5.9) and Follow-up Suggestion Chips
-  (§5.10), both of which revive long-standing dead hooks in the
-  production state machine.
+  the AI Brand Mark (chat-DS §5.6) is the one place we use a
+  non-Lucide, non-custom-SVG icon. This is calibrated to the 2024-25
+  GenAI category convention; reverting to Lucide loses brand
+  legibility.
+- **Co-author the v2 NLQ&A evolution roadmap** (§7-§9 below) —
+  particularly the Source/Grounding Label (chat-DS §5.8) and Follow-up
+  Suggestion Chips (chat-DS §5.3), both of which revive long-standing
+  dead hooks in the production state machine.
 
 ---
 
@@ -739,20 +757,29 @@ trends up; abandonment after first answer trends down.
 ### Design artifacts in this proposal
 
 - **`chat-system-design.pen`** — Variant C canvas, 12 chat states +
-  `hm8Iu` appHeader reusable
-- **`chat-system-design.md`** — this document
+  `hm8Iu` appHeader reusable (Frame 4A full v2 vision + Frame 4B
+  surface scope, split 2026-05-14)
+- **`v2-nlqa-system-design-proposal.md`** — this document (formerly
+  `chat-system-design.md`; renamed 2026-05-14 after the system-design
+  portions were factored out into the sister DS below)
 
 ### Sibling specs
 
-- `housesigma-design-system.md` — base platform DS (lives in the
-  housesigma design system repository)
+- `../pencil-poc/housesigma-chat-design-system.md` — **Chat Design
+  System** (sister spec to base DS, lives in the pencil-poc repo,
+  extracted from this document 2026-05-14). Authoritative source for:
+  design tokens (§2), 12-state state machine (§4), 15+ chat components
+  (§5), composition rules (§6). §3-§6 of this document mirror those
+  sections for narrative continuity and defer authority to the sister DS
+- `housesigma-design-system.md` — base platform DS (lives in
+  pencil-poc)
 - `v1-fact-lookup.md` — original v1 fact-lookup era design intent
   (superseded; preserved for historical context)
 - `v2-nlqa.md` — v2 NLQ&A repositioning design intent (this document
   builds on it; §7 here consolidates its key tables)
-- `v2-nlqa-spec.md` — v2 Conversational Components spec (this
-  document inlines its component specs in §5 for the system-design
-  review)
+- `v2-nlqa-spec.md` — v2 Conversational Components spec (predecessor
+  / draft of the sister DS; component specs in §5 of this document
+  inline an earlier copy of those specs for the system-design review)
 
 ### Production source of truth
 
