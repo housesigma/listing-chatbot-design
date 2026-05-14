@@ -28,7 +28,7 @@ Six artifacts, two proposals. Proposal 1 has **design** + **engineering** tracks
 | File | What it is |
 |---|---|
 | [`v2-nlqa-proposals.md`](v2-nlqa-proposals.md) | 7 engineering proposals that need cross-repo coordination (worker schema fields, chat-service SSE 透传, system prompt). Each proposal: 意图 / 服务端契约 / 前端落地 / i18n / GA / 验收 / feature flag. |
-| [`v2-nlqa-surface-changes.md`](v2-nlqa-surface-changes.md) | Frontend-only surface changes that can ship today with zero cross-repo dependency: i18n key renames, chip rebalancing, copy tone shifts, optional New Chat button. |
+| [`v2-nlqa-surface-changes.md`](v2-nlqa-surface-changes.md) | Frontend-only surface changes that can ship today with zero cross-repo dependency: i18n key renames, chip rebalancing, copy tone shifts. |
 
 ### Proposal 2 — Chat Design System
 

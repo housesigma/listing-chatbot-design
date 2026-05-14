@@ -166,8 +166,7 @@ restated here so the listing-chatbot proposal can be read on its own.
 | **New field `followUps`** | Server emits 2-3 follow-up question strings on `onDone`. Frontend renders as Follow-up Suggestion Chips below assistant bubble | `useChatStream.ts` `DonePayload` + new `AppAiChatFollowUps.vue` |
 | **New field `groundingType`** | Enum: `from_listing` / `from_market_context` / `general_advice` / `assumption`. Drives Source Label rendering + Confidence Indicator | `useChatStream.ts` `ChunkPayload` |
 | **Activate `abstained` UI** | Schema is wired through end-to-end (`useAiAssistant.ts:42-44`, `258-259`) but no UI consumes it. Add Abstain Pattern (see §10.4) | `AppAiChatMessages.vue` |
-| **New Chat reset** | `useAiAssistant.ts` already exposes `setMessages([])` — no UI entry today. Add header button | `AppAiChatSheet.vue` — sheet header |
-| **GA additive events** | `ai_chat_follow_up_click` (with chip text label), `ai_chat_new_conversation`, `ai_chat_grounding_seen` (with type) | `ga.service` |
+| **GA additive events** | `ai_chat_follow_up_click` (with chip text label), `ai_chat_grounding_seen` (with type) | `ga.service` |
 | **Stop-button aria-label** | "Stop generating" → keep (still accurate) | `AppAiChatComposer.vue:17` |
 
 ---
@@ -272,16 +271,7 @@ Full visual spec: `chat-design-system.md` §5.9. Distinct from the error
 bubble (chat DS §5.14): abstain means the assistant *chose* not to
 answer; error means the system failed.
 
-### 10.5 New Chat Button
-
-Activates `useAiAssistant.ts`'s existing `setMessages([])`. Add a
-sheet-header trailing action, hidden when `messages.length === 0`.
-
-GA: `ai_chat_new_conversation`.
-
-Full visual spec: `chat-design-system.md` §5.16.
-
-### 10.6 Idle Re-engagement Prompt *(P2)*
+### 10.5 Idle Re-engagement Prompt *(P2)*
 
 After 30 s of conversation idleness with `hasMessages === true`, show
 a muted "Still curious?" line above the composer with 2-3 fresh
@@ -352,8 +342,7 @@ redirect instead of dead-ending.
 
 ### P2 — Deep Conversation Support (Week 4+)
 
-- [ ] New Chat Button (§10.5)
-- [ ] Idle Re-engagement Prompt (§10.6)
+- [ ] Idle Re-engagement Prompt (§10.5)
 - [ ] Confidence Indicator (§10.2) — gate on user research
 - [ ] Half-snap min-height bumped 450 → 500 to fit longer answers
 - [ ] Markdown rich-content validation (lists, tables, inline links in

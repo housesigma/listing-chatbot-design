@@ -521,18 +521,6 @@ opens the chat sheet at `half` snap.
 > (typically 10 px @ 56 h) for cohesion with the host page. Once the
 > sheet opens, all chat radii apply inside the sheet.
 
-### 5.16 New Conversation Action
-
-Sheet-header action to clear history and return to entry hero.
-
-| Property | Value |
-|---|---|
-| Position | Top-right of sheet, outside drag-grabber area |
-| Tap target | 32 × 32 |
-| Icon | Lucide `message-circle-plus` 18 × 18, `--primary` |
-| Visibility | Hidden when `messages.length === 0` |
-| Action | Clears `messages`, resets snap to `half`, focuses composer |
-
 ---
 
 ## 6. Component Composition Rules
@@ -630,7 +618,6 @@ tolerance:
 |---|---|
 | §5.5 Send button (inactive) | aria-disabled, opacity 0.35 conveys state visually |
 | §5.5 Stop button | aria-label "Stop generating" |
-| §5.16 New Conversation | aria-label "Start a new conversation" |
 | §5.9 Abstain marker | Visible icon + text, marker text is part of bubble accessible name |
 | §5.8 Source Label | Rendered as readable text, italic style preserved for screen readers as italic |
 | §5.12 Coachmark | Focus management on open + close; dismiss key (Esc) supported |
@@ -695,7 +682,6 @@ look here or in base DS.
 | Scope pill | Chat DS | §5.13 |
 | Error bubble | Chat DS | §5.14 |
 | AI entry FAB | Chat DS | §5.15 |
-| New conversation action | Chat DS | §5.16 |
 | Page button / icon button outside sheet | Base DS | §8.1 |
 | Input field (forms) | Base DS | §8.2 |
 | Tag / badge | Base DS | §8.3 / §8.5 |

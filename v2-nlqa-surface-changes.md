@@ -98,7 +98,7 @@ State / Trigger / Key elements 完整定义见 `chat-design-system.md §4`。本
 | 11 | `noresult` | §6.6 errorGeneric 文案改值 | — |
 | 12 | `error` | §6.6 errorSafetyBlocked / errorGeneric 改值 | — |
 
-**对实施的启示**:本文 P0 改动主要落在 #3/#4/#5/#12 上,P2(New Chat 按钮)横跨多个 state 的 sheet 头部。其余 state 在本文范围内**不动结构、不动视觉**,只有 #2/#10/#11/#12 的部分文案随 i18n 改值。
+**对实施的启示**:本文 P0 改动主要落在 #3/#4/#5/#12 上。其余 state 在本文范围内**不动结构、不动视觉**,只有 #2/#10/#11/#12 的部分文案随 i18n 改值。
 
 ---
 
@@ -124,7 +124,6 @@ State / Trigger / Key elements 完整定义见 `chat-design-system.md §4`。本
 | Coachmark 文案改名 | `AppAiHintPopup.vue` | P0 |
 | 加载文案改名 | `AppAiChatMessages.vue` | P0 |
 | 错误文案语气微调 | `en.ts` / `zh.ts` | P0 |
-| New Chat 按钮(头部) | `AppAiChatSheet.vue` | P2 |
 | 视觉对齐(单独立项) | 多个 | P2 |
 
 ### 5.2 按文件视图(对齐 `v2-nlqa.md §8`)
@@ -133,13 +132,12 @@ State / Trigger / Key elements 完整定义见 `chat-design-system.md §4`。本
 
 | 文件 | 改动 |
 |---|---|
-| `packages/common/i18n/translation/{en,zh}.ts:965-998 / 904-926` | 删 6 旧 key + 加 6 重命名 + 改 2 错误文案值 + 加 `newChat` |
+| `packages/common/i18n/translation/{en,zh}.ts:965-998 / 904-926` | 删 6 旧 key + 加 6 重命名 + 改 2 错误文案值 |
 | `packages/app/src/pages/listing/components/AppAiChatHero.vue:5, 46, 47` | `entryLabel` → `askAnything`;chips 数组改 key |
-| `packages/app/src/pages/listing/components/AppAiChatSheet.vue:40, 78-89` | placeholder key 改;P2 加 New Chat 按钮 + `setMessages` |
+| `packages/app/src/pages/listing/components/AppAiChatSheet.vue:40` | placeholder key 改 |
 | `packages/app/src/pages/listing/components/AppAiChatMessages.vue:124-125` | 加载文案 key 切换 |
 | `packages/app/src/pages/listing/components/AppAiHintPopup.vue:4` | `hintTitle` → `askAboutThis` |
 | `packages/common/environments/types.ts:73, 77, 78` + `useAiAssistant.ts:78` | JSDoc 字面引用同步(纯文档串) |
-| `packages/services/ga.service.ts` | P2 New Chat 时新增 `ai_chat_new_conversation` event |
 
 **proposals 文档配套需改文件**(本文不动,见 proposals 各章节):`useChatStream.ts` / `useAiAssistant.ts` schema 扩展、`AppAiChatMessages.vue` 渲染 abstain marker / source label / follow-up chips、新建 `AppAiChatFollowUps.vue`、chat-service `orchestrator.service.ts` 透传、listing-chatbot `kafka_writer.py` payload 字段 + worker prompt。
 
@@ -173,21 +171,16 @@ State / Trigger / Key elements 完整定义见 `chat-design-system.md §4`。本
 
 `chipAbout`、`errorBusy`、`showMore`、`showLess` 已经足够口语化,**不动**。其他 `errorTtft` / `errorIdle` / `errorRound` / `errorTooLong` / `errorAuthExpired` / `errorCancelled` / `errorMcpError` / `errorInference` 语气调整可后续 sprint 跟进,**不阻塞本次 v2 改造**。
 
-### 6.3 新增 key(纯前端用)
+### 6.3 新增 key
 
-| Key | EN | ZH | 用途 |
-|---|---|---|---|
-| `newChat` | Start a new conversation | 开启新对话 | New Chat 按钮 aria-label(§7.2) |
-
-> 设计文档原本还列了 `noResultGeneric`、`abstainMarker`、`groundingFromListing/FromMarket/GeneralAdvice/Assumption`、`stillCurious` 等 key,**均依赖服务端字段或数据源,移出本文范围**(见 proposals)。
+无。设计文档原本列的 `noResultGeneric`、`abstainMarker`、`groundingFromListing/FromMarket/GeneralAdvice/Assumption`、`stillCurious` 等 key **均依赖服务端字段或数据源,移出本文范围**(见 proposals)。
 
 ### 6.4 操作清单(单次 PR)
 
 `en.ts` / `zh.ts` 内 `aiChat` 命名空间:
 1. 删 6 旧 key + 加 6 重命名 key + 填新 EN/ZH 值(§6.1)
 2. 改 2 个 key 的值:`errorSafetyBlocked`、`errorGeneric`(§6.2)
-3. 加 1 新 key:`newChat`(§6.3)— 可推到 New Chat 按钮 PR 一起
-4. 同步消费点(见 §6.1 末列)+ JSDoc 字面串(`common/environments/types.ts:73,77,78`)
+3. 同步消费点(见 §6.1 末列)+ JSDoc 字面串(`common/environments/types.ts:73,77,78`)
 
 > **必须单 commit / 单 PR** — i18n 与消费点错位会让 UI 显示 raw key(`aiChat.entryLabel`)。CI 加 i18n key 双向引用校验防呆。
 
@@ -218,33 +211,6 @@ const chips = [
 ### 7.2 `AppAiChatSheet.vue` — 容器
 
 **P0**: 把 `:40` 的 `t('aiChat.entryLabel') + '...'` 改成 `t('aiChat.askAnything') + '...'`。
-
-**P2 新增 — New Chat 按钮**:
-- 位置: `.drag-bar` 容器内右侧或紧贴 grabber 右上;32×32 命中区
-- 图标: spec 指定 Lucide `message-circle-plus`,项目用 font-awesome 体系,可临时用 `fa-solid fa-comment-medical` 或 `fa-regular fa-pen-to-square`,**引入 Lucide 单独立项**(见 §10 视觉差异)
-- aria-label: `t('aiChat.newChat')`
-- 可见性: `v-if="hasMessages"`(`useAiAssistant` 已 expose,无需新增 state)
-- 行为: 调 `useAiAssistant` 已暴露的 `setMessages([])`(`useAiAssistant.ts:350`)+ `snap.value = 'half'` + `input.value = ''`
-- GA: `gaService.event('ai_chat_new_conversation')`
-
-`AppAiChatSheet.vue` setup 需新增 `setMessages` 的解构(:78-89 区域):
-
-```ts
-const {
-  messages, input, isLoading, loadingDuration, progressLabel,
-  hasMessages, handleSubmit, stop,
-  setMessages, // <- 新增
-} = useAiAssistant({ initialContext: { listing_id: props.listingId } })
-
-const onNewChat = () => {
-  gaService.event('ai_chat_new_conversation')
-  setMessages([])
-  snap.value = 'half'
-  input.value = ''
-}
-```
-
-> New Chat 按钮**完全纯前端**:`setMessages` 已经 expose,行为只在 UI 内闭合,不依赖任何 SSE / Kafka / worker 字段。
 
 ### 7.3 `AppAiChatMessages.vue` — 消息列表(本文范围内只动加载文案)
 
@@ -283,7 +249,6 @@ const onNewChat = () => {
 | `ai_chat_chip_click` | 已有 | hero chip 点击 | chip 文案(新文案后自动跟随) |
 | `ai_chat_send` | 已有 | 提交输入 | — |
 | `ai_chat_stop` | 已有 | 点 stop | — |
-| `ai_chat_new_conversation` | **新增 (P2)** | 头部 New Chat 按钮 | — |
 
 > 原计划新增的 `ai_chat_follow_up_click`、`ai_chat_grounding_seen` 依赖服务端字段,移出本文。
 
@@ -301,8 +266,7 @@ const onNewChat = () => {
 
 ### P2 — 视情况再做
 
-4. **New Chat 按钮**(§7.2)— 实现简单,但用户研究还没确认是否值得放在头部,且需要确认与现有 drag-grabber 的视觉协调
-5. **视觉差异修复**(radius `16→20`、尾角 `2→4`、scope-pill 背景、Lucide 图标体系)— 视觉对齐通常单独立项,见 §10
+4. **视觉差异修复**(radius `16→20`、尾角 `2→4`、scope-pill 背景、Lucide 图标体系)— 视觉对齐通常单独立项,见 §10
 
 ### 移出范围(等服务端配合后单独立项)
 
@@ -334,7 +298,6 @@ const onNewChat = () => {
 | 阶段 | 用户可见的变化 | 观测信号 |
 |---|---|---|
 | P0 ship 后 | 首次进入看到 "Ask anything about this home" / "问问这套房子的任何问题"; chip 变成 1 通用 + 1 对比 + 1 谨慎; loading 文字变 "Thinking…" | GA `ai_chat_chip_click` 出现 `chipCompare` / `chipCautions` 的点击 |
-| New Chat 按钮上线后 | 有对话历史时 sheet 头部右上出现按钮,点击清空回到 hero | GA `ai_chat_new_conversation` 事件出现 |
 
 ---
 
