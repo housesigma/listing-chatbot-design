@@ -16,7 +16,7 @@
 > 2. The Listing Chatbot v2 NLQ&A positioning proposal (listing-specific)
 >
 > On 2026-05-14 the **system-design portion was extracted** into
-> [`../pencil-poc/housesigma-chat-design-system.md`](../pencil-poc/housesigma-chat-design-system.md)
+> [`./housesigma-chat-design-system.md`](./housesigma-chat-design-system.md)
 > as a sister spec to `housesigma-design-system.md`. **That document is
 > now the authoritative reference** for: design tokens, 12-state state
 > machine, 15+ chat components, composition rules — reusable across any
@@ -36,7 +36,7 @@ This proposal documents the Listing Chatbot's evolution from a
 **fact-retrieval surface** to a **listing-aware natural-language Q&A
 conversation partner**. It depends on, but does not redefine, the Chat
 Design System (sister DS) — see
-[`../pencil-poc/housesigma-chat-design-system.md`](../pencil-poc/housesigma-chat-design-system.md).
+[`./housesigma-chat-design-system.md`](./housesigma-chat-design-system.md).
 
 This document does two things:
 
@@ -765,7 +765,7 @@ trends up; abandonment after first answer trends down.
 
 ### Sibling specs
 
-- `../pencil-poc/housesigma-chat-design-system.md` — **Chat Design
+- `./housesigma-chat-design-system.md` — **Chat Design
   System** (sister spec to base DS, lives in the pencil-poc repo,
   extracted from this document 2026-05-14). Authoritative source for:
   design tokens (§2), 12-state state machine (§4), 15+ chat components
