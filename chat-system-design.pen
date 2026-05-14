@@ -6691,7 +6691,7 @@
           "y": 40,
           "name": "variantLabelC",
           "fill": "#222222",
-          "content": "Variant C — Chat-First (per conversational-components.md)",
+          "content": "Variant C — Chat-First (per chat-design-system.md)",
           "fontFamily": "Open Sans",
           "fontSize": 22,
           "fontWeight": "700"

@@ -15042,7 +15042,7 @@
       "id": "c7EJq",
       "x": -907,
       "y": 9300,
-      "name": "Frame 4A — Full v2 Vision (per chat-system-design.md §5 + proposals)",
+      "name": "Frame 4A — Full v2 Vision (per chat-design-system.md §5 + v2-nlqa.md)",
       "clip": true,
       "width": 3694,
       "height": 2950,
@@ -21777,7 +21777,7 @@
           "y": 40,
           "name": "variantLabelC",
           "fill": "#222222",
-          "content": "Frame 4A — Full v2 Vision (per chat-system-design.md §5 + proposals)",
+          "content": "Frame 4A — Full v2 Vision (per chat-design-system.md §5 + v2-nlqa.md)",
           "fontFamily": "Open Sans",
           "fontSize": 22,
           "fontWeight": "700"
