@@ -15556,6 +15556,30 @@
                       "fill": "$A:--border",
                       "width": 40,
                       "height": 4
+                    },
+                    {
+                      "type": "frame",
+                      "id": "o6FXp",
+                      "x": 350,
+                      "y": 0,
+                      "name": "newChatBtn",
+                      "width": 28,
+                      "height": 28,
+                      "layout": "none",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "tTStt",
+                          "x": 6,
+                          "y": 6,
+                          "name": "newChatIcon",
+                          "width": 16,
+                          "height": 16,
+                          "iconFontName": "note-pencil",
+                          "iconFontFamily": "phosphor",
+                          "fill": "#666666"
+                        }
+                      ]
                     }
                   ]
                 },
@@ -16087,6 +16111,30 @@
                       "fill": "$A:--border",
                       "width": 40,
                       "height": 4
+                    },
+                    {
+                      "type": "frame",
+                      "id": "S2Q0y",
+                      "x": 350,
+                      "y": 0,
+                      "name": "newChatBtn",
+                      "width": 28,
+                      "height": 28,
+                      "layout": "none",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "P8Rewe",
+                          "x": 6,
+                          "y": 6,
+                          "name": "newChatIcon",
+                          "width": 16,
+                          "height": 16,
+                          "iconFontName": "note-pencil",
+                          "iconFontFamily": "phosphor",
+                          "fill": "#666666"
+                        }
+                      ]
                     }
                   ]
                 },
@@ -16525,6 +16573,30 @@
                       "fill": "$A:--border",
                       "width": 40,
                       "height": 4
+                    },
+                    {
+                      "type": "frame",
+                      "id": "k5Ljy",
+                      "x": 350,
+                      "y": 0,
+                      "name": "newChatBtn",
+                      "width": 28,
+                      "height": 28,
+                      "layout": "none",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "F8hpE",
+                          "x": 6,
+                          "y": 6,
+                          "name": "newChatIcon",
+                          "width": 16,
+                          "height": 16,
+                          "iconFontName": "note-pencil",
+                          "iconFontFamily": "phosphor",
+                          "fill": "#666666"
+                        }
+                      ]
                     }
                   ]
                 },
@@ -18434,6 +18506,30 @@
                       "fill": "$A:--border",
                       "width": 40,
                       "height": 4
+                    },
+                    {
+                      "type": "frame",
+                      "id": "ffWwC",
+                      "x": 350,
+                      "y": 0,
+                      "name": "newChatBtn",
+                      "width": 28,
+                      "height": 28,
+                      "layout": "none",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "C9lKA",
+                          "x": 6,
+                          "y": 6,
+                          "name": "newChatIcon",
+                          "width": 16,
+                          "height": 16,
+                          "iconFontName": "note-pencil",
+                          "iconFontFamily": "phosphor",
+                          "fill": "#666666"
+                        }
+                      ]
                     }
                   ]
                 },
@@ -18847,6 +18943,30 @@
                       "fill": "$A:--border",
                       "width": 40,
                       "height": 4
+                    },
+                    {
+                      "type": "frame",
+                      "id": "CkS1y",
+                      "x": 350,
+                      "y": 0,
+                      "name": "newChatBtn",
+                      "width": 28,
+                      "height": 28,
+                      "layout": "none",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "V5reoZ",
+                          "x": 6,
+                          "y": 6,
+                          "name": "newChatIcon",
+                          "width": 16,
+                          "height": 16,
+                          "iconFontName": "note-pencil",
+                          "iconFontFamily": "phosphor",
+                          "fill": "#666666"
+                        }
+                      ]
                     }
                   ]
                 },
@@ -19308,6 +19428,30 @@
                       "fill": "$A:--border",
                       "width": 40,
                       "height": 4
+                    },
+                    {
+                      "type": "frame",
+                      "id": "pdVri",
+                      "x": 350,
+                      "y": 0,
+                      "name": "newChatBtn",
+                      "width": 28,
+                      "height": 28,
+                      "layout": "none",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "VOaIE",
+                          "x": 6,
+                          "y": 6,
+                          "name": "newChatIcon",
+                          "width": 16,
+                          "height": 16,
+                          "iconFontName": "note-pencil",
+                          "iconFontFamily": "phosphor",
+                          "fill": "#666666"
+                        }
+                      ]
                     }
                   ]
                 },
@@ -20807,6 +20951,30 @@
                       "fill": "$A:--border",
                       "width": 40,
                       "height": 4
+                    },
+                    {
+                      "type": "frame",
+                      "id": "IzgJp",
+                      "x": 350,
+                      "y": 0,
+                      "name": "newChatBtn",
+                      "width": 28,
+                      "height": 28,
+                      "layout": "none",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "vJrLV",
+                          "x": 6,
+                          "y": 6,
+                          "name": "newChatIcon",
+                          "width": 16,
+                          "height": 16,
+                          "iconFontName": "note-pencil",
+                          "iconFontFamily": "phosphor",
+                          "fill": "#666666"
+                        }
+                      ]
                     }
                   ]
                 },
@@ -21222,6 +21390,30 @@
                       "fill": "$A:--border",
                       "width": 40,
                       "height": 4
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Z4idA",
+                      "x": 350,
+                      "y": 0,
+                      "name": "newChatBtn",
+                      "width": 28,
+                      "height": 28,
+                      "layout": "none",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "o02Lc",
+                          "x": 6,
+                          "y": 6,
+                          "name": "newChatIcon",
+                          "width": 16,
+                          "height": 16,
+                          "iconFontName": "note-pencil",
+                          "iconFontFamily": "phosphor",
+                          "fill": "#666666"
+                        }
+                      ]
                     }
                   ]
                 },
@@ -22303,6 +22495,30 @@
                       "fill": "$A:--border",
                       "width": 40,
                       "height": 4
+                    },
+                    {
+                      "type": "frame",
+                      "id": "hahJi",
+                      "x": 350,
+                      "y": 0,
+                      "name": "newChatBtn",
+                      "width": 28,
+                      "height": 28,
+                      "layout": "none",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "B9I1K0",
+                          "x": 6,
+                          "y": 6,
+                          "name": "newChatIcon",
+                          "width": 16,
+                          "height": 16,
+                          "iconFontName": "note-pencil",
+                          "iconFontFamily": "phosphor",
+                          "fill": "#666666"
+                        }
+                      ]
                     }
                   ]
                 },
@@ -22711,6 +22927,30 @@
                       "fill": "$A:--border",
                       "width": 40,
                       "height": 4
+                    },
+                    {
+                      "type": "frame",
+                      "id": "xssh6",
+                      "x": 350,
+                      "y": 0,
+                      "name": "newChatBtn",
+                      "width": 28,
+                      "height": 28,
+                      "layout": "none",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "v6bcLN",
+                          "x": 6,
+                          "y": 6,
+                          "name": "newChatIcon",
+                          "width": 16,
+                          "height": 16,
+                          "iconFontName": "note-pencil",
+                          "iconFontFamily": "phosphor",
+                          "fill": "#666666"
+                        }
+                      ]
                     }
                   ]
                 },
@@ -23149,6 +23389,30 @@
                       "fill": "$A:--border",
                       "width": 40,
                       "height": 4
+                    },
+                    {
+                      "type": "frame",
+                      "id": "r0W8kt",
+                      "x": 350,
+                      "y": 0,
+                      "name": "newChatBtn",
+                      "width": 28,
+                      "height": 28,
+                      "layout": "none",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "eVjLx",
+                          "x": 6,
+                          "y": 6,
+                          "name": "newChatIcon",
+                          "width": 16,
+                          "height": 16,
+                          "iconFontName": "note-pencil",
+                          "iconFontFamily": "phosphor",
+                          "fill": "#666666"
+                        }
+                      ]
                     }
                   ]
                 },
@@ -25058,6 +25322,30 @@
                       "fill": "$A:--border",
                       "width": 40,
                       "height": 4
+                    },
+                    {
+                      "type": "frame",
+                      "id": "F5TM6B",
+                      "x": 350,
+                      "y": 0,
+                      "name": "newChatBtn",
+                      "width": 28,
+                      "height": 28,
+                      "layout": "none",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "gZCt0",
+                          "x": 6,
+                          "y": 6,
+                          "name": "newChatIcon",
+                          "width": 16,
+                          "height": 16,
+                          "iconFontName": "note-pencil",
+                          "iconFontFamily": "phosphor",
+                          "fill": "#666666"
+                        }
+                      ]
                     }
                   ]
                 },
@@ -25471,6 +25759,30 @@
                       "fill": "$A:--border",
                       "width": 40,
                       "height": 4
+                    },
+                    {
+                      "type": "frame",
+                      "id": "e9KDZ",
+                      "x": 350,
+                      "y": 0,
+                      "name": "newChatBtn",
+                      "width": 28,
+                      "height": 28,
+                      "layout": "none",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "zcVS3",
+                          "x": 6,
+                          "y": 6,
+                          "name": "newChatIcon",
+                          "width": 16,
+                          "height": 16,
+                          "iconFontName": "note-pencil",
+                          "iconFontFamily": "phosphor",
+                          "fill": "#666666"
+                        }
+                      ]
                     }
                   ]
                 },
@@ -25932,6 +26244,30 @@
                       "fill": "$A:--border",
                       "width": 40,
                       "height": 4
+                    },
+                    {
+                      "type": "frame",
+                      "id": "BuzOq",
+                      "x": 350,
+                      "y": 0,
+                      "name": "newChatBtn",
+                      "width": 28,
+                      "height": 28,
+                      "layout": "none",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "UgBTV",
+                          "x": 6,
+                          "y": 6,
+                          "name": "newChatIcon",
+                          "width": 16,
+                          "height": 16,
+                          "iconFontName": "note-pencil",
+                          "iconFontFamily": "phosphor",
+                          "fill": "#666666"
+                        }
+                      ]
                     }
                   ]
                 },
@@ -27431,6 +27767,30 @@
                       "fill": "$A:--border",
                       "width": 40,
                       "height": 4
+                    },
+                    {
+                      "type": "frame",
+                      "id": "IPiJI",
+                      "x": 350,
+                      "y": 0,
+                      "name": "newChatBtn",
+                      "width": 28,
+                      "height": 28,
+                      "layout": "none",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "q6vYL8",
+                          "x": 6,
+                          "y": 6,
+                          "name": "newChatIcon",
+                          "width": 16,
+                          "height": 16,
+                          "iconFontName": "note-pencil",
+                          "iconFontFamily": "phosphor",
+                          "fill": "#666666"
+                        }
+                      ]
                     }
                   ]
                 },
@@ -27846,6 +28206,30 @@
                       "fill": "$A:--border",
                       "width": 40,
                       "height": 4
+                    },
+                    {
+                      "type": "frame",
+                      "id": "mBRf5",
+                      "x": 350,
+                      "y": 0,
+                      "name": "newChatBtn",
+                      "width": 28,
+                      "height": 28,
+                      "layout": "none",
+                      "children": [
+                        {
+                          "type": "icon_font",
+                          "id": "qeKh9",
+                          "x": 6,
+                          "y": 6,
+                          "name": "newChatIcon",
+                          "width": 16,
+                          "height": 16,
+                          "iconFontName": "note-pencil",
+                          "iconFontFamily": "phosphor",
+                          "fill": "#666666"
+                        }
+                      ]
                     }
                   ]
                 },
