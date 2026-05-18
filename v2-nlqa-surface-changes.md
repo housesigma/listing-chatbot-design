@@ -1,6 +1,6 @@
 # Listing Chatbot v2 NLQ&A — Surface Changes
 
-> **范围**: v2 NLQ&A surface 层**可独立落地、零跨仓依赖**的改动(文案 / 入口 / chip 重组 / coachmark / loading 文案 / 错误文案)。配套 [`v2-nlqa-proposals.md`](./v2-nlqa-proposals.md) 覆盖需服务端配合的 7 个提案。
+> **范围**: v2 NLQ&A surface 层**可独立落地、零跨仓依赖**的改动(文案 / 入口 / chip 重组 / coachmark / loading 文案 / 错误文案)。配套 [`v2-nlqa-proposals.md`](./v2-nlqa-proposals.md) 覆盖需服务端配合的提案。
 >
 > **上游权威源**(同目录):
 > - [`v2-nlqa.md`](v2-nlqa.md) — Positioning Shift、Variants、Copy 表、UI patterns、Prompt direction、Risk
@@ -8,37 +8,39 @@
 >
 > **版本轴**: v1 / v2 = 设计 positioning 版本,不是代码版本号。
 >
-> **明确移出范围**(等服务端配合,见 proposals 对应章节):Abstain UI(§2)/ Abstain redirect prompt(§4)/ Source Label(§5)/ Follow-up Chips(§6)/ Stage-aware loading(§3)/ Idle re-engage(§7)/ Confidence Indicator(§8 deferred)
+> **明确移出范围**(等服务端配合,见 proposals 对应章节):Abstain UI / Abstain redirect prompt / Source Label / Follow-up Chips / Idle re-engage / Confidence Indicator(deferred)。Stage-aware loading **已在 master / `release/v3.3.0` 端到端落地**(chat-service commit `c8fc211`),本文 i18n 改名后会作为 stage 文案到达前的 fallback
 >
-> **代码基线**(2026-05-14):
+> **代码基线**(2026-05-15):
 >
 > | 仓库 | 分支 | HEAD |
 > |---|---|---|
-> | `web-hybrid` | `master` | `ca95f7ba3` |
+> | `web-hybrid` | `master` | `30a3ab86c` |
 > | `listing-chatbot` | `main` | `e2426ac` |
-> | `realagent-services` | `feature/PLAN-5931-mcp-client-test` | `bf57453` |
-> | `prototypes/listing-chatbot-design` | `main` | `83f5e65` |
+> | `realagent-services` | `master` | `9df6f56` |
+> | `prototypes/listing-chatbot-design` | `main` | `ad56765` |
+>
+> **基线选择说明**:`realagent-services` 上一版文档误用 `feature/PLAN-5931-mcp-client-test` (HEAD `bf57453`, 2026-04-24) 作为基线 —— 该分支是 ci-only 的空壳分叉点(自有 0 commit,落后 master 31 commit),导致基于它做代码调查会得出与线上完全脱节的结论(典型如 stage-aware 透传:feature 视角是"gateway 没透传",master 视角是"`c8fc211` 早已端到端落地")。本次基线统一改回 `master`,`release/v3.3.0` 是当前线上版本,与 master 各差 1 commit。`listing-chatbot-design` 显式以 `main` 为主(remote HEAD 历史遗留指向 `entire/checkpoints/v1`,不作为基线)。
 
 ---
 
-## 1. 设计原则(继承自 `chat-design-system.md` §2)
+## 设计原则(继承自 `chat-design-system.md`)
 
 落地必须遵守的 6 条原则。前 5 条本文都体现,第 6 条作为**已决定不动**的项明确:
 
 | 原则 | 在本文的体现 |
 |---|---|
-| **Conversational over transactional** | 沿用现有 chat-radius / pill / 圆形 send 体系,视觉壳子保持 Variant C(§10 视觉差异表只标待对齐的小幅 deltas) |
+| **Conversational over transactional** | 沿用现有 chat-radius / pill / 圆形 send 体系,视觉壳子保持 Variant C,只标出待对齐的小幅 deltas |
 | **Assistant-active voice** | "Thinking…" 替 "Looking up…",errorGeneric 改 "Something tripped me up. Try again?" |
 | **Redirect, don't refuse** | errorSafetyBlocked 改 "Let's stay focused on this listing — happy to help with anything about the home" |
-| **Trust through transparency** | Source/Grounding Label 是 proposals §5 范围,本文等服务端 |
-| **Multi-turn by default** | Follow-up Chips / Idle re-engagement 在 proposals §6/§7,本文不做 |
-| **Brand-identifiable AI mark**(**已决项**) | Phosphor `star-four` 是 AI 标识的**一次性图标家族例外**(`chat-design-system.md §5.6`)。`AppAiChatHero.vue:4` 当前用 font-awesome `fa-sparkle` 是历史遗留,**视觉等效但非 spec 钦定**。本文不改(留 P2 视觉对齐,见 §10),实施者**不要误以为这是开放讨论项** |
+| **Trust through transparency** | Source/Grounding Label 是 proposals 范围,本文等服务端 |
+| **Multi-turn by default** | Follow-up Chips / Idle re-engagement 在 proposals,本文不做 |
+| **Brand-identifiable AI mark**(**已决项**) | Phosphor `star-four` 是 AI 标识的**一次性图标家族例外**(见 `chat-design-system.md` 对应章节)。Hero 当前用 font-awesome `fa-sparkle` 是历史遗留,**视觉等效但非 spec 钦定**。本文不改(留 P2 视觉对齐),实施者**不要误以为这是开放讨论项** |
 
 ---
 
-## 2. 设计意图回顾
+## 设计意图回顾
 
-### 2.1 v1 → v2 心智模型差异
+### v1 → v2 心智模型差异
 
 | 维度 | v1 lookup (今天) | v2 NLQ&A (目标) |
 |---|---|---|
@@ -47,9 +49,9 @@
 | 文案语气 | 被动系统化 (Looking up…) | 主动助手化 (Thinking…) |
 | 兜底方式 | 「信息不在房源中」 | 「这角度回答不了 — 帮你换个角度?」 |
 
-### 2.2 v1 → v2 能力边界扩展
+### v1 → v2 能力边界扩展
 
-v1 lookup 时代**明确不做**的事(historical scope boundary,v2-nlqa.md §2 演进对照):
+v1 lookup 时代**明确不做**的事(historical scope boundary):
 - Comparing this listing to other properties
 - Mortgage or affordability calculations
 - Market trend analysis
@@ -58,53 +60,53 @@ v1 lookup 时代**明确不做**的事(historical scope boundary,v2-nlqa.md §2 
 
 v2 把其中 **2 项从"能力存在但用户不可触达"转为"一级入口"**:
 
-> **重要事实校正**: Comparing / Market context **不是 v2 新建的能力**。worker 端 `listing-chatbot/src/listing_chatbot/reference/data_fetcher.py:22-50` 注册的 23 个 MCP 工具里,**已有 9 个 market / comparison 类工具**长期在产线:`get_similar_listings`、`get_nearby_sold_listings`、`get_nearby_for_sale_listings`、`get_nearby_for_rent_listings`、`get_nearby_leased_listings`、`get_community_market_stats`、`get_municipality_market_overview`、`get_property_analytics`、`get_neighbourhood_demographics`。STP(`mcp/stp_context.py:349`)也把 "What have similar homes nearby recently sold for?" 列为 in-scope 高相关示例。eval 场景(`eval/scenarios/citation_selection/comparables_market_position.yaml`)也持续覆盖。**LLM 没有充分用是因为 v1 system prompt 写的是 "answer using listing data only" 把工具调用压着了** —— v2-nlqa.md §11 明确写了要解锁这块。
+> **重要事实校正**: Comparing / Market context **不是 v2 新建的能力**。worker 端 data_fetcher 已经长期注册着 9 个 market / comparison 类 MCP 工具(覆盖 similar listings、nearby sold / for-sale / for-rent / leased listings、community market stats、municipality market overview、property analytics、neighbourhood demographics)。STP context 也把「附近相似房源最近成交价」这类问题列为 in-scope 高相关示例,eval 场景中持续有 comparables / market position 覆盖。**LLM 没有充分用是因为 v1 system prompt 写的是 "answer using listing data only" 把工具调用压着了** —— `v2-nlqa.md` 明确写了要解锁这块。
 
 v2 的 2 项变化都是 **surface + prompt 层** 的:
 
-- **Comparing** → chip 2 从 v1 的 "How long has it been listed?" 换成 v2 的 "How does it compare to nearby listings?"(`chipCompare`),把已有能力 promote 到一级入口
-- **Market context** → System prompt 解锁推理(proposals §4 / §12.1 第 2 条)+ Source Label `from_market_context`(proposals §5)让用户看到答案"用了市场数据"
+- **Comparing** → chip 2 从 v1 的 "How long has it been listed?" 换成 v2 的 "How does it compare to nearby listings?"(对应 `chipCompare` key),把已有能力 promote 到一级入口
+- **Market context** → System prompt 解锁推理(proposals 范围)+ Source Label `from_market_context`(proposals 范围)让用户看到答案"用了市场数据"
 
 v2 **仍不做**的:Mortgage、Agent recommendations、Booking — 这些由 `safety_blocked` 错误码兜底并 redirect 回主题(`aiChat.errorSafetyBlocked` 已改语气)。
 
-### 2.3 Variant 探索史
+### Variant 探索史
 
-详见 `v2-nlqa.md §3`。要点:Variant B(强套 base DS)已否决 — base DS 适配 listings / filters / forms 但不适配 chat,Chat Design System 在 chat surface 内压过 base DS。Variant C(Chat-First)是 canonical,拆分为 4A(全量 v2) + 4B(本文落地版)。
+详见 `v2-nlqa.md`。要点:Variant B(强套 base DS)已否决 — base DS 适配 listings / filters / forms 但不适配 chat,Chat Design System 在 chat surface 内压过 base DS。Variant C(Chat-First)是 canonical,拆分为 4A(全量 v2) + 4B(本文落地版)。
 
-### 2.4 本文覆盖的子集
+### 本文覆盖的子集
 
 v2 心智模型升级的"**入口面**" — 用户在打开 sheet、看 hero、敲第一个问题、等回答的几秒钟内,所有视觉文案语气从 lookup 转 NLQ&A。这部分是 v2 心智模型生效与否的**第一印象层**,且完全由 web-hybrid 自主决定,不需要任何服务端字段或数据透传。
 
-**信任层 / 对话延展层**(Source Label、Follow-up Chips、Abstain UI、Stage-aware 进度)在服务端字段就绪后单独立项落地,见 proposals。
+**信任层 / 对话延展层**(Source Label、Follow-up Chips、Abstain UI)在服务端字段就绪后单独立项落地,见 proposals。**Stage-aware 进度文案已端到端上线**(chat-service master commit `c8fc211`,在 `release/v3.3.0`),本文范围内只需 i18n 改名(`lookingUp` → `thinking`),改名后会作为 stage 文案到达前的 fallback。
 
 ---
 
-## 3. 12-state 状态机全景
+## 12-state 状态机全景
 
-State / Trigger / Key elements 完整定义见 `chat-design-system.md §4`。本表给出**每个 state 上本文 / proposals 谁负责**,避免来回翻:
+State / Trigger / Key elements 完整定义见 `chat-design-system.md`。本表给出**每个 state 上本文 / proposals 谁负责**,避免来回翻:
 
 | # | State | 本文(surface) | 相关 proposals |
 |---|---|---|---|
 | 1 | `trigger` | — | — |
-| 2 | `hint` | §6.5 文案改 `askAboutThis` | — |
-| 3 | `halfsnap` | §6.1 hero 文案 + chips、§6.2 placeholder | — |
-| 4 | `entry_hero` | §6.1、§6.2 | — |
-| 5 | `retrieving` | §6.3 加载文案 `thinking/stillThinking` | proposals §3 stage-aware 文案 |
+| 2 | `hint` | 文案改 `askAboutThis` | — |
+| 3 | `halfsnap` | hero 文案 + chips、placeholder | — |
+| 4 | `entry_hero` | hero 文案 + chips、placeholder | — |
+| 5 | `retrieving` | 加载文案 `thinking` / `stillThinking`(stage 文案到达前的 fallback) | Stage-aware 文案已在线上(master `c8fc211`)逐 stage 替换 fallback,本文不动 |
 | 6 | `streaming` | — | — |
 | 7 | `stopped` | — | — |
-| 8 | `result` | — | proposals §5 Source Label、§6 Follow-up Chips |
+| 8 | `result` | — | proposals Source Label、Follow-up Chips |
 | 9 | `show_more` | — | — |
-| 10 | `abstained` | — | proposals §2 Abstain UI、§4 abstain redirect 语气 |
-| 11 | `noresult` | §6.6 errorGeneric 文案改值 | — |
-| 12 | `error` | §6.6 errorSafetyBlocked / errorGeneric 改值 | — |
+| 10 | `abstained` | — | proposals Abstain UI、abstain redirect 语气 |
+| 11 | `noresult` | errorGeneric 文案改值 | — |
+| 12 | `error` | errorSafetyBlocked / errorGeneric 改值 | — |
 
-**对实施的启示**:本文 P0 改动主要落在 #3/#4/#5/#12 上。其余 state 在本文范围内**不动结构、不动视觉**,只有 #2/#10/#11/#12 的部分文案随 i18n 改值。
+**对实施的启示**:本文 P0 改动主要落在 halfsnap / entry_hero / retrieving / error 这几个 state 上。其余 state 在本文范围内**不动结构、不动视觉**,只有 hint / abstained / noresult / error 的部分文案随 i18n 改值。
 
 ---
 
-## 4. Component Composition Rules
+## Component Composition Rules
 
-详见 `chat-design-system.md §6`。本文对实施的启示:
+详见 `chat-design-system.md`。本文对实施的启示:
 
 - **Chat surface = sheet 容器内部**。sheet 内全部用 chat token(软圆角 16-24、pill 输入、圆形 send、`--muted` 灰底);sheet 外(app header、scrim 下 listing)跟 base DS
 - **AI FAB 例外**:FAB 本身在 Bottom Action Bar,跟 base DS 与兄弟按钮 cohesion;FAB 触发的 hint popup 虽挂在 FAB wrapper 上,**算 chat surface**,用 chat token
@@ -112,9 +114,9 @@ State / Trigger / Key elements 完整定义见 `chat-design-system.md §4`。本
 
 ---
 
-## 5. 改动总览
+## 改动总览
 
-### 5.1 按区块视图
+### 按区块视图
 
 | 区块 | 影响文件 | 优先级 |
 |---|---|---|
@@ -126,41 +128,41 @@ State / Trigger / Key elements 完整定义见 `chat-design-system.md §4`。本
 | 错误文案语气微调 | `en.ts` / `zh.ts` | P0 |
 | 视觉对齐(单独立项) | 多个 | P2 |
 
-### 5.2 按文件视图(对齐 `v2-nlqa.md §8`)
+### 按文件视图
 
-本文实际触动的文件(细节见 §6/§7):
+本文实际触动的文件:
 
 | 文件 | 改动 |
 |---|---|
-| `packages/common/i18n/translation/{en,zh}.ts:965-998 / 904-926` | 删 6 旧 key + 加 6 重命名 + 改 2 错误文案值 |
-| `packages/app/src/pages/listing/components/AppAiChatHero.vue:5, 46, 47` | `entryLabel` → `askAnything`;chips 数组改 key |
-| `packages/app/src/pages/listing/components/AppAiChatSheet.vue:40` | placeholder key 改 |
-| `packages/app/src/pages/listing/components/AppAiChatMessages.vue:124-125` | 加载文案 key 切换 |
-| `packages/app/src/pages/listing/components/AppAiHintPopup.vue:4` | `hintTitle` → `askAboutThis` |
-| `packages/common/environments/types.ts:73, 77, 78` + `useAiAssistant.ts:78` | JSDoc 字面引用同步(纯文档串) |
+| `packages/common/i18n/translation/en.ts` 与 `zh.ts` 中 `aiChat` 命名空间 | 删 6 个旧 key、新增对应的 6 个重命名 key、调整 2 条错误文案的文案值 |
+| `packages/app/src/pages/listing/components/AppAiChatHero.vue` | hero headline 渲染用的 i18n key 切换、chips 数据数组中两个非通用 chip 的 key 替换 |
+| `packages/app/src/pages/listing/components/AppAiChatSheet.vue` | 透传给 composer 的 placeholder 文案的 i18n key 切换 |
+| `packages/app/src/pages/listing/components/AppAiChatMessages.vue` | 加载状态文案(常规态 / 长等待态两段)的 i18n key 切换 |
+| `packages/app/src/pages/listing/components/AppAiHintPopup.vue` | coachmark 标题渲染用的 i18n key 切换 |
+| `packages/common/environments/types.ts` 与 `packages/hook/ai/useAiAssistant.ts` | JSDoc 注释中残留的旧 key 字面引用同步(纯文档串) |
 
 **proposals 文档配套需改文件**(本文不动,见 proposals 各章节):`useChatStream.ts` / `useAiAssistant.ts` schema 扩展、`AppAiChatMessages.vue` 渲染 abstain marker / source label / follow-up chips、新建 `AppAiChatFollowUps.vue`、chat-service `orchestrator.service.ts` 透传、listing-chatbot `kafka_writer.py` payload 字段 + worker prompt。
 
 ---
 
-## 6. i18n 改动清单
+## i18n 改动清单
 
-**文件**: `packages/common/i18n/translation/en.ts:965-998` + `zh.ts:904-926`。`aiChat.*` 命名空间共 17 个 key,5 处运行时 `t()` + 1 处 JSDoc 引用(详见 §6.1 同步消费点列)。
+**文件**: `packages/common/i18n/translation/en.ts` + `zh.ts` 的 `aiChat` 命名空间。namespace 下 key 由 5 个组件文件运行时消费,另由错误码映射函数(`useAiAssistant.ts`)用于把 chat-service 错误码翻成本地化字符串;还有两处 JSDoc 注释里有旧 key 名的字面引用。
 
-**策略**: 重命名 + 改值单 PR 一次性做完,对齐 `v2-nlqa.md §7` Copy Changes。`entryLabel` / `lookingUp` / `stillLooking` / `hintTitle` 带 lookup 语义,留下会持续误导,**不分阶段**。
+**策略**: 重命名 + 改值单 PR 一次性做完,对齐 `v2-nlqa.md` 的 Copy Changes。`entryLabel` / `lookingUp` / `stillLooking` / `hintTitle` 带 lookup 语义,留下会持续误导,**不分阶段**。
 
-### 6.1 重命名 + 改值(6 处)
+### 重命名 + 改值(6 处)
 
 | 旧 key | 新 key | EN | ZH | 同步消费点 |
 |---|---|---|---|---|
-| `entryLabel` | `askAnything` | Ask anything about this home | 问问这套房子的任何问题 | `AppAiChatHero.vue:5`、`AppAiChatSheet.vue:40` |
-| `lookingUp` | `thinking` | Thinking… | 思考中… | `AppAiChatMessages.vue:125` |
-| `stillLooking` | `stillThinking` | Still thinking… | 还在思考… | `AppAiChatMessages.vue:124` |
-| `hintTitle` | `askAboutThis` | Ask about this home | 问问这套房子 | `AppAiHintPopup.vue:4` |
-| `chipListed` | `chipCompare` | How does it compare to nearby listings? | 和附近房源比怎么样? | `AppAiChatHero.vue:46` |
-| `chipSchools` | `chipCautions` | Anything I should be cautious about? | 有什么需要注意的地方吗? | `AppAiChatHero.vue:47` |
+| `entryLabel` | `askAnything` | Ask anything about this home | 问问这套房子的任何问题 | hero 标题渲染、sheet 透传给 composer 的 placeholder |
+| `lookingUp` | `thinking` | Thinking | 思考中 | 消息列表 loading 常规态文案（typing-dots 气泡已自带 3 个动画 dot，文案不再带省略号） |
+| `stillLooking` | `stillThinking` | Still thinking | 还在思考 | 消息列表 loading 长等待态文案（同上不带省略号） |
+| `hintTitle` | `askAboutThis` | Ask about this home | 问问这套房子 | coachmark popup 标题 |
+| `chipListed` | `chipCompare` | How does it compare to nearby listings? | 和附近房源比怎么样? | hero chips 数据数组中"对比类"chip |
+| `chipSchools` | `chipCautions` | Anything I should be cautious about? | 有什么需要注意的地方吗? | hero chips 数据数组中"风险提示类"chip |
 
-### 6.2 只改值(key 名保留)
+### 只改值(key 名保留)
 
 少数 key 名本身没有问题,只调整文案语气:
 
@@ -171,77 +173,80 @@ State / Trigger / Key elements 完整定义见 `chat-design-system.md §4`。本
 
 `chipAbout`、`errorBusy`、`showMore`、`showLess` 已经足够口语化,**不动**。其他 `errorTtft` / `errorIdle` / `errorRound` / `errorTooLong` / `errorAuthExpired` / `errorCancelled` / `errorMcpError` / `errorInference` 语气调整可后续 sprint 跟进,**不阻塞本次 v2 改造**。
 
-### 6.3 新增 key
+### 新增 key
 
 无。设计文档原本列的 `noResultGeneric`、`abstainMarker`、`groundingFromListing/FromMarket/GeneralAdvice/Assumption`、`stillCurious` 等 key **均依赖服务端字段或数据源,移出本文范围**(见 proposals)。
 
-### 6.4 操作清单(单次 PR)
+### 操作清单(单次 PR)
 
 `en.ts` / `zh.ts` 内 `aiChat` 命名空间:
-1. 删 6 旧 key + 加 6 重命名 key + 填新 EN/ZH 值(§6.1)
-2. 改 2 个 key 的值:`errorSafetyBlocked`、`errorGeneric`(§6.2)
-3. 同步消费点(见 §6.1 末列)+ JSDoc 字面串(`common/environments/types.ts:73,77,78`)
+1. 删 6 个旧 key、加 6 个重命名 key、填新 EN / ZH 值(见重命名 + 改值表)
+2. 改 2 个 key 的值:`errorSafetyBlocked`、`errorGeneric`(见只改值表)
+3. 同步运行时消费点(5 个组件 + 错误码映射函数)和 JSDoc 字面引用(`common/environments/types.ts` 加载文案 env 标志的 JSDoc、`useAiAssistant.ts` `progressLabel` 状态变量的注释块)
 
-> **必须单 commit / 单 PR** — i18n 与消费点错位会让 UI 显示 raw key(`aiChat.entryLabel`)。CI 加 i18n key 双向引用校验防呆。
+> **必须单 commit / 单 PR** — i18n 与消费点错位会让 UI 显示 raw key(如 `aiChat.entryLabel`)。建议 CI 加 i18n key 双向引用校验防呆。
 
 ---
 
-## 7. 组件级改动
+## 组件级改动
 
-### 7.1 `AppAiChatHero.vue` — 入口 hero
-
-**当前关键代码**(:44-48):
-```ts
-const chips = [
-  { key: 'aiChat.chipAbout' },
-  { key: 'aiChat.chipListed' },
-  { key: 'aiChat.chipSchools' },
-]
-```
+### `AppAiChatHero.vue` — 入口 hero
 
 **改动**:
-- chips 数组中 `chipListed` → `chipCompare`、`chipSchools` → `chipCautions`(`chipAbout` 保留)
-- 模板 `:5` 把 `t('aiChat.entryLabel')` 改成 `t('aiChat.askAnything')`
+- 模板中 hero 标题渲染所用的 i18n key 从 `entryLabel` 切到 `askAnything`,文案随 i18n 自动变化
+- chips 数据数组中,"通用介绍"chip(`chipAbout`)保留;"上市时长"chip 换成"对比类"(`chipListed` → `chipCompare`);"学校"chip 换成"风险提示类"(`chipSchools` → `chipCautions`)
 
 **不动的**:
-- `font-awesome-icon icon="fa-solid fa-sparkle"`(:4)— 是 `chat-design-system.md §5.6` Phosphor `star-four` 的 font-awesome 等效占位,**视觉对齐留 §10**
-- scope-pill 结构、margin-top auto 锚定到底等布局
-- 微视觉差(背景 `#e9f6f7` vs spec `--muted`、字号 40 vs spec 32)留到 P2 视觉对齐 sprint
+- 头部 AI sparkle 图标(font-awesome `fa-sparkle`)— 是 Phosphor `star-four` 的 font-awesome 等效占位,**视觉对齐留到 P2 视觉对齐章节**
+- scope-pill 结构、margin-top auto 让 chips 锚定到 hero 底部的布局
+- 微视觉差(背景 `#e9f6f7` vs spec `--muted`、icon 字号 40 vs spec 32)留到 P2 视觉对齐 sprint
 
-### 7.2 `AppAiChatSheet.vue` — 容器
+### `AppAiChatSheet.vue` — 容器
 
-**P0**: 把 `:40` 的 `t('aiChat.entryLabel') + '...'` 改成 `t('aiChat.askAnything') + '...'`。
+**P0**: composer 的 placeholder prop 由 sheet 透传,把 placeholder 字符串引用的 i18n key 从 `entryLabel` 切到 `askAnything`(末尾追加省略号的拼接逻辑不动)。
 
-### 7.3 `AppAiChatMessages.vue` — 消息列表(本文范围内只动加载文案)
+### `AppAiChatMessages.vue` — 消息列表(本文范围内只动加载文案)
 
-**当前**(:115-126): 三段优先级 = `progressLabel`(env flag) > `stillLooking`(≥10s) > `lookingUp`(default)。**结构不动**,把:
+**当前**: loading 文案有三段优先级 = `progressLabel`(由 env flag `listingChatbotProgressEvent` 控制,服务端 stage 文案到达时显示) > `stillLooking`(等待 ≥10s) > `lookingUp`(默认)。**结构不动**,只把:
 
-- `:124` `t('aiChat.stillLooking')` → `t('aiChat.stillThinking')`
-- `:125` `t('aiChat.lookingUp')` → `t('aiChat.thinking')`
+- 长等待态使用的 i18n key 从 `stillLooking` 切到 `stillThinking`
+- 默认态使用的 i18n key 从 `lookingUp` 切到 `thinking`
 
-同步更新 `useAiAssistant.ts:74-78` `progressLabel` 注释块里残留的 `aiChat.lookingUp / aiChat.stillLooking` 字面引用(注释块横跨 5 行,旧 key 名出现在 :78,只是文档串,不影响运行,但避免误导后续读者)。同样的字面引用还出现在 `common/environments/types.ts:73,77,78`(见 §6 i18n 消费点表第 6 行)。
+同步更新 `useAiAssistant.ts` 中 `progressLabel` 状态变量的注释块,把里面残留的 `aiChat.lookingUp` / `aiChat.stillLooking` 字面引用换成新 key 名(只是文档串,不影响运行,但避免误导后续读者)。同样的字面引用还出现在 `common/environments/types.ts` 中 env 标志的 JSDoc 中(见操作清单同步项)。
 
-> `progressLabel` 这一段(env flag on + 服务端 stage 文案 emit 时显示)**保持原样不动**。底层机制已就位,但当前 worker 未 per-stage 发送 user-friendly 文案,实际跑起来还是落到 thinking / stillThinking — **不影响本文范围**。
+> `progressLabel` 这一段(env flag on + 服务端 stage 文案 emit 时显示)**保持原样不动**。端到端机制已在线上落地,各层证据如下:
+>
+> - **Worker**(listing-chatbot `main`):`src/listing_chatbot/agent/progress.py:51-62` 每 stage emit `ProgressEvent(stage, message, timestamp_ms)`,`message` 来自 `configuration/default.yaml` 的 stage→7 条变体配置(`intent_classification` → "Reading your brief…"、`scope_tool_planning` → "Pulling the right reports…"、`response_rendering` → "Typing up your summary…" 等);`worker/kafka_writer.py:130-159` 完整序列化 `{stage, message, timestamp_ms}` 写 Kafka
+> - **Gateway**(realagent-services `master`,commit `c8fc211` "RR streaming passthrough — progress + reset + telemetry projection",2026-05-11,在 `release/v3.3.0` 已部署):`apps/chat-service/src/services/orchestrator.service.ts` 新增 `case 'progress'` envelope handler,经 `coerceProgressPayload` 校验 + `canWriteChunk` 背压 gate + `writeProgressChunk` sanitise(ANSI / BiDi / 零宽字符 / C0+C1 边界清洗)后,写到 SSE chunk 的 `progress` 字段(同 PR 还新增 `case 'reset'` / `case 'heartbeat'` 透传)
+> - **Frontend**(web-hybrid `master`):`packages/hook/ai/useChatStream.ts:349-365, 418-422` 的 `ProgressFieldPayload { stage, message, timestamp_ms }` 类型 + `payload.progress` 分支消费;`packages/hook/ai/useAiAssistant.ts:237-241` `stream.onProgress` 回调把 `message` 替换式(非累积)赋值给 `progressLabel.value`;`AppAiChatMessages.vue:115-126` 三级 fallback:**flag on + progressLabel 非空 → stage 文案 verbatim;否则 loadingDuration ≥10s → `aiChat.stillThinking`;否则 → `aiChat.thinking`**(stage 文案一旦到过一次就 latch 住,不会回退到 stillThinking,因为 if 在前面拦截);env flag `listingChatbotProgressEvent` 默认 on
+>
+> 因此本文 i18n 改名(`lookingUp` → `thinking`,`stillLooking` → `stillThinking`)**只影响 stage 文案到达前的 fallback**(开头几百 ms 还没收到 worker 第一个 ProgressEvent 时,以及 stage 透传失败的极端情况下)。progressLabel 路径本身不动。
 
 > Abstain marker / Source label / Follow-up chips 的渲染**全部不在本文范围**(见顶部"明确移出范围")。
 
-### 7.4 `AppAiChatComposer.vue` — composer
+### `AppAiChatComposer.vue` — composer
 
-- aria-label `"Stop generating"`(:17)— 保持(v2-nlqa.md §8 明确说)
-- placeholder 通过 `AppAiChatSheet:40` 透传,§7.2 改完 sheet 端引用后,这里自动跟 `askAnything` 更新,本组件 **无需改动**
+- stop 按钮 aria-label("Stop generating")— 保持(`v2-nlqa.md` 明确说)
+- placeholder 通过 sheet 透传,sheet 端切换 i18n key 后,这里自动跟 `askAnything` 更新,本组件 **无需改动**
 - **不动**结构、按钮形状、动画
 - 视觉差异(背景 `#ededf0` vs spec `#F2F2F2`)留到 P2 视觉对齐
 
-### 7.5 `AppAiHintPopup.vue` — coachmark
+### `AppAiHintPopup.vue` — coachmark
 
-- 把 `:4` 的 `t('aiChat.hintTitle')` 改成 `t('aiChat.askAboutThis')`,文案随 i18n 自动更新
-- **不动**结构、定位、`localStorage.hint_ai_chat_viewed` 单次显示、自动 2s 关闭
+文案改名:
+- 把模板中 popup 标题渲染所用的 i18n key 从 `hintTitle` 切到 `askAboutThis`,文案随 i18n 自动更新
 
-> **挂载位置提示**: `AppAiHintPopup` 不挂在 sheet 内,而是挂在 `AppListingWatchActions.vue:35`(listing 详情页的 Bottom Action Bar 上,作为 AI FAB 的 sibling)。本 §7.5 改动只动 popup 组件本身;不要去改 sheet 内的 hint 引用 —— 那里没有。`localStorage.hint_ai_chat_viewed` 在 `AppListingWatchActions.vue:142, 204` 读写。
+可见性硬化（同 PR 一并修复 popup 被高 z-index overlay 遮挡时静默 dismiss 的问题）:
+- 自动关闭时长从 2 秒延长到 4 秒
+- 引入 IntersectionObserver 监听 popup 自身可见性。`hint_displayed` GA 事件、`localStorage.hint_ai_chat_viewed='1'` 写入、4 秒倒计时**统一改成只有 IntersectionObserver 确认 ≥50% 可见后才触发**。
+- popup 通过新增的 `seen` 事件通知 parent 设置 `aiHintViewed`,原有的 `close` 事件改为纯 UI 隐藏。被遮挡时 popup 静默留在 DOM,直到真正可见或路由切换。one-shot 曝光窗口在被遮挡情形下得到保护,用户下次进 listing 仍有机会看到。
+- 保留: 定位、模板结构、AI FAB 点击路径下的 dismiss 仍同时清掉 popup + 写 viewed=1(用户主动开聊是更强的"已感知"信号)
+
+> **挂载位置提示**: `AppAiHintPopup` 不挂在 sheet 内,而是挂在 `AppListingWatchActions.vue`(listing 详情页的 Bottom Action Bar 上,作为 AI FAB 的 sibling)。本节改动只动 popup 组件本身和 parent 的事件 handler,sheet 内没有 hint 引用。`hint_ai_chat_viewed` 这个 localStorage 标志位的读写发生在 `AppListingWatchActions.vue` 内。
 
 ---
 
-## 8. GA 事件
+## GA 事件
 
 | 事件名 | 状态 | 触发 | hs_label |
 |---|---|---|---|
@@ -254,54 +259,71 @@ const chips = [
 
 ---
 
-## 9. 落地优先级
+## 落地优先级
 
 ### P0 — 当前 sprint 即可发,零服务端依赖
 
-1. **i18n key 重命名 + 改值**(§6,单次 PR):6 个旧 key 删 / 6 个新 key 加 / 2 个 key 改值 / 5 处 `t(...)` 消费点同步
-2. **Hero 3 chip 数组更新**(§7.1):`chipListed` → `chipCompare`、`chipSchools` → `chipCautions`
-3. **加载状态文案引用切换**(§7.3):`lookingUp` / `stillLooking` → `thinking` / `stillThinking`
+1. **i18n key 重命名 + 改值**(单次 PR):删 6 个旧 key、加 6 个新 key、改 2 个 key 的值、运行时消费点 + JSDoc 字面引用同步
+2. **Hero 3 chip 数组更新**:`chipListed` → `chipCompare`、`chipSchools` → `chipCautions`
+3. **加载状态文案引用切换**:`lookingUp` / `stillLooking` → `thinking` / `stillThinking`
 
 > P0 必须**单次 PR**完成,避免 i18n 与消费点错位。改动全部是字符串 + key 名,**不需要 feature flag**,改完就发。GA `ai_chat_chip_click` 可以观察到新 chip 文案的点击分布,作为 v2 心智模型生效与否的早期信号。
 
 ### P2 — 视情况再做
 
-4. **视觉差异修复**(radius `16→20`、尾角 `2→4`、scope-pill 背景、Lucide 图标体系)— 视觉对齐通常单独立项,见 §10
+4. **视觉差异修复**(bubble 主圆角、bubble 尾角、scope-pill 背景、Lucide 图标体系)— 视觉对齐通常单独立项
 
 ### 移出范围(等服务端配合后单独立项)
 
-- Abstain UI 启用 — 等 chat-service `writeDoneEvent` 透传 `abstained` / `null_reason`(改动 ~3 行)
+- Abstain UI 启用 — 等 chat-service `writeDoneEvent` 透传 `abstained` / `null_reason`
 - Source / Grounding Label — 等 worker 产出 `grounding_type` + chat-service 透传
 - Follow-up Suggestion Chips — 等 worker 产出 `follow_ups: string[]` + chat-service 透传
-- Stage-aware 进度文案 — 等 worker per-stage emit user-friendly `ProgressEvent.message`
+- ~~Stage-aware 进度文案~~ **已上线** — chat-service master commit `c8fc211`(2026-05-11)合入 `case 'progress'` 透传,在 `release/v3.3.0`(2026-05-13)已部署;worker `agent/progress.py` + `configuration/default.yaml` 的 stage→文案配置、前端 `useChatStream.ts` 的 `payload.progress` 消费分支均早已就位;env flag `listingChatbotProgressEvent` 默认 on。本文 i18n `lookingUp` → `thinking` / `stillLooking` → `stillThinking` 改名只是 stage 文案到达前的 fallback,与 stage-aware 路径独立
 - Idle Re-engagement Prompt — 依赖 `follow_ups` 数据源
 - Abstain 文案换成「换个角度」语气 — 等 worker system prompt 改写
 
 ---
 
-## 10. 未覆盖的视觉差异(参考,P2 单独立项)
+## 视觉对齐(随同 PR 一并修复,参 Frame 4B spec)
+
+本次 PR 在 i18n 改动基础上,同步把 Frame 4B 设计稿的几项关键视觉差异落了:
+
+| 项 | 改前 | 改后 / Spec |
+|---|---|---|
+| Hero chips 布局 | `flex-wrap: wrap` 横向 wrap | `flex-direction: column; align-items: center` 垂直堆叠(spec layout: vertical) |
+| Hero chips gap | 8px | 12px |
+| Hero chip cornerRadius | 20px | 22px |
+| Hero chip padding | 8 / 14 | 8 / 16 |
+| Hero icon size | 40px | 32px |
+| Bubble 主圆角 | 16px | 20px |
+| User bubble 尾角(`border-bottom-right-radius`) | 2px | 4px |
+| AI bubble 尾角(`border-bottom-left-radius`) | 2px | 4px |
+| Loading bubble 圆角/尾角 | 16 / 2 | 20 / 4 |
+
+Chip 横向 wrap 在长文案 chip 下视觉散乱,垂直堆叠也是 spec 明确意图(`chipsSection.layout: vertical`)。Bubble 圆角/尾角向 spec 对齐,与设计稿一致。
+
+## 未覆盖的视觉差异(后续 P2 单独立项)
 
 | 项 | 当前 | spec |
 |---|---|---|
-| Bubble 主圆角 | 16px (`AppAiChatMessages.vue:281`) | 20px (`chat-radius-lg`) |
-| Bubble 尾角 | 2px (`:307, 313`) | 4px (`chat-tail-radius`) |
-| Hero scope-pill 背景 | `#e9f6f7` (`AppAiChatHero.vue:86`) | `--muted` (#F2F2F2) |
-| AI sparkle 图标 | FontAwesome `fa-sparkle` | Phosphor `star-four`(`chat-DS §5.6` 钦定;见 §1 原则 6) |
+| Hero scope-pill 背景 | `#e9f6f7`(hero 组件 SCSS) | `$A:--bg-cyan-light` 变量(色调相近,变量化是单独工作) |
+| Hero scope-pill 内 pin 图标 | font-awesome `fa-location-dot` 直接铺平 | spec 包裹一层 22×22 cyan 圆形背景 + 白色 pin 图标 |
+| AI sparkle 图标 | FontAwesome `fa-sparkle` | Phosphor `star-four`(chat-DS 钦定;迁图标字体集是依赖工作) |
 | 通用图标体系 | FontAwesome | Lucide(引入是单独依赖工作) |
 
 对 v2 心智模型**不构成阻塞**,后续视觉对齐 sprint 单独跟进。Composer / Hint popup 圆角 1-3px 极轻微差异已剔除。
 
 ---
 
-## 11. 验收要点
+## 验收要点
 
 | 阶段 | 用户可见的变化 | 观测信号 |
 |---|---|---|
-| P0 ship 后 | 首次进入看到 "Ask anything about this home" / "问问这套房子的任何问题"; chip 变成 1 通用 + 1 对比 + 1 谨慎; loading 文字变 "Thinking…" | GA `ai_chat_chip_click` 出现 `chipCompare` / `chipCautions` 的点击 |
+| P0 ship 后 | 首次进入看到 "Ask anything about this home" / "问问这套房子的任何问题"; chip 变成 1 通用 + 1 对比 + 1 谨慎; loading 文字变 "Thinking"（typing-dots 气泡自带 3 个动画 dot，文案不带省略号） | GA `ai_chat_chip_click` 出现 `chipCompare` / `chipCautions` 的点击 |
 
 ---
 
-## 12. 参考
+## 参考
 
 ### 设计(同目录)
 - `v2-nlqa.md` — **v2 NLQ&A 设计意图 + 提案**:positioning shift、Variant 探索史、Design Principles、Copy 变更总表、新增 / 复活 UI patterns、System Prompt direction、Rollout、Risk
@@ -316,11 +338,11 @@ const chips = [
 - `packages/app/src/pages/listing/components/AppAiChatMessages.vue` — 消息列表、loading、source label hook、collapse
 - `packages/app/src/pages/listing/components/AppAiChatComposer.vue` — 输入条、send/stop
 - `packages/app/src/pages/listing/components/AppAiHintPopup.vue` — 首次进入 coachmark
-- `packages/app/src/components/AppListingWatchActions.vue:33-45` — AI FAB 入口
-- `packages/app/src/pages/listing/listing.vue:318-324` — chat-sheet 挂载点
+- `packages/app/src/components/AppListingWatchActions.vue` — AI FAB 入口
+- `packages/app/src/pages/listing/listing.vue` — chat-sheet 挂载点
 - `packages/hook/ai/useAiAssistant.ts` — message 状态机、错误码映射、`stop`、`setMessages`
 - `packages/hook/ai/useChatStream.ts` — 原始 SSE 解析、`DonePayload` / `ChunkPayload`、watchdog
-- `packages/common/i18n/translation/{en,zh}.ts:965-998 / 904-926` — `aiChat.*` namespace
+- `packages/common/i18n/translation/{en,zh}.ts` — `aiChat.*` namespace
 
 ### 配套
 - [`v2-nlqa-proposals.md`](./v2-nlqa-proposals.md) — 服务端依赖项提案存档
