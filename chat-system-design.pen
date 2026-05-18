@@ -7187,56 +7187,17 @@
               "width": "fill_container",
               "height": 48,
               "stroke": {
-                "align": "inside",
-                "thickness": {
-                  "bottom": 1
-                },
-                "fill": "#EEE"
+                "thickness": 0
               },
               "padding": [
                 12,
+                16,
+                0,
                 16
               ],
-              "justifyContent": "space_between",
+              "justifyContent": "end",
               "alignItems": "center",
               "children": [
-                {
-                  "type": "frame",
-                  "id": "B0xuG",
-                  "name": "dsMsgScopePill",
-                  "fill": "#E9F6F7",
-                  "cornerRadius": 14,
-                  "gap": 6,
-                  "padding": [
-                    4,
-                    12,
-                    4,
-                    10
-                  ],
-                  "alignItems": "center",
-                  "children": [
-                    {
-                      "type": "icon_font",
-                      "id": "o7qCkL",
-                      "name": "dsMsgScopePin",
-                      "width": 13,
-                      "height": 13,
-                      "iconFontName": "map-pin",
-                      "iconFontFamily": "phosphor",
-                      "fill": "$A:--primary"
-                    },
-                    {
-                      "type": "text",
-                      "id": "r3FeCN",
-                      "name": "dsMsgScopeText",
-                      "fill": "#666",
-                      "content": "Unit 301 - 110 12 Avenue NE · Calgary",
-                      "fontFamily": "Poppins",
-                      "fontSize": 12,
-                      "fontWeight": "normal"
-                    }
-                  ]
-                },
                 {
                   "type": "icon_font",
                   "id": "ARUDq",
@@ -7417,7 +7378,7 @@
           "fill": "#555",
           "textGrowth": "fixed-width",
           "width": 1000,
-          "content": "Panel 400×600 (max 100vh − 48) · radius 16 · shadow 0 12 40 / 22% · z-index 1000\nHero entry: minimal chrome (close only, justify-end, no border)\nMessages: scope pill left + close right + 1px #EEE divider\nDelta vs mobile sheet: no drag bar / no snap / no safe-area-inset · scope pill migrates from hero to header when messages start",
+          "content": "Panel 400×600 (max 100vh − 48) · radius 16 · shadow 0 12 40 / 22% · z-index 1000\nHeader: always minimal (close only, justify-end, no border) — same on hero and messages, symmetric with mobile sheet\nDelta vs mobile sheet: no drag bar / no snap / no safe-area-inset · scope pill stays in hero only; never migrates to header",
           "lineHeight": 1.6,
           "fontFamily": "Inter",
           "fontSize": 11

@@ -333,7 +333,7 @@ Same v2 NLQ&A positioning shift,**容器形态**不同 —— desktop 改用浮�
 |---|---|---|
 | Entry | host 页 `AppListingWatchActions` 内的 AI 按钮 + 首次 `AppAiHintPopup` coachmark | 视口右下角 fixed FAB (`PcAiChatFab` 嵌在 `PcAiChat` 内部) |
 | Container | 全屏 modal bottom sheet,top corners `chat-radius-lg`,snap = half / full,带 drag bar + scrim | 400×600 floating popover,四角全 `chat-radius-md`,固定尺寸,**无 drag bar / 无 snap / 无 scrim**,只靠 `0 12 40 / 22%` shadow 浮起来 |
-| Header chrome | 无独立 header(sheet 整页占满,hero 自带 title 区) | 有 header — hero entry 极简(只右上 close),messages 状态 chrome 化(scope pill 左 + close 右 + 1px divider) |
+| Header chrome | 无独立 header(sheet 整页占满,hero 自带 title 区) | 有 header — 始终极简(只右上 close,无 scope pill,无 divider),与 mobile sheet 对称 |
 | Close | 拉拽 sheet 到阈值 / 点 scrim / 系统返回 | 右上 `×` button / ESC key |
 | z-index | sheet (789) over scrim (788) | popover (1000),FAB (1000) — 二者互斥呈现 |
 | Safe-area-inset | composer 加 `env(safe-area-inset-bottom)` | N/A |
@@ -344,7 +344,7 @@ Same v2 NLQ&A positioning shift,**容器形态**不同 —— desktop 改用浮�
 
 ### 触发的设计决策
 
-1. **Scope pill 漂移** — hero entry 时 pill 留在 hero block 内(沿用 mobile 布局);messages 状态时 pill 上移到 header 作为对话期上下文锚,因为 popover 浮在仍可见的 listing 页面上,但 hero 已经隐去 —— 没 header anchor 用户会"忘记在跟哪套房聊"。Mobile 不需要这一步,sheet 全屏盖住 listing 时上下文是封闭的。
+1. **Header 永远极简,scope pill 不漂移** — desktop 与 mobile 对称:scope pill 只出现在 entry hero 中,**不**上移到 header。早期设计稿曾让 pill 在 messages 状态漂移到 header 做对话期上下文锚,理由是"popover 浮在仍可见的 listing 页面上,hero 隐去后没 anchor"。重新审视后这条理由站不住:① host listing detail page 本身就是 anchor —— title / photos / price / map 全部跟 popover 同时在 viewport 内可见,scope pill 复述了 host page 已经显示的信息;② `PcAiChat` 组件**挂在 `PcListing` 内**(不是全局 fixed-position),popover 不可能跟着用户漂到别的 listing,架构上已经阻断"忘记在跟哪套房聊"的场景;③ 分布式的 per-bubble Source Label(§5.8 "Based on this listing")提供更精细的 grounding 信号。最终 desktop / mobile 两端一致:**scope pill 只在 entry hero 出现,任何 header 永远只有 close**。
 
 2. **AI bubble max-width** — code 层 `.ai-row .message-group max-width: 90%`,与 mobile 等同;popover 内 messages area 是 368 px(panel 400 − padding 16×2),AI bubble 上限 ≈ 322 px(90%)。
 

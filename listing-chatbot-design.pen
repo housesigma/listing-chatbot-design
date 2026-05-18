@@ -28432,7 +28432,7 @@
           "fill": "#555555",
           "textGrowth": "fixed-width",
           "width": 1540,
-          "content": "Floating popover anchored bottom-right of viewport. Hero entry → minimal header (only close). Messages → header carries scope pill as context anchor.",
+          "content": "Floating popover anchored bottom-right of viewport. Header is always minimal (close only); scope pill stays in the hero entry only — symmetric with mobile sheet.",
           "fontFamily": "Inter",
           "fontSize": 13
         },
@@ -28884,56 +28884,17 @@
               "width": "fill_container",
               "height": 48,
               "stroke": {
-                "align": "inside",
-                "thickness": {
-                  "bottom": 1
-                },
-                "fill": "#EEE"
+                "thickness": 0
               },
               "padding": [
                 12,
+                16,
+                0,
                 16
               ],
-              "justifyContent": "space_between",
+              "justifyContent": "end",
               "alignItems": "center",
               "children": [
-                {
-                  "type": "frame",
-                  "id": "uIfJ1",
-                  "name": "msgScopePill",
-                  "fill": "#E9F6F7",
-                  "cornerRadius": 14,
-                  "gap": 6,
-                  "padding": [
-                    4,
-                    12,
-                    4,
-                    10
-                  ],
-                  "alignItems": "center",
-                  "children": [
-                    {
-                      "type": "icon_font",
-                      "id": "G0Soq",
-                      "name": "msgScopePin",
-                      "width": 13,
-                      "height": 13,
-                      "iconFontName": "map-pin",
-                      "iconFontFamily": "phosphor",
-                      "fill": "$A:--primary"
-                    },
-                    {
-                      "type": "text",
-                      "id": "Pon9d",
-                      "name": "msgScopeText",
-                      "fill": "#666",
-                      "content": "Unit 301 - 110 12 Avenue NE · Calgary",
-                      "fontFamily": "Poppins",
-                      "fontSize": 12,
-                      "fontWeight": "normal"
-                    }
-                  ]
-                },
                 {
                   "type": "icon_font",
                   "id": "yD91h",
@@ -29114,7 +29075,7 @@
           "fill": "#555",
           "textGrowth": "fixed-width",
           "width": 1000,
-          "content": "Panel 400×600 (max 100vh − 48) · radius 16 · shadow 0 12 40 / 22% · z-index 1000\nHeader: 12 16 padding · divider 1px #EEE in Messages, no divider in Hero Entry\nHero entry: minimal chrome (close only, justify-end, no border)\nMessages: scope pill left + close right + border\nAI bubble max-width 90% (≈322 within 368-wide messages area)\nLong-press / drag / sheet snap = NOT applicable (desktop popover, not bottom sheet)",
+          "content": "Panel 400×600 (max 100vh − 48) · radius 16 · shadow 0 12 40 / 22% · z-index 1000\nHeader: always minimal (close only, justify-end, no border) — same on hero and messages, symmetric with mobile sheet\nScope pill stays in hero; never migrates to header\nAI bubble max-width 90% (≈322 within 368-wide messages area)\nLong-press / drag / sheet snap = NOT applicable (desktop popover, not bottom sheet)",
           "lineHeight": 1.6,
           "fontFamily": "Inter",
           "fontSize": 11
