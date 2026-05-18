@@ -553,24 +553,32 @@ right: 24px` slot. When the panel opens, the FAB unmounts (the panel
 occupies its anchor); when the panel closes, the FAB re-mounts. Single
 floating element at any time, no visual stacking.
 
-**Header chrome states** *(specific to the popover; sheet has no header
-because it's the entire screen)*:
+**Header chrome**: **always minimal** — only the `×` close button,
+right-aligned. No divider, no scope pill. Same treatment for every chat
+state, identical to the mobile sheet which has no header chrome at all.
 
-| Chat state | Header treatment |
-|---|---|
-| `entry_hero` (no messages yet) | **Minimal** — only the `×` close button, right-aligned. No divider, no scope pill. The hero block carries the title (h2 + sparkle + scope pill + chips). |
-| `streaming` / `result` / `show_more` / `stopped` / `abstained` / `noresult` / `error` (conversation active) | **Chrome** — scope pill on left, `×` close on right, 1 px `--border` divider below. Scope pill migrates from the hero into the header as the conversation begins (hero unmounts). |
+**Why no scope pill migration**: an earlier draft of this spec moved a
+scope pill from the entry hero into the header once a conversation
+began, on the rationale that the popover floats over the host listing
+page and the user might "lose track" of which listing the bot is
+grounded on. Two reasons that rationale didn't hold up:
 
-**Why migrate the scope pill**: in hero entry, the hero block is the
-visual identity (icon + h2 + chips); the header can stay invisible. Once
-messages flow, the hero unmounts and the header becomes the only
-persistent surface — the scope pill rides up to keep the
-"which-home-am-I-asking-about" anchor visible across the scrolling
-conversation. Mobile doesn't need this because the sheet covers the
-whole page (no listing visible to anchor to); desktop does because the
-popover floats over a still-visible listing page, and without a header
-anchor the user could lose track of which listing the bot is grounded
-on.
+1. The host listing-detail page behind the popover is itself the anchor
+   — title, photos, price, and map are all in the same viewport, visible
+   alongside the popover at all times. A header scope pill duplicates
+   information the page is already showing.
+2. The popover is structurally **listing-page-bound** (`PcAiChat`
+   instantiates inside `PcListing`, not at the app root), so it cannot
+   accidentally "follow" the user to a different listing. There is no
+   architectural path for the popover and the page-behind to disagree
+   on scope.
+
+The entry hero's scope pill (§5.13) still carries the affordance "this
+chat will be grounded on this listing" before the user commits. Once
+messages flow, per-bubble Source Label (§5.8) takes over as the
+finer-grained grounding signal. This makes desktop and mobile
+symmetric: **scope pill appears only in the entry hero on both surfaces,
+never in any persistent chrome**.
 
 **ESC dismiss**: pressing ESC closes the panel. Mobile sheet has no ESC
 equivalent (touch-first interaction model).
@@ -583,9 +591,9 @@ container shell differs:
 | 1 `trigger` | Host action bar + AI FAB | Fixed bottom-right FAB |
 | 2 `hint` | Coachmark over FAB | (deferred — desktop FAB visible enough on first load) |
 | 3 `halfsnap` | Sheet at 50 dvh | **N/A** — popover has no half-snap (opens directly to entry hero) |
-| 4 `entry_hero` | Sheet full-snap, hero content | Popover at fixed size, hero content + minimal header |
-| 5 `retrieving` | Sheet full-snap, hero replaced by typing indicator | Popover, hero replaced by typing indicator, chrome header materializes (scope pill + divider) |
-| 6 `streaming` | Same body, chrome unchanged | Same body, chrome header persists |
+| 4 `entry_hero` | Sheet full-snap, hero content | Popover at fixed size, hero content + minimal header (`×` only) |
+| 5 `retrieving` | Sheet full-snap, hero replaced by typing indicator | Popover, hero replaced by typing indicator, header unchanged (`×` only) |
+| 6 `streaming` | Same body, chrome unchanged | Same body, chrome unchanged |
 | 7 `stopped` | User tapped stop | Same |
 | 8 `result` | Assistant bubble landed | Same |
 | 9 `show_more` | Collapsed bubble expanded | Same |
