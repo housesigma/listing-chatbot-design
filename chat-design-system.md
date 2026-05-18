@@ -71,7 +71,9 @@ and conversational metaphors.
 ### 1.3 Applicable surfaces
 
 Any surface that exhibits chat-like interaction patterns:
-- Listing Chatbot bottom sheet (current canonical user)
+- Listing Chatbot **mobile bottom sheet** (`AppAiChatSheet`, the original canonical user)
+- Listing Chatbot **desktop floating popover** (`PcAiChat`, anchored bottom-right
+  of the listing-page viewport) — same 12-state machine, different container shell
 - Future AI assistants (property valuation Q&A, market analysis,
   agent-buyer chat — if/when shipped)
 - Any feature using streaming text + bubble exchange
@@ -521,6 +523,83 @@ opens the chat sheet at `half` snap.
 > (typically 10 px @ 56 h) for cohesion with the host page. Once the
 > sheet opens, all chat radii apply inside the sheet.
 
+### 5.16 Desktop Floating Popover Container
+
+Alternative to the mobile Modal Bottom Sheet (§5.7). Used on desktop
+viewports where the host page stays partially visible behind the chat
+surface — context anchoring shifts from sheet-dominates-screen (mobile)
+to popover-overlays-corner (desktop). Same 12-state machine, same chat
+tokens; the container shell is what differs.
+
+| Property | Value |
+|---|---|
+| Container | Fixed-position floating panel anchored to viewport bottom-right |
+| `cornerRadius` | 16 (`chat-radius-md`, **all four corners** — not sheet-style top-only) |
+| Background | `--card` |
+| Width | 400 px (`max-width: calc(100vw - 48px)`) |
+| Height | 600 px (`max-height: calc(100vh - 48px)`) |
+| Right offset | 24 px |
+| Bottom offset | 24 px |
+| Drop shadow | `0 12 40 / 22%` outer — replaces the mobile scrim |
+| Scrim | **None** — host page remains interactive behind the popover |
+| z-index | 1000 |
+| Transition | `opacity 0.22s, transform 0.22s` (rise from bottom-right with `scale(0.97)`) |
+| Snap points | **None** — width/height are fixed, no drag-to-resize gesture |
+| Drag bar / grabber | **None** — close exclusively via the `×` button or ESC key |
+| Safe-area-inset | **N/A** — desktop has no notch / home indicator |
+
+**FAB / panel toggle:** the desktop FAB lives at the same `bottom: 24px;
+right: 24px` slot. When the panel opens, the FAB unmounts (the panel
+occupies its anchor); when the panel closes, the FAB re-mounts. Single
+floating element at any time, no visual stacking.
+
+**Header chrome states** *(specific to the popover; sheet has no header
+because it's the entire screen)*:
+
+| Chat state | Header treatment |
+|---|---|
+| `entry_hero` (no messages yet) | **Minimal** — only the `×` close button, right-aligned. No divider, no scope pill. The hero block carries the title (h2 + sparkle + scope pill + chips). |
+| `streaming` / `result` / `show_more` / `stopped` / `abstained` / `noresult` / `error` (conversation active) | **Chrome** — scope pill on left, `×` close on right, 1 px `--border` divider below. Scope pill migrates from the hero into the header as the conversation begins (hero unmounts). |
+
+**Why migrate the scope pill**: in hero entry, the hero block is the
+visual identity (icon + h2 + chips); the header can stay invisible. Once
+messages flow, the hero unmounts and the header becomes the only
+persistent surface — the scope pill rides up to keep the
+"which-home-am-I-asking-about" anchor visible across the scrolling
+conversation. Mobile doesn't need this because the sheet covers the
+whole page (no listing visible to anchor to); desktop does because the
+popover floats over a still-visible listing page, and without a header
+anchor the user could lose track of which listing the bot is grounded
+on.
+
+**ESC dismiss**: pressing ESC closes the panel. Mobile sheet has no ESC
+equivalent (touch-first interaction model).
+
+**Mapping to 12-state machine** — same logical states as §4, only the
+container shell differs:
+
+| # | Mobile (Sheet, §5.7) | Desktop (Popover, this section) |
+|---|---|---|
+| 1 `trigger` | Host action bar + AI FAB | Fixed bottom-right FAB |
+| 2 `hint` | Coachmark over FAB | (deferred — desktop FAB visible enough on first load) |
+| 3 `halfsnap` | Sheet at 50 dvh | **N/A** — popover has no half-snap (opens directly to entry hero) |
+| 4 `entry_hero` | Sheet full-snap, hero content | Popover at fixed size, hero content + minimal header |
+| 5 `retrieving` | Sheet full-snap, hero replaced by typing indicator | Popover, hero replaced by typing indicator, chrome header materializes (scope pill + divider) |
+| 6 `streaming` | Same body, chrome unchanged | Same body, chrome header persists |
+| 7 `stopped` | User tapped stop | Same |
+| 8 `result` | Assistant bubble landed | Same |
+| 9 `show_more` | Collapsed bubble expanded | Same |
+| 10 `abstained` | Abstain marker rendered | Same |
+| 11 `noresult` | Error bubble inside sheet | Error bubble inside popover |
+| 12 `error` | Error bubble inside sheet | Error bubble inside popover |
+
+**Components reused inside the popover** *(no visual delta from §5.1 - §5.14)*:
+Message Bubble (§5.1), Suggestion Chip (§5.2), Composer (§5.4), Send/Stop
+(§5.5), AI Brand Mark (§5.6), Source Label (§5.8), Abstain Marker (§5.9),
+Typing Indicator (§5.10), Show More Toggle (§5.11), Scope Pill (§5.13),
+Error Bubble (§5.14). Bubble inner-text wrap, padding, gap, and shape
+are byte-identical. Only the outer chrome (sheet vs popover) differs.
+
 ---
 
 ## 6. Component Composition Rules
@@ -535,21 +614,25 @@ opens the chat sheet at `half` snap.
 | 4 px-grid spacing OK to break for bubble feel | Strict 4 px grid |
 
 **Where chat surface ends:**
-- Sheet container's edge — anything outside the sheet (status bar, app
-  header, listing content behind the scrim) follows base DS
-- The AI FAB's container (host page's action bar) — the FAB itself
-  follows base DS for cohesion with sibling CTAs
+- Sheet / Popover container's edge — anything outside (status bar, app
+  header, listing content behind the scrim or behind the floating popover)
+  follows base DS
+- The AI FAB's container — mobile: host page's action bar; desktop:
+  free-floating `fixed` slot. The FAB itself follows base DS proportions
+  in both cases.
 
 **Layering rule** (z-index):
 
-| Layer | z-index |
-|---|---|
-| Page content | base |
-| App header | DS-defined |
-| Coachmark (§5.12) | above app header |
-| Scrim (§5.7.2) | above all page content |
-| Sheet (§5.7) | above scrim |
-| Toast (base DS) | above everything |
+| Layer | z-index | Surface |
+|---|---|---|
+| Page content | base | both |
+| App header | DS-defined | both |
+| Coachmark (§5.12) | above app header | mobile |
+| Scrim (§5.7.2) | above all page content | mobile only — desktop popover has no scrim |
+| Sheet (§5.7) | above scrim | mobile |
+| Desktop Popover (§5.16) | 1000 | desktop |
+| Desktop FAB | 1000 | desktop |
+| Toast (base DS) | above everything | both |
 
 ---
 

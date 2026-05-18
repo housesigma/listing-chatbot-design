@@ -323,23 +323,104 @@ Chip 横向 wrap 在长文案 chip 下视觉散乱,垂直堆叠也是 spec 明�
 
 ---
 
+## Desktop Variant
+
+Same v2 NLQ&A positioning shift,**容器形态**不同 —— desktop 改用浮动 popover 而不是 bottom sheet。业务层(`useAiAssistant` / `useChatStream`)/i18n/chat-stream 协议全部复用,无双轨。详见 `chat-design-system.md` §5.16。
+
+### Surface 拓扑
+
+| Layer | Mobile (`AppAiChatSheet`) | Desktop (`PcAiChat`) |
+|---|---|---|
+| Entry | host 页 `AppListingWatchActions` 内的 AI 按钮 + 首次 `AppAiHintPopup` coachmark | 视口右下角 fixed FAB (`PcAiChatFab` 嵌在 `PcAiChat` 内部) |
+| Container | 全屏 modal bottom sheet,top corners `chat-radius-lg`,snap = half / full,带 drag bar + scrim | 400×600 floating popover,四角全 `chat-radius-md`,固定尺寸,**无 drag bar / 无 snap / 无 scrim**,只靠 `0 12 40 / 22%` shadow 浮起来 |
+| Header chrome | 无独立 header(sheet 整页占满,hero 自带 title 区) | 有 header — hero entry 极简(只右上 close),messages 状态 chrome 化(scope pill 左 + close 右 + 1px divider) |
+| Close | 拉拽 sheet 到阈值 / 点 scrim / 系统返回 | 右上 `×` button / ESC key |
+| z-index | sheet (789) over scrim (788) | popover (1000),FAB (1000) — 二者互斥呈现 |
+| Safe-area-inset | composer 加 `env(safe-area-inset-bottom)` | N/A |
+
+### 12-state 映射
+
+复用 `chat-design-system.md` §5.16 表(state 1 / 4 / 5 / 6 / 8 / 9 / 10 / 11 / 12 一致;state 3 `halfsnap` 在 desktop 上**不存在** —— popover 直接打开到 entry hero;state 2 `hint` 在 desktop MVP **暂不做**,因为右下角 FAB 在 desktop 屏幕上足够显眼)。
+
+### 触发的设计决策
+
+1. **Scope pill 漂移** — hero entry 时 pill 留在 hero block 内(沿用 mobile 布局);messages 状态时 pill 上移到 header 作为对话期上下文锚,因为 popover 浮在仍可见的 listing 页面上,但 hero 已经隐去 —— 没 header anchor 用户会"忘记在跟哪套房聊"。Mobile 不需要这一步,sheet 全屏盖住 listing 时上下文是封闭的。
+
+2. **AI bubble max-width** — code 层 `.ai-row .message-group max-width: 90%`,与 mobile 等同;popover 内 messages area 是 368 px(panel 400 − padding 16×2),AI bubble 上限 ≈ 322 px(90%)。
+
+3. **Header brand symbol 去除** — 早期试过 outline `star-four + AI` 文字做品牌 mark,但与 hero h2 / scope pill 信息重叠,最终选 chrome-only(只有 close),sparkle 完全交给 hero icon 表达。
+
+### 文件清单
+
+新增(`packages/desktop/src/pages/listing/components/`):
+- `PcAiChat.vue` — 根组件:floating panel 容器 + FAB toggle + `useAiAssistant` 接入 + ESC dismiss
+- `PcAiChatHero.vue` — entry hero(40px sparkle 图标 + h2 + scope pill + 3 chips,垂直布局)
+- `PcAiChatMessages.vue` — 消息列表 + 加载指示 + markdown 渲染 + collapse / Show more
+- `PcAiChatComposer.vue` — 输入条 + send / stop 切换
+
+修改(`packages/desktop/src/pages/listing/`):
+- `PcListing.vue` — 在 `<template v-if="house">` 块尾挂 `<PcAiChat>`,gate `listing?.resp?.component_display?.chatbot === 1`
+
+i18n:
+- 全部复用 mobile 已对齐的 `aiChat.*` namespace(`askAnything` / `chipCompare` / `chipCautions` / `thinking` / `stillThinking` / `errorGeneric` / `errorSafetyBlocked` 等),无新增 key
+
+业务 hook(共享,无改动):
+- `packages/hook/ai/useAiAssistant.ts`
+- `packages/hook/ai/useChatStream.ts`
+
+### 设计稿对应
+
+- `listing-chatbot-design.pen` **Frame 4 — Desktop Chatbot (PcAiChat)**(node `Q5s2r0`)— 本节落地版,展示 FAB / hero entry / messages 三个关键状态及 spec 注脚
+- `chat-system-design.pen` **Desktop — Floating Popover Variant**(node `g4phu`)— chat DS 画布的 desktop 容器规范,与 §5.16 配套
+
+### 移出 desktop MVP 范围
+
+| 项 | 状态 |
+|---|---|
+| Coachmark hint popup | 不做(desktop 屏幕大,FAB 直接可见) |
+| Sheet snap / drag bar / 安全区适配 | N/A(popover 不需要)|
+| `hint_ai_chat_viewed` localStorage 写入 | 不做(无 coachmark)|
+
+### GA 事件
+
+`ai_chat_open` 的 `hs_label` desktop 上发 `"desktop_fab"`(mobile 是 `entry_bar` / `bottom_bar`),其他事件(`ai_chat_chip_click` / `ai_chat_send` / `ai_chat_stop`)与 mobile 完全一致。
+
+---
+
 ## 参考
 
 ### 设计(同目录)
 - `v2-nlqa.md` — **v2 NLQ&A 设计意图 + 提案**:positioning shift、Variant 探索史、Design Principles、Copy 变更总表、新增 / 复活 UI patterns、System Prompt direction、Rollout、Risk
 - `chat-design-system.md` — **Chat Design System**(sister spec to base DS,chat surface 视觉 / 组件 / token 权威),listing chatbot 是其首个落地 surface
-- `listing-chatbot-design.pen` Frame 4B(node `c565Q`)— **本文落地版设计稿**:12 状态屏沿用,只更新 surface 范围内的文案
+- `listing-chatbot-design.pen` Frame 4B(node `c565Q`)— **mobile 落地版设计稿**:12 状态屏沿用,只更新 surface 范围内的文案
+- `listing-chatbot-design.pen` Frame 4 — Desktop Chatbot(node `Q5s2r0`)— **desktop 落地版设计稿**:FAB / hero entry / messages 三个关键状态 + spec 注脚
 - `listing-chatbot-design.pen` Frame 4A(node `c7EJq`)— **全量 v2 设计稿**:12 状态屏含 abstain marker、Source Label、Follow-up Chips、stage-aware loading 文案等新组件渲染(见 proposals)
+- `chat-system-design.pen` Desktop — Floating Popover Variant(node `g4phu`)— chat DS 画布的 desktop 容器规范
 - `chat-system-design.pen` — chat DS 画布(Variant C 12 状态可复用版),含 reusable component library
 
 ### web-hybrid 源码
-- `packages/app/src/pages/listing/components/AppAiChatSheet.vue` — 容器、snap、状态管理
-- `packages/app/src/pages/listing/components/AppAiChatHero.vue` — 入口 hero、3 chip
-- `packages/app/src/pages/listing/components/AppAiChatMessages.vue` — 消息列表、loading、source label hook、collapse
-- `packages/app/src/pages/listing/components/AppAiChatComposer.vue` — 输入条、send/stop
-- `packages/app/src/pages/listing/components/AppAiHintPopup.vue` — 首次进入 coachmark
+
+**Mobile (`packages/app/src/pages/listing/components/`)**:
+- `AppAiChatSheet.vue` — 容器、snap、状态管理
+- `AppAiChatHero.vue` — 入口 hero、3 chip
+- `AppAiChatMessages.vue` — 消息列表、loading、source label hook、collapse
+- `AppAiChatComposer.vue` — 输入条、send/stop
+- `AppAiHintPopup.vue` — 首次进入 coachmark
+
+**Mobile 挂载点**:
 - `packages/app/src/components/AppListingWatchActions.vue` — AI FAB 入口
-- `packages/app/src/pages/listing/listing.vue` — chat-sheet 挂载点
+- `packages/app/src/pages/listing/listing.vue` — sheet 挂载
+
+**Desktop (`packages/desktop/src/pages/listing/components/`)**:
+- `PcAiChat.vue` — 浮动 popover 容器 + FAB toggle + `useAiAssistant` 接入
+- `PcAiChatHero.vue` — 入口 hero(同 mobile 结构,size/spacing 适配 400px panel)
+- `PcAiChatMessages.vue` — 消息列表(逻辑与 mobile 一致)
+- `PcAiChatComposer.vue` — 输入条(无 safe-area-inset)
+
+**Desktop 挂载点**:
+- `packages/desktop/src/pages/listing/PcListing.vue` — popover 挂载
+
+**共享(两端都用)**:
 - `packages/hook/ai/useAiAssistant.ts` — message 状态机、错误码映射、`stop`、`setMessages`
 - `packages/hook/ai/useChatStream.ts` — 原始 SSE 解析、`DonePayload` / `ChunkPayload`、watchdog
 - `packages/common/i18n/translation/{en,zh}.ts` — `aiChat.*` namespace
