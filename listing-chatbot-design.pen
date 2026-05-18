@@ -22365,6 +22365,7 @@
                           "type": "frame",
                           "id": "H4qG7",
                           "name": "botBubble",
+                          "width": 322,
                           "fill": "$A:--muted",
                           "cornerRadius": [
                             20,
@@ -22385,7 +22386,7 @@
                               "name": "botText1",
                               "fill": "$A:--foreground",
                               "textGrowth": "fixed-width",
-                              "width": 280,
+                              "width": 290,
                               "content": "Based on the listing, this property has 5+1 bedrooms and 6 bathrooms.",
                               "fontFamily": "Poppins",
                               "fontSize": 14,
@@ -22444,6 +22445,7 @@
                           "type": "frame",
                           "id": "O1qZe",
                           "name": "botBubble2",
+                          "width": 322,
                           "fill": "$A:--muted",
                           "cornerRadius": [
                             20,
@@ -22464,7 +22466,7 @@
                               "name": "botText2",
                               "fill": "$A:--foreground",
                               "textGrowth": "fixed-width",
-                              "width": 280,
+                              "width": 290,
                               "content": "The property includes a 2-car attached garage with direct indoor access.",
                               "fontFamily": "Poppins",
                               "fontSize": 14,
@@ -22779,6 +22781,7 @@
                           "type": "frame",
                           "id": "T6KAE",
                           "name": "prevBotBubble",
+                          "width": 322,
                           "fill": "$A:--muted",
                           "cornerRadius": [
                             20,
@@ -22799,7 +22802,7 @@
                               "name": "prevBotTxt",
                               "fill": "$A:--foreground",
                               "textGrowth": "fixed-width",
-                              "width": 280,
+                              "width": 290,
                               "content": "Based on the listing, this property has 5+1 bedrooms and 6 bathrooms.",
                               "fontFamily": "Poppins",
                               "fontSize": 14,
@@ -23211,6 +23214,7 @@
                           "type": "frame",
                           "id": "WzCN9",
                           "name": "noResultBubble",
+                          "width": 322,
                           "fill": "$A:--muted",
                           "cornerRadius": [
                             20,
@@ -23231,7 +23235,7 @@
                               "name": "noResultTxt",
                               "fill": "$A:--foreground",
                               "textGrowth": "fixed-width",
-                              "width": 280,
+                              "width": 290,
                               "content": "School district information isn't included in the listing. Try asking about bedrooms, bathrooms, square footage, or HOA fees.",
                               "fontFamily": "Poppins",
                               "fontSize": 14,
@@ -25120,6 +25124,7 @@
                           "type": "frame",
                           "id": "MaMm1",
                           "name": "botBubble",
+                          "width": 322,
                           "fill": "$A:--muted",
                           "cornerRadius": [
                             20,
@@ -25140,7 +25145,7 @@
                               "name": "botText1",
                               "fill": "$A:--foreground",
                               "textGrowth": "fixed-width",
-                              "width": 280,
+                              "width": 290,
                               "content": "There are several schools nearby. The closest is Crescent Heights High School (~800m), followed by Stanley Jones Elementary",
                               "fontFamily": "Poppins",
                               "fontSize": 14,
@@ -25205,6 +25210,7 @@
                           "type": "frame",
                           "id": "epcyJ",
                           "name": "botBubble2",
+                          "width": 322,
                           "fill": "$A:--muted",
                           "cornerRadius": [
                             20,
@@ -25225,7 +25231,7 @@
                               "name": "botText2",
                               "fill": "$A:--foreground",
                               "textGrowth": "fixed-width",
-                              "width": 280,
+                              "width": 290,
                               "content": "The property includes a 2-car attached garage with direct indoor access.",
                               "fontFamily": "Poppins",
                               "fontSize": 14,
@@ -25534,6 +25540,7 @@
                           "id": "RM4Nh",
                           "name": "botBubble",
                           "clip": true,
+                          "width": 322,
                           "height": 160,
                           "fill": "$A:--muted",
                           "cornerRadius": [
@@ -25555,7 +25562,7 @@
                               "name": "botText1",
                               "fill": "$A:--foreground",
                               "textGrowth": "fixed-width",
-                              "width": 240,
+                              "width": 290,
                               "content": "This is a Semi Detached (Half Duplex) located at 213 25 Avenue NE in Calgary's Tuxedo Park neighbourhood. The home features 3+1 bedrooms across the upper and lower levels, 3 bathrooms, and no enclosed garage. The lot is mid-block facing north, with mature landscaping and a fenced backyard. Interior highlights include a renovated kitchen with quartz counters, hardwood flooring through the main level, and a finished basement that adds extra living area suitable as a fourth bedroom or family room. The roof was replaced in 2021 and the furnace is reported to be from 2019, making major systems relatively recent. The neighbourhood is known for tree-lined streets and walkability to local shops, transit, and parks along the Bow River pathway.",
                               "fontFamily": "Poppins",
                               "fontSize": 14,
@@ -25587,7 +25594,7 @@
                                   }
                                 ]
                               },
-                              "width": 272,
+                              "width": 322,
                               "height": 40
                             }
                           ]
@@ -25665,6 +25672,7 @@
                           "type": "frame",
                           "id": "VrStK",
                           "name": "botBubble2",
+                          "width": 322,
                           "fill": "$A:--muted",
                           "cornerRadius": [
                             20,
@@ -25685,7 +25693,7 @@
                               "name": "botText2",
                               "fill": "$A:--foreground",
                               "textGrowth": "fixed-width",
-                              "width": 280,
+                              "width": 290,
                               "content": "This listing was published 3 days ago and is currently active on the market.",
                               "fontFamily": "Poppins",
                               "fontSize": 14,
@@ -25994,6 +26002,7 @@
                           "type": "frame",
                           "id": "Lotyc",
                           "name": "botBubble",
+                          "width": 322,
                           "fill": "$A:--muted",
                           "cornerRadius": [
                             20,
@@ -26014,7 +26023,7 @@
                               "name": "botText1",
                               "fill": "$A:--foreground",
                               "textGrowth": "fixed-width",
-                              "width": 260,
+                              "width": 290,
                               "content": "I'm a bit busy right now — please try again in a moment.",
                               "fontFamily": "Poppins",
                               "fontSize": 14,
@@ -26079,6 +26088,7 @@
                           "type": "frame",
                           "id": "fC0Cb",
                           "name": "botBubble2",
+                          "width": 322,
                           "fill": "$A:--muted",
                           "cornerRadius": [
                             20,
@@ -26099,7 +26109,7 @@
                               "name": "botText2",
                               "fill": "$A:--foreground",
                               "textGrowth": "fixed-width",
-                              "width": 280,
+                              "width": 290,
                               "content": "The property includes a 2-car attached garage with direct indoor access.",
                               "fontFamily": "Poppins",
                               "fontSize": 14,
@@ -27493,6 +27503,7 @@
                           "type": "frame",
                           "id": "G9sE1",
                           "name": "botBubble",
+                          "width": 322,
                           "fill": "$A:--muted",
                           "cornerRadius": [
                             20,
@@ -27513,7 +27524,7 @@
                               "name": "botText1",
                               "fill": "$A:--foreground",
                               "textGrowth": "fixed-width",
-                              "width": 260,
+                              "width": 290,
                               "content": "This Semi Detached (Half Duplex) is located at 213 25 Avenue NE in Tuxedo Park, Calgary. The home features 3+1 bedrooms across two levels, 3 bathrooms, and",
                               "fontFamily": "Poppins",
                               "fontSize": 14,
@@ -27578,6 +27589,7 @@
                           "type": "frame",
                           "id": "JHLzL",
                           "name": "botBubble2",
+                          "width": 322,
                           "fill": "$A:--muted",
                           "cornerRadius": [
                             20,
@@ -27598,7 +27610,7 @@
                               "name": "botText2",
                               "fill": "$A:--foreground",
                               "textGrowth": "fixed-width",
-                              "width": 280,
+                              "width": 290,
                               "content": "The property includes a 2-car attached garage with direct indoor access.",
                               "fontFamily": "Poppins",
                               "fontSize": 14,
@@ -27908,6 +27920,7 @@
                           "type": "frame",
                           "id": "O8pZ3X",
                           "name": "botBubble",
+                          "width": 322,
                           "fill": "$A:--muted",
                           "cornerRadius": [
                             20,
@@ -27928,7 +27941,7 @@
                               "name": "botText1",
                               "fill": "$A:--foreground",
                               "textGrowth": "fixed-width",
-                              "width": 260,
+                              "width": 290,
                               "content": "I can't determine the seller's bottom-line price from the listing. The current asking price is $524,886.",
                               "fontFamily": "Poppins",
                               "fontSize": 14,
@@ -27993,6 +28006,7 @@
                           "type": "frame",
                           "id": "F2vY4",
                           "name": "botBubble2",
+                          "width": 322,
                           "fill": "$A:--muted",
                           "cornerRadius": [
                             20,
@@ -28013,7 +28027,7 @@
                               "name": "botText2",
                               "fill": "$A:--foreground",
                               "textGrowth": "fixed-width",
-                              "width": 280,
+                              "width": 290,
                               "content": "The property includes a 2-car attached garage with direct indoor access.",
                               "fontFamily": "Poppins",
                               "fontSize": 14,
@@ -28378,6 +28392,732 @@
           "fontFamily": "Open Sans",
           "fontSize": 22,
           "fontWeight": "700"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "Q5s2r0",
+      "x": -907,
+      "y": 15570,
+      "name": "Frame 4 — Desktop Chatbot (PcAiChat)",
+      "width": 1700,
+      "height": 1100,
+      "fill": "#FFFFFF",
+      "stroke": {
+        "align": "inside",
+        "thickness": 1,
+        "fill": "#E5E5E5"
+      },
+      "layout": "none",
+      "children": [
+        {
+          "type": "text",
+          "id": "XliOO",
+          "x": 80,
+          "y": 36,
+          "name": "title",
+          "fill": "#222222",
+          "content": "Frame 4 — Desktop Chatbot (PcAiChat)",
+          "fontFamily": "Open Sans",
+          "fontSize": 22,
+          "fontWeight": "700"
+        },
+        {
+          "type": "text",
+          "id": "jrowq",
+          "x": 80,
+          "y": 74,
+          "name": "subtitle",
+          "fill": "#555555",
+          "textGrowth": "fixed-width",
+          "width": 1540,
+          "content": "Floating popover anchored bottom-right of viewport. Hero entry → minimal header (only close). Messages → header carries scope pill as context anchor.",
+          "fontFamily": "Inter",
+          "fontSize": 13
+        },
+        {
+          "type": "text",
+          "id": "B17gC",
+          "x": 80,
+          "y": 140,
+          "name": "labelFab",
+          "fill": "#555555",
+          "content": "1. FAB (collapsed)",
+          "fontFamily": "Inter",
+          "fontSize": 13,
+          "fontWeight": "600"
+        },
+        {
+          "type": "text",
+          "id": "WkI0Y",
+          "x": 520,
+          "y": 140,
+          "name": "labelHero",
+          "fill": "#555555",
+          "content": "2. Panel — Hero Entry",
+          "fontFamily": "Inter",
+          "fontSize": 13,
+          "fontWeight": "600"
+        },
+        {
+          "type": "text",
+          "id": "HE924",
+          "x": 1080,
+          "y": 140,
+          "name": "labelMsg",
+          "fill": "#555555",
+          "content": "3. Panel — Messages",
+          "fontFamily": "Inter",
+          "fontSize": 13,
+          "fontWeight": "600"
+        },
+        {
+          "type": "frame",
+          "id": "UtBAb",
+          "x": 80,
+          "y": 180,
+          "name": "viewportContext",
+          "width": 360,
+          "height": 800,
+          "fill": "#F8F9FB",
+          "cornerRadius": 12,
+          "stroke": {
+            "align": "inside",
+            "thickness": 1,
+            "fill": "#E5E7EB"
+          },
+          "layout": "none",
+          "children": [
+            {
+              "type": "text",
+              "id": "oBWvU",
+              "x": 14,
+              "y": 14,
+              "name": "vpHint",
+              "fill": "#A0A4AB",
+              "content": "viewport (faded background)",
+              "fontFamily": "Inter",
+              "fontSize": 11
+            },
+            {
+              "type": "frame",
+              "id": "knO5H",
+              "x": 280,
+              "y": 720,
+              "name": "fab",
+              "width": 56,
+              "height": 56,
+              "fill": "$A:--primary",
+              "cornerRadius": 28,
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#0000002E",
+                "offset": {
+                  "x": 0,
+                  "y": 6
+                },
+                "blur": 20
+              },
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "wrgUP",
+                  "name": "fabIcon",
+                  "width": 22,
+                  "height": 22,
+                  "iconFontName": "star-four-fill",
+                  "iconFontFamily": "phosphor",
+                  "fill": "#FFFFFF"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "RzBIq",
+          "x": 80,
+          "y": 1000,
+          "name": "fabNote",
+          "fill": "#777",
+          "textGrowth": "fixed-width",
+          "width": 360,
+          "content": "position: fixed; right: 24px; bottom: 24px;\n56×56 circle, drop shadow 0 6 20 / 18%",
+          "lineHeight": 1.5,
+          "fontFamily": "Inter",
+          "fontSize": 11
+        },
+        {
+          "type": "frame",
+          "id": "JnIsO",
+          "x": 520,
+          "y": 180,
+          "name": "heroPanel",
+          "clip": true,
+          "width": 400,
+          "height": 600,
+          "fill": "#FFFFFF",
+          "cornerRadius": 16,
+          "effect": {
+            "type": "shadow",
+            "shadowType": "outer",
+            "color": "#00000038",
+            "offset": {
+              "x": 0,
+              "y": 12
+            },
+            "blur": 40
+          },
+          "layout": "vertical",
+          "children": [
+            {
+              "type": "frame",
+              "id": "xubAU",
+              "name": "heroHeader",
+              "width": "fill_container",
+              "height": 48,
+              "padding": [
+                12,
+                16,
+                0,
+                16
+              ],
+              "justifyContent": "end",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "M5aaHe",
+                  "name": "heroClose",
+                  "width": 18,
+                  "height": 18,
+                  "iconFontName": "x",
+                  "iconFontFamily": "phosphor",
+                  "fill": "#666"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "S2xk0",
+              "name": "heroBody",
+              "width": "fill_container",
+              "height": "fill_container",
+              "layout": "vertical",
+              "gap": 14,
+              "padding": [
+                24,
+                20,
+                16,
+                20
+              ],
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "NWe6A",
+                  "name": "heroIcon",
+                  "width": 40,
+                  "height": 40,
+                  "iconFontName": "star-four",
+                  "iconFontFamily": "phosphor",
+                  "fill": "$A:--primary"
+                },
+                {
+                  "type": "text",
+                  "id": "WVuNh",
+                  "name": "heroH2",
+                  "fill": "#333",
+                  "content": "Ask anything about this home",
+                  "fontFamily": "Poppins",
+                  "fontSize": 18,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "frame",
+                  "id": "ciJb2",
+                  "name": "scopePillHero",
+                  "fill": "#E9F6F7",
+                  "cornerRadius": 15,
+                  "gap": 6,
+                  "padding": [
+                    5,
+                    12,
+                    5,
+                    10
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "s9hTk",
+                      "name": "scopePin1",
+                      "width": 14,
+                      "height": 14,
+                      "iconFontName": "map-pin",
+                      "iconFontFamily": "phosphor",
+                      "fill": "$A:--primary"
+                    },
+                    {
+                      "type": "text",
+                      "id": "TVv5l",
+                      "name": "scopeText1",
+                      "fill": "#666",
+                      "content": "Unit 301 - 110 12 Avenue NE · Calgary",
+                      "fontFamily": "Poppins",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "UwrOR",
+                  "name": "chipsSpacer",
+                  "width": "fill_container",
+                  "height": 1,
+                  "fill": "#00000000"
+                },
+                {
+                  "type": "frame",
+                  "id": "uTg5h",
+                  "name": "heroChips",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 10,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "yDGq4",
+                      "name": "chip1",
+                      "fill": "#FFFFFF",
+                      "cornerRadius": 20,
+                      "stroke": {
+                        "align": "inside",
+                        "thickness": 1,
+                        "fill": "#E0E0E0"
+                      },
+                      "padding": [
+                        7,
+                        14
+                      ],
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "j0Any1",
+                          "name": "chip1Text",
+                          "fill": "#333",
+                          "content": "Tell me about this home",
+                          "fontFamily": "Poppins",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "ZRJuc",
+                      "name": "chip2",
+                      "fill": "#FFFFFF",
+                      "cornerRadius": 20,
+                      "stroke": {
+                        "align": "inside",
+                        "thickness": 1,
+                        "fill": "#E0E0E0"
+                      },
+                      "padding": [
+                        7,
+                        14
+                      ],
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "ka9TT",
+                          "name": "chip2Text",
+                          "fill": "#333",
+                          "content": "How does it compare to nearby listings?",
+                          "fontFamily": "Poppins",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "ESWhH",
+                      "name": "chip3",
+                      "fill": "#FFFFFF",
+                      "cornerRadius": 20,
+                      "stroke": {
+                        "align": "inside",
+                        "thickness": 1,
+                        "fill": "#E0E0E0"
+                      },
+                      "padding": [
+                        7,
+                        14
+                      ],
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "YsWhc",
+                          "name": "chip3Text",
+                          "fill": "#333",
+                          "content": "Anything I should be cautious about?",
+                          "fontFamily": "Poppins",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "cPSRS",
+              "name": "heroComposer",
+              "width": "fill_container",
+              "height": 72,
+              "gap": 10,
+              "padding": [
+                12,
+                16,
+                16,
+                16
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "AuzLi",
+                  "name": "heroInput",
+                  "width": "fill_container",
+                  "height": 44,
+                  "fill": "#EDEDF0",
+                  "cornerRadius": 22,
+                  "padding": [
+                    0,
+                    16
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "Ve6DT",
+                      "name": "heroPlaceholder",
+                      "fill": "#BBB",
+                      "content": "Ask anything about this home...",
+                      "fontFamily": "Poppins",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "j1iny",
+                  "name": "heroSend",
+                  "width": 44,
+                  "height": 44,
+                  "fill": "$A:--primary",
+                  "cornerRadius": 22,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "WdmHf",
+                      "name": "heroSendIcon",
+                      "width": 18,
+                      "height": 18,
+                      "iconFontName": "arrow-up",
+                      "iconFontFamily": "phosphor",
+                      "fill": "#FFFFFF"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "nuNAm",
+          "x": 1080,
+          "y": 180,
+          "name": "msgPanel",
+          "clip": true,
+          "width": 400,
+          "height": 600,
+          "fill": "#FFFFFF",
+          "cornerRadius": 16,
+          "effect": {
+            "type": "shadow",
+            "shadowType": "outer",
+            "color": "#00000038",
+            "offset": {
+              "x": 0,
+              "y": 12
+            },
+            "blur": 40
+          },
+          "layout": "vertical",
+          "children": [
+            {
+              "type": "frame",
+              "id": "HB8OL",
+              "name": "msgHeader",
+              "width": "fill_container",
+              "height": 48,
+              "stroke": {
+                "align": "inside",
+                "thickness": {
+                  "bottom": 1
+                },
+                "fill": "#EEE"
+              },
+              "padding": [
+                12,
+                16
+              ],
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "uIfJ1",
+                  "name": "msgScopePill",
+                  "fill": "#E9F6F7",
+                  "cornerRadius": 14,
+                  "gap": 6,
+                  "padding": [
+                    4,
+                    12,
+                    4,
+                    10
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "G0Soq",
+                      "name": "msgScopePin",
+                      "width": 13,
+                      "height": 13,
+                      "iconFontName": "map-pin",
+                      "iconFontFamily": "phosphor",
+                      "fill": "$A:--primary"
+                    },
+                    {
+                      "type": "text",
+                      "id": "Pon9d",
+                      "name": "msgScopeText",
+                      "fill": "#666",
+                      "content": "Unit 301 - 110 12 Avenue NE · Calgary",
+                      "fontFamily": "Poppins",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "icon_font",
+                  "id": "yD91h",
+                  "name": "msgClose",
+                  "width": 18,
+                  "height": 18,
+                  "iconFontName": "x",
+                  "iconFontFamily": "phosphor",
+                  "fill": "#666"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "Ef31f",
+              "name": "msgBody",
+              "width": "fill_container",
+              "height": "fill_container",
+              "layout": "vertical",
+              "gap": 16,
+              "padding": 16,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "i91MR",
+                  "name": "userRow",
+                  "width": "fill_container",
+                  "justifyContent": "end",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "R8gqb",
+                      "name": "userBubble",
+                      "fill": "$A:--primary",
+                      "cornerRadius": [
+                        18,
+                        18,
+                        4,
+                        18
+                      ],
+                      "layout": "vertical",
+                      "padding": [
+                        10,
+                        14
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "Qw7Gf",
+                          "name": "userText",
+                          "fill": "#FFFFFF",
+                          "content": "what is the price?",
+                          "fontFamily": "Poppins",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "kSqpH",
+                  "name": "aiRow",
+                  "width": "fill_container",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "N66uB9",
+                      "name": "aiBubble",
+                      "width": 322,
+                      "fill": "#F4F5F7",
+                      "cornerRadius": [
+                        18,
+                        18,
+                        18,
+                        4
+                      ],
+                      "layout": "vertical",
+                      "gap": 4,
+                      "padding": [
+                        10,
+                        14
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "Chf86",
+                          "name": "aiText",
+                          "fill": "#333",
+                          "textGrowth": "fixed-width",
+                          "width": 290,
+                          "content": "The current asking price is $299,900. Property taxes for 2025 are $2,339 and the monthly maintenance fee is $475.",
+                          "fontFamily": "Poppins",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "Z0Vgt0",
+              "name": "msgComposer",
+              "width": "fill_container",
+              "height": 72,
+              "gap": 10,
+              "padding": [
+                12,
+                16,
+                16,
+                16
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "avC3V",
+                  "name": "msgInput",
+                  "width": "fill_container",
+                  "height": 44,
+                  "fill": "#EDEDF0",
+                  "cornerRadius": 22,
+                  "padding": [
+                    0,
+                    16
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "AdT25",
+                      "name": "msgPlaceholder",
+                      "fill": "#BBB",
+                      "content": "Ask anything about this home...",
+                      "fontFamily": "Poppins",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "t0ToU",
+                  "name": "msgSend",
+                  "width": 44,
+                  "height": 44,
+                  "fill": "$A:--primary",
+                  "cornerRadius": 22,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "rsUqS",
+                      "name": "msgSendIcon",
+                      "width": 18,
+                      "height": 18,
+                      "iconFontName": "arrow-up",
+                      "iconFontFamily": "phosphor",
+                      "fill": "#FFFFFF"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "Sf2Cd",
+          "x": 520,
+          "y": 830,
+          "name": "specNote",
+          "fill": "#555",
+          "textGrowth": "fixed-width",
+          "width": 1000,
+          "content": "Panel 400×600 (max 100vh − 48) · radius 16 · shadow 0 12 40 / 22% · z-index 1000\nHeader: 12 16 padding · divider 1px #EEE in Messages, no divider in Hero Entry\nHero entry: minimal chrome (close only, justify-end, no border)\nMessages: scope pill left + close right + border\nAI bubble max-width 90% (≈322 within 368-wide messages area)\nLong-press / drag / sheet snap = NOT applicable (desktop popover, not bottom sheet)",
+          "lineHeight": 1.6,
+          "fontFamily": "Inter",
+          "fontSize": 11
         }
       ]
     }

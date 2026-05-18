@@ -6697,6 +6697,732 @@
           "fontWeight": "700"
         }
       ]
+    },
+    {
+      "type": "frame",
+      "id": "g4phu",
+      "x": 3814,
+      "y": 0,
+      "name": "Desktop — Floating Popover Variant",
+      "width": 1700,
+      "height": 1100,
+      "fill": "#FFFFFF",
+      "stroke": {
+        "align": "inside",
+        "thickness": 1,
+        "fill": "#E5E5E5"
+      },
+      "layout": "none",
+      "children": [
+        {
+          "type": "text",
+          "id": "dI1Er",
+          "x": 80,
+          "y": 36,
+          "name": "dsTitle",
+          "fill": "#222",
+          "content": "Desktop — Floating Popover Variant",
+          "fontFamily": "Open Sans",
+          "fontSize": 22,
+          "fontWeight": "700"
+        },
+        {
+          "type": "text",
+          "id": "O9qum3",
+          "x": 80,
+          "y": 74,
+          "name": "dsSubtitle",
+          "fill": "#555",
+          "textGrowth": "fixed-width",
+          "width": 1540,
+          "content": "Same 12-state machine as mobile; only the surface container differs. Sheet snap / drag bar / safe-area become irrelevant. Popover is fixed bottom-right, anchored to the listing-page viewport. parent (listing page) is always partially visible.",
+          "fontFamily": "Inter",
+          "fontSize": 13
+        },
+        {
+          "type": "text",
+          "id": "r0e9Y",
+          "x": 80,
+          "y": 140,
+          "name": "dsLabelFab",
+          "fill": "#555",
+          "content": "1. FAB (collapsed)",
+          "fontFamily": "Inter",
+          "fontSize": 13,
+          "fontWeight": "600"
+        },
+        {
+          "type": "text",
+          "id": "QvDJy",
+          "x": 520,
+          "y": 140,
+          "name": "dsLabelHero",
+          "fill": "#555",
+          "content": "2. Panel — Hero Entry",
+          "fontFamily": "Inter",
+          "fontSize": 13,
+          "fontWeight": "600"
+        },
+        {
+          "type": "text",
+          "id": "mMLeV",
+          "x": 1080,
+          "y": 140,
+          "name": "dsLabelMsg",
+          "fill": "#555",
+          "content": "3. Panel — Messages",
+          "fontFamily": "Inter",
+          "fontSize": 13,
+          "fontWeight": "600"
+        },
+        {
+          "type": "frame",
+          "id": "BMjI0",
+          "x": 80,
+          "y": 180,
+          "name": "viewportContext",
+          "width": 360,
+          "height": 800,
+          "fill": "#F8F9FB",
+          "cornerRadius": 12,
+          "stroke": {
+            "align": "inside",
+            "thickness": 1,
+            "fill": "#E5E7EB"
+          },
+          "layout": "none",
+          "children": [
+            {
+              "type": "text",
+              "id": "Yd8Tj",
+              "x": 14,
+              "y": 14,
+              "name": "dsVpHint",
+              "fill": "#A0A4AB",
+              "content": "viewport (faded background)",
+              "fontFamily": "Inter",
+              "fontSize": 11
+            },
+            {
+              "type": "frame",
+              "id": "gcgSv",
+              "x": 280,
+              "y": 720,
+              "name": "fab",
+              "width": 56,
+              "height": 56,
+              "fill": "$A:--primary",
+              "cornerRadius": 28,
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#0000002E",
+                "offset": {
+                  "x": 0,
+                  "y": 6
+                },
+                "blur": 20
+              },
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "SlB0m",
+                  "name": "dsFabIcon",
+                  "width": 22,
+                  "height": 22,
+                  "iconFontName": "star-four",
+                  "iconFontFamily": "phosphor",
+                  "fill": "#FFFFFF"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "YwLh9",
+          "x": 80,
+          "y": 1000,
+          "name": "dsFabNote",
+          "fill": "#777",
+          "textGrowth": "fixed-width",
+          "width": 360,
+          "content": "position: fixed; right: 24; bottom: 24;\n56×56 circle, drop shadow 0 6 20 / 18%",
+          "lineHeight": 1.5,
+          "fontFamily": "Inter",
+          "fontSize": 11
+        },
+        {
+          "type": "frame",
+          "id": "H67LGZ",
+          "x": 520,
+          "y": 180,
+          "name": "heroPanel",
+          "clip": true,
+          "width": 400,
+          "height": 600,
+          "fill": "#FFFFFF",
+          "cornerRadius": 16,
+          "effect": {
+            "type": "shadow",
+            "shadowType": "outer",
+            "color": "#00000038",
+            "offset": {
+              "x": 0,
+              "y": 12
+            },
+            "blur": 40
+          },
+          "layout": "vertical",
+          "children": [
+            {
+              "type": "frame",
+              "id": "rj7fv",
+              "name": "heroHeader",
+              "width": "fill_container",
+              "height": 48,
+              "padding": [
+                12,
+                16,
+                0,
+                16
+              ],
+              "justifyContent": "end",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "S979B",
+                  "name": "dsHeroClose",
+                  "width": 18,
+                  "height": 18,
+                  "iconFontName": "x",
+                  "iconFontFamily": "phosphor",
+                  "fill": "#666"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "D1bhe",
+              "name": "heroBody",
+              "width": "fill_container",
+              "height": "fill_container",
+              "layout": "vertical",
+              "gap": 14,
+              "padding": [
+                24,
+                20,
+                16,
+                20
+              ],
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "n6nYTk",
+                  "name": "dsHeroIcon",
+                  "width": 40,
+                  "height": 40,
+                  "iconFontName": "star-four",
+                  "iconFontFamily": "phosphor",
+                  "fill": "$A:--primary"
+                },
+                {
+                  "type": "text",
+                  "id": "lZX5k",
+                  "name": "dsHeroH2",
+                  "fill": "#333",
+                  "content": "Ask anything about this home",
+                  "fontFamily": "Poppins",
+                  "fontSize": 18,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "frame",
+                  "id": "ngyIf",
+                  "name": "dsScopePill",
+                  "fill": "#E9F6F7",
+                  "cornerRadius": 15,
+                  "gap": 6,
+                  "padding": [
+                    5,
+                    12,
+                    5,
+                    10
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "v5eoH0",
+                      "name": "dsScopePin",
+                      "width": 14,
+                      "height": 14,
+                      "iconFontName": "map-pin",
+                      "iconFontFamily": "phosphor",
+                      "fill": "$A:--primary"
+                    },
+                    {
+                      "type": "text",
+                      "id": "PMQvU",
+                      "name": "dsScopeText",
+                      "fill": "#666",
+                      "content": "Unit 301 - 110 12 Avenue NE · Calgary",
+                      "fontFamily": "Poppins",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "QHTRs",
+                  "name": "dsChipsSpacer",
+                  "width": "fill_container",
+                  "height": 1,
+                  "fill": "#00000000"
+                },
+                {
+                  "type": "frame",
+                  "id": "sKR8S",
+                  "name": "dsChips",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 10,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "A2q84",
+                      "name": "dsChip1",
+                      "fill": "#FFFFFF",
+                      "cornerRadius": 20,
+                      "stroke": {
+                        "align": "inside",
+                        "thickness": 1,
+                        "fill": "#E0E0E0"
+                      },
+                      "padding": [
+                        7,
+                        14
+                      ],
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "z5snff",
+                          "name": "dsChip1Text",
+                          "fill": "#333",
+                          "content": "Tell me about this home",
+                          "fontFamily": "Poppins",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Qwz73",
+                      "name": "dsChip2",
+                      "fill": "#FFFFFF",
+                      "cornerRadius": 20,
+                      "stroke": {
+                        "align": "inside",
+                        "thickness": 1,
+                        "fill": "#E0E0E0"
+                      },
+                      "padding": [
+                        7,
+                        14
+                      ],
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "GG7Ur",
+                          "name": "dsChip2Text",
+                          "fill": "#333",
+                          "content": "How does it compare to nearby listings?",
+                          "fontFamily": "Poppins",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "fZ9aa",
+                      "name": "dsChip3",
+                      "fill": "#FFFFFF",
+                      "cornerRadius": 20,
+                      "stroke": {
+                        "align": "inside",
+                        "thickness": 1,
+                        "fill": "#E0E0E0"
+                      },
+                      "padding": [
+                        7,
+                        14
+                      ],
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "FGjbV",
+                          "name": "dsChip3Text",
+                          "fill": "#333",
+                          "content": "Anything I should be cautious about?",
+                          "fontFamily": "Poppins",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "ArqfG",
+              "name": "dsHeroComposer",
+              "width": "fill_container",
+              "height": 72,
+              "gap": 10,
+              "padding": [
+                12,
+                16,
+                16,
+                16
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "SzlwC",
+                  "name": "dsHeroInput",
+                  "width": "fill_container",
+                  "height": 44,
+                  "fill": "#EDEDF0",
+                  "cornerRadius": 22,
+                  "padding": [
+                    0,
+                    16
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "R1WHmz",
+                      "name": "dsHeroPlaceholder",
+                      "fill": "#BBB",
+                      "content": "Ask anything about this home...",
+                      "fontFamily": "Poppins",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "slvMD",
+                  "name": "dsHeroSend",
+                  "width": 44,
+                  "height": 44,
+                  "fill": "$A:--primary",
+                  "cornerRadius": 22,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "LTfN8",
+                      "name": "dsHeroSendIcon",
+                      "width": 18,
+                      "height": 18,
+                      "iconFontName": "arrow-up",
+                      "iconFontFamily": "phosphor",
+                      "fill": "#FFFFFF"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "fLDnk",
+          "x": 1080,
+          "y": 180,
+          "name": "msgPanel",
+          "clip": true,
+          "width": 400,
+          "height": 600,
+          "fill": "#FFFFFF",
+          "cornerRadius": 16,
+          "effect": {
+            "type": "shadow",
+            "shadowType": "outer",
+            "color": "#00000038",
+            "offset": {
+              "x": 0,
+              "y": 12
+            },
+            "blur": 40
+          },
+          "layout": "vertical",
+          "children": [
+            {
+              "type": "frame",
+              "id": "lPoA4",
+              "name": "dsMsgHeader",
+              "width": "fill_container",
+              "height": 48,
+              "stroke": {
+                "align": "inside",
+                "thickness": {
+                  "bottom": 1
+                },
+                "fill": "#EEE"
+              },
+              "padding": [
+                12,
+                16
+              ],
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "B0xuG",
+                  "name": "dsMsgScopePill",
+                  "fill": "#E9F6F7",
+                  "cornerRadius": 14,
+                  "gap": 6,
+                  "padding": [
+                    4,
+                    12,
+                    4,
+                    10
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "o7qCkL",
+                      "name": "dsMsgScopePin",
+                      "width": 13,
+                      "height": 13,
+                      "iconFontName": "map-pin",
+                      "iconFontFamily": "phosphor",
+                      "fill": "$A:--primary"
+                    },
+                    {
+                      "type": "text",
+                      "id": "r3FeCN",
+                      "name": "dsMsgScopeText",
+                      "fill": "#666",
+                      "content": "Unit 301 - 110 12 Avenue NE · Calgary",
+                      "fontFamily": "Poppins",
+                      "fontSize": 12,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "icon_font",
+                  "id": "ARUDq",
+                  "name": "dsMsgClose",
+                  "width": 18,
+                  "height": 18,
+                  "iconFontName": "x",
+                  "iconFontFamily": "phosphor",
+                  "fill": "#666"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "yMPR9",
+              "name": "dsMsgBody",
+              "width": "fill_container",
+              "height": "fill_container",
+              "layout": "vertical",
+              "gap": 16,
+              "padding": 16,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "lB6O7",
+                  "name": "dsUserRow",
+                  "width": "fill_container",
+                  "justifyContent": "end",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "Av56m",
+                      "name": "dsUserBubble",
+                      "fill": "$A:--primary",
+                      "cornerRadius": [
+                        18,
+                        18,
+                        4,
+                        18
+                      ],
+                      "layout": "vertical",
+                      "padding": [
+                        10,
+                        14
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "uf1ly",
+                          "name": "dsUserText",
+                          "fill": "#FFFFFF",
+                          "content": "what is the price?",
+                          "fontFamily": "Poppins",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "LeOYp",
+                  "name": "dsAiRow",
+                  "width": "fill_container",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "zblcr",
+                      "name": "dsAiBubble",
+                      "width": 322,
+                      "fill": "#F4F5F7",
+                      "cornerRadius": [
+                        18,
+                        18,
+                        18,
+                        4
+                      ],
+                      "layout": "vertical",
+                      "gap": 4,
+                      "padding": [
+                        10,
+                        14
+                      ],
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "LeHp2",
+                          "name": "dsAiText",
+                          "fill": "#333",
+                          "textGrowth": "fixed-width",
+                          "width": 290,
+                          "content": "The current asking price is $299,900. Property taxes for 2025 are $2,339 and the monthly maintenance fee is $475.",
+                          "fontFamily": "Poppins",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "aHvYt",
+              "name": "dsMsgComposer",
+              "width": "fill_container",
+              "height": 72,
+              "gap": 10,
+              "padding": [
+                12,
+                16,
+                16,
+                16
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "KmHaQ",
+                  "name": "dsMsgInput",
+                  "width": "fill_container",
+                  "height": 44,
+                  "fill": "#EDEDF0",
+                  "cornerRadius": 22,
+                  "padding": [
+                    0,
+                    16
+                  ],
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "H8gT0r",
+                      "name": "dsMsgPlaceholder",
+                      "fill": "#BBB",
+                      "content": "Ask anything about this home...",
+                      "fontFamily": "Poppins",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "EBiWw",
+                  "name": "dsMsgSend",
+                  "width": 44,
+                  "height": 44,
+                  "fill": "$A:--primary",
+                  "cornerRadius": 22,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "YOLP6",
+                      "name": "dsMsgSendIcon",
+                      "width": 18,
+                      "height": 18,
+                      "iconFontName": "arrow-up",
+                      "iconFontFamily": "phosphor",
+                      "fill": "#FFFFFF"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "Byszn",
+          "x": 520,
+          "y": 830,
+          "name": "dsSpec",
+          "fill": "#555",
+          "textGrowth": "fixed-width",
+          "width": 1000,
+          "content": "Panel 400×600 (max 100vh − 48) · radius 16 · shadow 0 12 40 / 22% · z-index 1000\nHero entry: minimal chrome (close only, justify-end, no border)\nMessages: scope pill left + close right + 1px #EEE divider\nDelta vs mobile sheet: no drag bar / no snap / no safe-area-inset · scope pill migrates from hero to header when messages start",
+          "lineHeight": 1.6,
+          "fontFamily": "Inter",
+          "fontSize": 11
+        }
+      ]
     }
   ],
   "imports": {
