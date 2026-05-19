@@ -1,0 +1,490 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Table Rendering — chat bubble overflow strategies</title>
+<style>
+  /* design tokens lifted from chat-md-demo.html so the bubbles look familiar */
+  :root {
+    --primary: #00838f;
+    --primary-foreground: #fff;
+    --muted: #f1f3f4;
+    --muted-foreground: #5f6368;
+    --foreground: #1f1f1f;
+    --border: rgba(0, 0, 0, 0.10);
+    --card: #ffffff;
+    --bg: #eef0f3;
+    --good: #1b7c3f;
+    --bad: #a8350e;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 32px 24px 64px;
+    font-family: -apple-system, "Helvetica Neue", "Segoe UI", "PingFang SC",
+                 "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: var(--bg);
+    color: var(--foreground);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── page header ─────────────────────────────────────────────────── */
+  .page-header { max-width: 1320px; margin: 0 auto 24px; }
+  .page-title  { margin: 0 0 6px; font-size: 22px; font-weight: 700; }
+  .page-subtitle {
+    margin: 0 0 6px;
+    font-size: 13px;
+    color: var(--muted-foreground);
+    max-width: 760px;
+  }
+  .page-hint {
+    margin: 8px 0 0;
+    font-size: 12px;
+    color: #8a4d12;
+    background: #fff3cd;
+    padding: 6px 10px;
+    border-radius: 6px;
+    display: inline-block;
+  }
+  code { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 0.92em; }
+
+  /* ── panel grid ──────────────────────────────────────────────────── */
+  .stage {
+    max-width: 1320px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 20px;
+    align-items: start;
+  }
+  .panel {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 14px 14px 18px;
+    overflow: hidden;
+  }
+  .panel-label {
+    display: inline-block;
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: var(--primary);
+    background: rgba(0, 131, 143, 0.10);
+    padding: 2px 8px;
+    border-radius: 10px;
+    margin-bottom: 6px;
+    font-family: ui-monospace, monospace;
+  }
+  .panel-title { margin: 0 0 4px; font-size: 14px; font-weight: 700; }
+  .panel-desc  { margin: 0 0 12px; font-size: 12px; color: var(--muted-foreground); line-height: 1.5; }
+  .panel-pros, .panel-cons {
+    margin: 6px 0 0;
+    padding-left: 18px;
+    font-size: 11.5px;
+    line-height: 1.55;
+  }
+  .panel-pros li { color: var(--good); }
+  .panel-cons li { color: var(--bad); }
+
+  /* ── chat bubble frame (mobile-narrow so the overflow is obvious) ── */
+  .bubble-frame {
+    margin: 0 auto 8px;
+    padding: 8px;
+    background: #f6f6f8;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    width: 320px;
+    max-width: 100%;
+  }
+  .message-row { display: flex; }
+  .message-group { max-width: 90%; }
+  .message-bubble {
+    background: var(--muted);
+    color: var(--foreground);
+    padding: 12px 14px;
+    border-radius: 16px 16px 16px 4px;
+    font-size: 14px;
+    line-height: 1.5;
+    overflow: hidden;     /* clip rounded corners over table edges */
+  }
+  .md-content h4 { margin: 0 0 6px; font-size: 14px; font-weight: 700; }
+  .md-content p  { margin: 0 0 6px; }
+  .md-content p:last-child { margin-bottom: 0; }
+
+  /* ═══════════════════════════════════════════════════════════════════
+     0 · CURRENT — chat-md-demo.html:434-457 verbatim
+     ═══════════════════════════════════════════════════════════════════ */
+  .v-current .md-content table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    border-collapse: collapse;
+    margin: 8px 0;
+    font-size: 12px;
+  }
+  .v-current .md-content th,
+  .v-current .md-content td {
+    padding: 6px 8px;
+    border: 1px solid var(--border);
+    text-align: left;
+    vertical-align: top;
+    white-space: normal;
+  }
+  .v-current .md-content th { background: rgba(0, 0, 0, 0.04); font-weight: 600; }
+
+  /* ═══════════════════════════════════════════════════════════════════
+     A · TABLE-AS-SCROLLER — width:max-content + cell nowrap
+     ═══════════════════════════════════════════════════════════════════ */
+  .v-a .md-content table {
+    display: block;
+    width: max-content;
+    max-width: 100%;
+    overflow-x: auto;
+    border-collapse: collapse;
+    margin: 8px 0;
+    font-size: 12px;
+  }
+  .v-a .md-content th,
+  .v-a .md-content td {
+    padding: 6px 8px;
+    border: 1px solid var(--border);
+    text-align: left;
+    white-space: nowrap;
+  }
+  .v-a .md-content th { background: rgba(0, 0, 0, 0.04); font-weight: 600; }
+
+  /* ═══════════════════════════════════════════════════════════════════
+     B · WRAPPER SCROLLER — outer div scrolls, table stays display:table
+     ═══════════════════════════════════════════════════════════════════ */
+  .v-b .md-content .md-table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 8px 0;
+  }
+  .v-b .md-content .md-table-wrap > table {
+    display: table;
+    width: auto;
+    min-width: 100%;
+    border-collapse: collapse;
+    margin: 0;
+    font-size: 12px;
+  }
+  .v-b .md-content th,
+  .v-b .md-content td {
+    padding: 6px 8px;
+    border: 1px solid var(--border);
+    text-align: left;
+    white-space: nowrap;
+  }
+  .v-b .md-content th { background: rgba(0, 0, 0, 0.04); font-weight: 600; }
+
+  /* ═══════════════════════════════════════════════════════════════════
+     B+ · B plus right-edge fade mask (scroll affordance)
+     ═══════════════════════════════════════════════════════════════════ */
+  .v-bplus .md-content .md-table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 8px 0;
+    mask-image: linear-gradient(to right, #000 0, #000 calc(100% - 28px), transparent);
+    -webkit-mask-image: linear-gradient(to right, #000 0, #000 calc(100% - 28px), transparent);
+  }
+  .v-bplus .md-content .md-table-wrap > table {
+    display: table;
+    width: auto;
+    min-width: 100%;
+    border-collapse: collapse;
+    margin: 0;
+    font-size: 12px;
+  }
+  .v-bplus .md-content th,
+  .v-bplus .md-content td {
+    padding: 6px 8px;
+    border: 1px solid var(--border);
+    text-align: left;
+    white-space: nowrap;
+  }
+  .v-bplus .md-content th { background: rgba(0, 0, 0, 0.04); font-weight: 600; }
+
+  /* ═══════════════════════════════════════════════════════════════════
+     C · STICKY FIRST COLUMN — B+ extended with frozen address column
+     ═══════════════════════════════════════════════════════════════════ */
+  .v-c .md-content .md-table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 8px 0;
+    mask-image: linear-gradient(to right, #000 0, #000 calc(100% - 28px), transparent);
+    -webkit-mask-image: linear-gradient(to right, #000 0, #000 calc(100% - 28px), transparent);
+  }
+  .v-c .md-content .md-table-wrap > table {
+    display: table;
+    width: auto;
+    min-width: 100%;
+    border-collapse: separate;   /* sticky requires separate borders */
+    border-spacing: 0;
+    margin: 0;
+    font-size: 12px;
+  }
+  .v-c .md-content th,
+  .v-c .md-content td {
+    padding: 6px 8px;
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    text-align: left;
+    white-space: nowrap;
+    background: var(--muted);
+  }
+  .v-c .md-content tr:first-child th { border-top: 1px solid var(--border); }
+  .v-c .md-content th:first-child,
+  .v-c .md-content td:first-child {
+    border-left: 1px solid var(--border);
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    box-shadow: 2px 0 4px -2px rgba(0, 0, 0, 0.18); /* seam when scrolled */
+  }
+  .v-c .md-content th             { background: #e6e8eb; font-weight: 600; }
+  .v-c .md-content th:first-child { background: #d9dde0; }
+  .v-c .md-content td:first-child { background: #f1f3f4; }
+
+  /* ── code snippet block ──────────────────────────────────────────── */
+  .snippet-block {
+    max-width: 1320px;
+    margin: 32px auto 0;
+    background: #1f2330;
+    color: #e8eaed;
+    padding: 18px 20px;
+    border-radius: 12px;
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 12.5px;
+    line-height: 1.6;
+    overflow-x: auto;
+  }
+  .snippet-title {
+    color: #ffa94d;
+    font-weight: 700;
+    margin-bottom: 10px;
+    font-family: -apple-system, sans-serif;
+    font-size: 13px;
+  }
+  .snippet-block pre { margin: 0; white-space: pre; }
+  .key     { color: #ff79c6; }
+  .str     { color: #f1fa8c; }
+  .comment { color: #6272a4; font-style: italic; }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <h1 class="page-title">Wide-table rendering — chat bubble overflow strategies</h1>
+  <p class="page-subtitle">
+    把同一张 10 列的房产对比表放进 320px 宽的气泡里。
+    五个面板：同一份 HTML，只换 CSS，渲染结果天差地别。
+  </p>
+  <p class="page-subtitle">
+    递进顺序：<strong>0 现状（squeeze）</strong> → <strong>A table 自身横滚</strong> →
+    <strong>B wrapper 横滚</strong> → <strong>B+ 加渐变提示</strong> →
+    <strong>C 第一列粘性</strong>。
+  </p>
+  <p class="page-hint">💡 在每个气泡里横向拖动表格，留意右边缘视觉提示和列宽行为</p>
+</div>
+
+<div class="stage">
+
+  <!-- ─── 0 · CURRENT ─────────────────────────────────────────────── -->
+  <div class="panel v-current">
+    <span class="panel-label">0 · CURRENT</span>
+    <h3 class="panel-title">现状 — squeeze + wrap</h3>
+    <p class="panel-desc">
+      <code>display:block; width:100%; overflow-x:auto</code> + 单元格 <code>white-space:normal</code>。<br>
+      浏览器选了"压缩列宽 + 文字换行"，<strong>不会触发横滚</strong>。
+    </p>
+    <div class="bubble-frame">
+      <div class="message-row">
+        <div class="message-group">
+          <div class="message-bubble">
+            <div class="md-content">
+              <h4>📊 周边可比销售</h4>
+              <div data-table></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ul class="panel-cons">
+      <li>列名被竖切（"List / Price"、"Sold / Price"）</li>
+      <li>数字与货币列被强行换行，难以扫读</li>
+      <li>列越多压得越扁，到 12 列基本不可读</li>
+    </ul>
+  </div>
+
+  <!-- ─── A · TABLE AS SCROLLER ───────────────────────────────────── -->
+  <div class="panel v-a">
+    <span class="panel-label">A · TABLE-SCROLLER</span>
+    <h3 class="panel-title">A — table 自己当滚动容器</h3>
+    <p class="panel-desc">
+      <code>width:max-content</code>（自然宽） + <code>max-width:100%</code> + 单元格
+      <code>nowrap</code>。总宽超出气泡 → 触发横滚。
+    </p>
+    <div class="bubble-frame">
+      <div class="message-row">
+        <div class="message-group">
+          <div class="message-bubble">
+            <div class="md-content">
+              <h4>📊 周边可比销售</h4>
+              <div data-table></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ul class="panel-pros">
+      <li>一处 CSS 改完，无需改 marked renderer</li>
+      <li>列宽按内容自然伸缩，整齐</li>
+    </ul>
+    <ul class="panel-cons">
+      <li>所有列强制 nowrap → 长地址 / 备注列变成一根长条</li>
+      <li><code>display:block</code> 丢失部分 table-layout 算法（colgroup、align 不可靠）</li>
+    </ul>
+  </div>
+
+  <!-- ─── B · WRAPPER ─────────────────────────────────────────────── -->
+  <div class="panel v-b">
+    <span class="panel-label">B · WRAPPER</span>
+    <h3 class="panel-title">B — 外层 div 当滚动容器</h3>
+    <p class="panel-desc">
+      marked renderer 在 <code>&lt;table&gt;</code> 外包一层
+      <code>&lt;div class="md-table-wrap"&gt;</code>。table 保持
+      <code>display:table</code>，列宽算法不丢。
+    </p>
+    <div class="bubble-frame">
+      <div class="message-row">
+        <div class="message-group">
+          <div class="message-bubble">
+            <div class="md-content">
+              <h4>📊 周边可比销售</h4>
+              <div class="md-table-wrap" role="region" aria-label="可比销售表" tabindex="0" data-table></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ul class="panel-pros">
+      <li>语义保留 — table 还是 table，colgroup / scope 都正常</li>
+      <li><code>tabindex="0"</code> 让键盘用户也能滚到溢出列</li>
+    </ul>
+    <ul class="panel-cons">
+      <li>需要改 marked renderer（一行）</li>
+      <li>缺少"还能滚"的视觉暗示，新用户易漏</li>
+    </ul>
+  </div>
+
+  <!-- ─── B+ · FADE MASK ──────────────────────────────────────────── -->
+  <div class="panel v-bplus">
+    <span class="panel-label">B+ · FADE MASK</span>
+    <h3 class="panel-title">B+ — 右侧渐变提示</h3>
+    <p class="panel-desc">
+      B 之上加 <code>mask-image</code>：右边缘 28px 线性渐隐到透明。
+      用户一眼看出"还能横滚"。
+    </p>
+    <div class="bubble-frame">
+      <div class="message-row">
+        <div class="message-group">
+          <div class="message-bubble">
+            <div class="md-content">
+              <h4>📊 周边可比销售</h4>
+              <div class="md-table-wrap" role="region" aria-label="可比销售表" tabindex="0" data-table></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ul class="panel-pros">
+      <li>视觉暗示零交互成本，纯 CSS</li>
+      <li>滚到最右时渐变会自然消失（隐含反馈）</li>
+    </ul>
+    <ul class="panel-cons">
+      <li>表格不溢出时仍渲染渐变 → 需要 JS 检测溢出后加 class，或接受小瑕疵</li>
+      <li>低端 Android WebView 上 mask 偶有锯齿，需要 fallback</li>
+    </ul>
+  </div>
+
+  <!-- ─── C · STICKY FIRST COLUMN ─────────────────────────────────── -->
+  <div class="panel v-c">
+    <span class="panel-label">C · STICKY-LEFT</span>
+    <h3 class="panel-title">C — 第一列粘性 + B+</h3>
+    <p class="panel-desc">
+      在 B+ 基础上对第一列 <code>position:sticky; left:0</code>。
+      横滚时地址列始终可见，方便对齐数据扫读。
+    </p>
+    <div class="bubble-frame">
+      <div class="message-row">
+        <div class="message-group">
+          <div class="message-bubble">
+            <div class="md-content">
+              <h4>📊 周边可比销售</h4>
+              <div class="md-table-wrap" role="region" aria-label="可比销售表" tabindex="0" data-table></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ul class="panel-pros">
+      <li>多列横滚体验最佳，类 Excel 冻结首列</li>
+      <li>sticky 列加 box-shadow 模拟 z 轴层次</li>
+    </ul>
+    <ul class="panel-cons">
+      <li>必须 <code>border-collapse:separate</code>，边框处理变啰嗦</li>
+      <li>sticky 单元格背景必须不透明，否则下层文字穿透</li>
+    </ul>
+  </div>
+
+</div>
+
+<!-- ── marked.js renderer override (works for B / B+ / C) ─────────── -->
+<div class="snippet-block">
+  <div class="snippet-title">marked.js renderer override（方案 B / B+ / C 共用）</div>
+<pre><span class="comment">// useChatStream.ts — 紧邻现有 new marked.Marked(...) 处</span>
+<span class="key">const</span> renderer = <span class="key">new</span> marked.<span class="key">Renderer</span>();
+<span class="key">const</span> origTable = renderer.table.bind(renderer);
+renderer.table = (...args) =&gt;
+  <span class="str">`&lt;div class="md-table-wrap" role="region" aria-label="表格" tabindex="0"&gt;${origTable(...args)}&lt;/div&gt;`</span>;
+
+<span class="key">const</span> _marked = <span class="key">new</span> marked.<span class="key">Marked</span>({ breaks: <span class="key">true</span>, gfm: <span class="key">true</span>, renderer });
+
+<span class="comment">// 注：DOMPurify 默认允许 div / role / tabindex / aria-label，无需额外白名单。</span></pre>
+</div>
+
+<script>
+  // ── shared sample data (10 columns × 4 rows of property comparables) ──
+  const COLS = ['Address', 'Beds', 'Baths', 'Sqft', 'Year', 'List Price', 'Sold Price', 'DOM', '$/Sqft', 'Type'];
+  const ROWS = [
+    ['12 Maple Ave',         '4', '3', '2,400', '2018', '$1,250,000', '$1,210,000', '12', '$504', 'Detached'],
+    ['88 King St E #1502',   '2', '2',   '980', '2020',   '$799,000',   '$810,000',  '5', '$827', 'Condo Apt'],
+    ['7 Oakwood Cres',       '3', '2', '1,860', '2005',   '$980,000',   '$955,000', '21', '$513', 'Semi-Detached'],
+    ['401 Lakeshore Blvd W', '5', '4', '3,120', '2022', '$1,850,000', '$1,780,000', '34', '$570', 'Detached'],
+  ];
+
+  function buildTable() {
+    const thead = `<thead><tr>${COLS.map(c => `<th>${c}</th>`).join('')}</tr></thead>`;
+    const tbody = `<tbody>${ROWS.map(r => `<tr>${r.map(c => `<td>${c}</td>`).join('')}</tr>`).join('')}</tbody>`;
+    return `<table>${thead}${tbody}</table>`;
+  }
+
+  // Two placement modes:
+  //   • [data-table] without .md-table-wrap → the div itself BECOMES the <table>
+  //   • [data-table] with .md-table-wrap    → the div stays as wrapper, table goes INSIDE
+  document.querySelectorAll('[data-table]').forEach((el) => {
+    if (el.classList.contains('md-table-wrap')) {
+      el.innerHTML = buildTable();
+    } else {
+      el.outerHTML = buildTable();
+    }
+  });
+</script>
+
+</body>
+</html>
