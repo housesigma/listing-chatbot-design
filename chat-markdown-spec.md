@@ -166,20 +166,37 @@ producing a giant heading inside a 14-15px bubble.
 
 | # | Tag | Markdown | Worker | Style |
 |---|---|---|---|---|
-| 15 | `table` | `\| col \| col \|` + `\|---\|---\|` | ✅ instructed | `display: block; width: 100%; overflow-x: auto; border-collapse: collapse; margin: 8px 0; font-size: 0.93em` |
+| 15 | `table` | `\| col \| col \|` + `\|---\|---\|` | ✅ instructed | `display: table; width: auto; min-width: 100%; border-collapse: collapse; margin: 0; font-size: 0.93em`. Wrapped in `<div class="md-table-wrap" role="region" aria-label="Table" tabindex="0">` by [`useChatStream.ts::table`](../../web-hybrid/packages/hook/ai/useChatStream.ts). The wrapper owns `overflow-x: auto` + a `mask-image` right-edge fade and `margin: 8px 0`. |
 | 16 | `thead` | header row | ✅ instructed | no override (styling carried by `th`) |
 | 17 | `tbody` | body rows | ✅ instructed | no override (styling carried by `td`) |
 | 18 | `tr` | row | ✅ instructed | no override |
-| 19 | `th` | header cell | ✅ instructed | `padding: 6px 10px; border: 1px solid rgba(0,0,0,0.08); text-align: left; vertical-align: top; white-space: normal; background: rgba(0,0,0,0.04); font-weight: 600` |
-| 20 | `td` | body cell | ✅ instructed | `padding: 6px 10px; border: 1px solid rgba(0,0,0,0.08); text-align: left; vertical-align: top; white-space: normal` |
+| 19 | `th` | header cell | ✅ instructed | `padding: 6px 10px; border: 1px solid rgba(0,0,0,0.08); text-align: left; vertical-align: top; white-space: nowrap; background: rgba(0,0,0,0.04); font-weight: 600` |
+| 20 | `td` | body cell | ✅ instructed | `padding: 6px 10px; border: 1px solid rgba(0,0,0,0.08); text-align: left; vertical-align: top; white-space: nowrap` |
 
-**Table overflow strategy** — tables use `display: block; overflow-x: auto`
-so a 3-column table on a narrow mobile viewport scrolls *inside the bubble*
-rather than forcing the bubble past `max-width: 90%`. Cells use
-`white-space: normal` so multi-line content wraps cleanly. Worker
-contract caps tables at 3 columns; horizontal-scroll model is chosen
-over column collapsing because the worker chose the comparison shape
-for a reason.
+**Table overflow strategy** (Strategy B+ in
+[`chat-table-demo.html`](chat-table-demo.html)) — the renderer wraps
+every `<table>` in `<div class="md-table-wrap">`; the wrapper scrolls
+horizontally inside the bubble so a wide comparison table doesn't push
+the bubble past `max-width: 90%`. Cells `white-space: nowrap` so the
+LLM's chosen comparison shape stays intact column-by-column rather than
+being squeezed into wraps. A `mask-image` linear gradient fades the
+right edge ~28 px so users discover the scroll affordance; the fade is
+dismissed once scrolled to the rightmost extent via the
+`[data-scroll-end]` attribute toggled by
+[`useTableScrollAffordance`](../../web-hybrid/packages/hook/ai/useTableScrollAffordance.ts)
+(scroll listener + `ResizeObserver` — `ResizeObserver` is required so
+the "end" updates as the table grows during streaming).
+
+Worker contract caps tables at 3 columns; the wrapper-scroll model is
+robust against any wider tables the LLM occasionally emits anyway. The
+renderer reuses `marked.Renderer.prototype.table` so cell `align`
+attributes from the markdown alignment row (`|---:|`, `|:---:|`) are
+preserved.
+
+Sticky-first-column (Strategy C in the demo) was evaluated and
+rejected — the opaque cell backgrounds it requires don't blend with
+the bubble color across light/dark themes, and the visual weight
+overpowered a 3-column table at the worker-contract cap.
 
 ### 4.7 Inline: emphasis (3)
 
