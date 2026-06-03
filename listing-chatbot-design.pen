@@ -27957,8 +27957,8 @@
                       "type": "icon",
                       "id": "wrgUP",
                       "name": "fabIcon",
-                      "width": 22,
-                      "height": 22,
+                      "width": 24,
+                      "height": 24,
                       "icon": "star-four-fill",
                       "library": "phosphor",
                       "fill": "#FFFFFF"
@@ -27995,8 +27995,8 @@
                       "type": "icon",
                       "id": "kEnQV",
                       "name": "ctaIcon",
-                      "width": 22,
-                      "height": 22,
+                      "width": 24,
+                      "height": 24,
                       "icon": "calendar-blank",
                       "library": "phosphor",
                       "fill": "#FFFFFF"
@@ -28560,7 +28560,7 @@
           "y": 1300,
           "name": "introHeader",
           "fill": "#333333",
-          "content": "FAB Launcher — Intro Animation Keyframes (desktop · §5.17 AI entry)",
+          "content": "FAB Launcher — Intro + Hover Motion (desktop · §5.17 AI entry)",
           "fontFamily": "Inter",
           "fontSize": 16,
           "fontWeight": "700"
@@ -28619,10 +28619,10 @@
             {
               "type": "frame",
               "id": "scFD2",
-              "x": 52,
+              "x": 44,
               "y": 360,
               "name": "introPill",
-              "width": 284,
+              "width": 312,
               "height": 56,
               "fill": "$A:--primary",
               "cornerRadius": 28,
@@ -28639,7 +28639,7 @@
               "gap": 10,
               "padding": [
                 0,
-                18,
+                30,
                 0,
                 16
               ],
@@ -28649,8 +28649,8 @@
                   "type": "icon",
                   "id": "YmJDs",
                   "name": "pillStar",
-                  "width": 22,
-                  "height": 22,
+                  "width": 24,
+                  "height": 24,
                   "icon": "star-four-fill",
                   "library": "phosphor",
                   "fill": "#FFFFFF"
@@ -28723,8 +28723,8 @@
                   "type": "icon",
                   "id": "Jbhu0",
                   "name": "circleStar",
-                  "width": 22,
-                  "height": 22,
+                  "width": 24,
+                  "height": 24,
                   "icon": "star-four-fill",
                   "library": "phosphor",
                   "fill": "#FFFFFF"
@@ -28754,7 +28754,114 @@
           "fill": "#777777",
           "textGrowth": "fixed-width",
           "width": 760,
-          "content": "First launch only (gate: localStorage.aiLauncher_intro_viewed). The expanded ✦ \"Ask anything about this home\" pill (284×56, r28) auto-collapses to the 56 circle: width 284→56 right-anchored (~420ms, ease-in-out) after a ~1.9s dwell; text fades + clips, star rides to center (padding-left 16 auto-centers it). Returning users render the circle directly. prefers-reduced-motion: skip straight to the circle. Live timeline: chat-fab-intro-demo.html.",
+          "content": "First launch only (gate: localStorage.aiLauncher_intro_viewed). The ✦ \"Ask anything about this home\" pill (312×56, r28, four-star 24) fades IN at full width — opacity only, no slide/scale — dwells ~1.9 s, then collapses width 312 → 56 right-anchored (~920 ms, ease-in-out) while the four-star spins 720° locked to the width (same segment + easing, so rotation tracks the morph 1:1). Height stays 56 throughout, so the centred star never drifts vertically; the label fades + clips and the star rides to centre (padding-left 16 auto-centres it). Returning users render the circle directly; prefers-reduced-motion skips straight to the circle. Live timeline: chat-fab-intro-demo.html.",
+          "lineHeight": 1.6,
+          "fontFamily": "Inter",
+          "fontSize": 11,
+          "fontWeight": "normal"
+        },
+        {
+          "type": "text",
+          "id": "AvEyG",
+          "x": 960,
+          "y": 1340,
+          "name": "introLbl1",
+          "fill": "#555555",
+          "content": "3. Hover — circle ⇄ pill (persistent)",
+          "fontFamily": "Inter",
+          "fontSize": 13,
+          "fontWeight": "600"
+        },
+        {
+          "type": "frame",
+          "id": "DbWA5",
+          "x": 960,
+          "y": 1366,
+          "name": "kfHover",
+          "width": 360,
+          "height": 440,
+          "fill": "#F8F9FB",
+          "cornerRadius": 12,
+          "stroke": "#E5E7EB",
+          "strokeWidth": 1,
+          "strokeAlignment": "inner",
+          "layout": "none",
+          "children": [
+            {
+              "type": "text",
+              "id": "tqqUd",
+              "x": 14,
+              "y": 14,
+              "name": "vpHint",
+              "fill": "#A0A4AB",
+              "content": "rest circle → hover expands to pill (same morph)",
+              "fontFamily": "Inter",
+              "fontSize": 11,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "uHWJD",
+              "x": 44,
+              "y": 360,
+              "name": "introPill",
+              "width": 312,
+              "height": 56,
+              "fill": "$A:--primary",
+              "cornerRadius": 28,
+              "effect": {
+                "type": "shadow",
+                "shadowType": "outer",
+                "color": "#0000002E",
+                "offset": {
+                  "x": 0,
+                  "y": 6
+                },
+                "blur": 20
+              },
+              "gap": 10,
+              "padding": [
+                0,
+                30,
+                0,
+                16
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon",
+                  "id": "qnDe6",
+                  "name": "pillStar",
+                  "width": 24,
+                  "height": 24,
+                  "icon": "star-four-fill",
+                  "library": "phosphor",
+                  "fill": "#FFFFFF"
+                },
+                {
+                  "type": "text",
+                  "id": "mVNqr",
+                  "name": "pillLabel",
+                  "fill": "#FFFFFF",
+                  "content": "Ask anything about this home",
+                  "fontFamily": "Inter",
+                  "fontSize": 15,
+                  "fontWeight": "600"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "N1zKGT",
+          "x": 960,
+          "y": 1828,
+          "name": "hoverNote",
+          "fill": "#777777",
+          "textGrowth": "fixed-width",
+          "width": 600,
+          "content": "Persistent (every visit, after the intro). Pointer enter expands the resting 56 circle to the 312 pill; pointer leave collapses it back. Reuses the intro morph exactly — unified ~920 ms, four-star 720° spin locked to the width, opacity-only label, no vertical drift. Stands down while the intro plays, while the panel is open, and under prefers-reduced-motion. Mid-morph reverse is seamless (from-values read live before cancelling the prior run).",
           "lineHeight": 1.6,
           "fontFamily": "Inter",
           "fontSize": 11,

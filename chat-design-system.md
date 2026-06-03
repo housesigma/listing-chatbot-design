@@ -661,11 +661,11 @@ Schedule View CTA, so the two are choreographed by these rules:
    CTA and stays mounted at full prominence throughout the intro — never
    hidden, dimmed, or delayed. Do not demote the commercial CTA to spotlight
    a secondary feature.
-2. **Vertical stack, no horizontal collision.** Intro pill (~284) and
+2. **Vertical stack, no horizontal collision.** Intro pill (~312) and
    Schedule View (~190) are both right-anchored in the column and stack with
    `gap: 12`; they never overlap — the intro pill just extends further left.
    AI is the TOP slot, Schedule the BOTTOM anchor, so as the pill collapses
-   `284 → 56` (width only; height stays 56) **Schedule never moves.**
+   `312 → 56` (width only; height stays 56) **Schedule never moves.**
 3. **Stagger the entrances** — never two simultaneous animations. Schedule
    View enters with the page and settles first; ~500 ms later the AI intro
    entrance begins above it. By the time the pill dwells, Schedule is already
@@ -698,8 +698,37 @@ Timeline (first launch, < 1280px) — motion-spec offsets + 500 ms stagger:
 | ~500 | AI intro entrance begins above Schedule |
 | ~900 | intro pill expanded & landed |
 | 900–2800 | dwell — AI is focal, Schedule calm below |
-| 2800–3220 | AI collapses 284 → 56 (Schedule unmoved) |
-| 3220 | rest — stack = `[ AI circle, Schedule View ]` |
+| 2800–3720 | AI collapses 312 → 56, four-star spins 720° (Schedule unmoved) |
+| 3720 | rest — stack = `[ AI circle, Schedule View ]` |
+
+#### FAB launcher motion spec (desktop)
+
+The desktop AI launcher is a single morphable pill — a 56 px circle at rest
+(`radius 28`, `--primary`, four-star **24 px** to match the Schedule View /
+Contact agent host CTA icon so the stacked pills read as one family) that
+expands to a 312 px labelled pill (`✦ Ask anything about this home`, 30 px right
+inset so the nowrap label clears the corner). Two surfaces share one morph:
+
+| | Trigger | Motion |
+|---|---|---|
+| **First-launch intro** | once per user (`localStorage.aiLauncher_intro_viewed`) | pill **fades in** at full width (opacity only — no slide/scale) → dwells ~1.9 s → collapses to circle |
+| **Hover** | every visit, after the intro, while at rest | pointer enter expands circle → pill; pointer leave collapses back |
+
+Shared morph rules:
+
+- **Unified duration** — every expand/collapse runs the same ~920 ms (the
+  intro collapse segment; hover expand and collapse match it).
+- **Star spin locked to width** — the four-star rotates **720°** on the exact
+  same segment + easing as the width, so rotation tracks morph progress 1:1.
+- **No vertical drift** — entrance is opacity-only and hover gives no lift;
+  height stays 56 throughout, so the centred star never moves up/down (the only
+  residual is the rotating icon's own bounding box, centre fixed).
+- **Reversible** — a mid-morph hover reverse is seamless (from-values are read
+  live before the prior animation is cancelled).
+- **Stands down** while the intro plays, while the panel is open, and under
+  `prefers-reduced-motion` (renders the circle directly).
+
+Live reference: `chat-fab-intro-demo.html`.
 
 ---
 

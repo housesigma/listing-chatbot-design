@@ -54,7 +54,7 @@
   /* ===== AI launcher (morphing) ===== */
   .fab{
     bottom:24px; width:56px;
-    padding-left:16px; padding-right:18px;   /* left:16 = star auto-centers at 56px */
+    padding-left:16px; padding-right:30px;   /* left:16 = star auto-centers at 56px; right:30 = label inset off corner */
   }
   .fab .star{flex:0 0 auto; width:24px; height:24px; transform-origin:center;}
   .fab .star svg{display:block; width:24px; height:24px; fill:#fff;}
@@ -73,7 +73,8 @@
   <div class="watermark">（其余留白 · blank canvas — bottom-right only）</div>
 
   <div class="controls">
-    <h1>Chatbot FAB · intro animation</h1>
+    <h1>Chatbot FAB · intro + hover motion</h1>
+    <div style="font-size:11px;color:var(--muted);margin:-4px 0 10px;">Tip: hover the FAB to morph circle ⇄ pill (after the intro).</div>
     <div class="seg" id="seg">
       <button data-mode="first-wide" class="active">First · ≥1280</button>
       <button data-mode="first-narrow">First · &lt;1280</button>
@@ -106,10 +107,13 @@
   const phase    = document.getElementById('phase');
   const replay   = document.getElementById('replay');
 
-  const D = 2900;                         // first-launch morph duration
+  const PILL = '312px';                   // expanded labelled-pill width
+  const D = 3220;                         // first-launch total: entrance 400 + dwell 1900 + collapse 920
+  const MORPH = 920;                      // unified expand/collapse time (intro collapse segment; reused by hover)
+  const E = { inOut:'cubic-bezier(.22,1,.36,1)', collapse:'cubic-bezier(.65,0,.35,1)' };
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   let mode = 'first-wide';
-  let anims = [], timers = [];
+  let anims = [], timers = [], hoverAnims = [], introPlaying = false;
 
   function clearAll(){
     anims.forEach(a => a.cancel()); anims = [];
@@ -127,13 +131,14 @@
     if (narrow) timers.push(setTimeout(()=>setPhase('Schedule View enters'), 0));
     timers.push(setTimeout(()=>setPhase('AI entrance'),       delay));
     timers.push(setTimeout(()=>setPhase('dwell — AI focal'),  delay+400));
-    timers.push(setTimeout(()=>setPhase('collapse'),          delay+2300));
-    timers.push(setTimeout(()=>setPhase('settle'),            delay+2720));
-    timers.push(setTimeout(()=>setPhase('rest ✓'),            delay+2900));
+    timers.push(setTimeout(()=>setPhase('collapse + 720° spin'), delay+2300));
+    timers.push(setTimeout(()=>{ setPhase('rest ✓'); introPlaying = false; }, delay+D));
   }
 
   function playFirst(narrow){
     clearAll();
+    hoverAnims.forEach(a=>a.cancel()); hoverAnims = [];
+    introPlaying = true;
     setStack(narrow);
     fab.style.width = '56px';
     const delay = narrow ? 500 : 0;        // stagger: Schedule settles first
@@ -142,34 +147,33 @@
       schedule.style.opacity = '0';
       anims.push(schedule.animate(
         [{opacity:0, transform:'translateY(10px)'},{opacity:1, transform:'none'}],
-        {duration:300, easing:'cubic-bezier(.22,1,.36,1)', fill:'forwards'}));
+        {duration:300, easing:E.inOut, fill:'forwards'}));
     }
 
-    if (reduce){ playReturn(true, narrow); setPhase('rest ✓ (reduced motion)'); return; }
+    if (reduce){ playReturn(true, narrow); setPhase('rest ✓ (reduced motion)'); introPlaying = false; return; }
 
+    // Entrance is opacity-only at full pill width — no slide/scale, no overshoot —
+    // so the centred star never drifts vertically. Collapse settles straight to 56.
     anims.push(fab.animate([
-      { width:'284px', opacity:0, transform:'translateY(12px) scale(0.92)', easing:'cubic-bezier(.22,1,.36,1)', offset:0 },
-      { width:'284px', opacity:1, transform:'translateY(0px) scale(1)', offset:0.138 },                                       // 400ms expanded
-      { width:'284px', opacity:1, transform:'translateY(0px) scale(1)', easing:'cubic-bezier(.65,0,.35,1)', offset:0.793 },   // 2300ms collapse start
-      { width:'56px',  opacity:1, transform:'translateY(0px) scale(1)', easing:'cubic-bezier(.34,1.56,.64,1)', offset:0.938 },// 2720ms collapsed
-      { width:'56px',  opacity:1, transform:'translateY(0px) scale(1.06)', offset:0.966 },                                    // 2800ms overshoot
-      { width:'56px',  opacity:1, transform:'translateY(0px) scale(1)', offset:1 }                                            // 2900ms rest
+      { width:PILL, opacity:0, transform:'none', offset:0 },
+      { width:PILL, opacity:1, transform:'none', offset:0.124 },                          // 400ms expanded & landed
+      { width:PILL, opacity:1, transform:'none', easing:E.collapse, offset:0.714 },       // 2300ms collapse start
+      { width:'56px', opacity:1, transform:'none', offset:1 }                             // 3220ms rest (collapse = 920ms)
     ], { duration:D, delay, fill:'both' }));   // 'both' = stays hidden (keyframe 0) through the stagger delay
 
     anims.push(label.animate([
       { opacity:0, offset:0 },
-      { opacity:1, offset:0.138 },
-      { opacity:1, easing:'ease-in', offset:0.793 },
-      { opacity:0, offset:0.848 },
+      { opacity:1, offset:0.124 },
+      { opacity:1, easing:'ease-in', offset:0.714 },
+      { opacity:0, offset:0.77 },
       { opacity:0, offset:1 }
     ], { duration:D, delay, fill:'both' }));
 
+    // Star spins two full turns locked to the width collapse — same segment + easing.
     anims.push(star.animate([
-      { transform:'scale(1)', offset:0 },
-      { transform:'scale(1)', offset:0.362 },
-      { transform:'scale(1.08)', offset:0.41 },
-      { transform:'scale(1)', offset:0.455 },
-      { transform:'scale(1)', offset:1 }
+      { transform:'rotate(0deg)', offset:0 },
+      { transform:'rotate(0deg)', easing:E.collapse, offset:0.714 },
+      { transform:'rotate(720deg)', offset:1 }
     ], { duration:D, delay }));
 
     markTimers(delay, narrow);
@@ -201,6 +205,25 @@
   });
   replay.addEventListener('click', run);
   fab.addEventListener('click', ()=>{ if(mode.startsWith('first')) run(); });
+
+  // Hover-morph: at rest, pointer enter expands circle → pill, leave collapses
+  // back. Reuses the intro morph (unified MORPH ms, 720° star spin, opacity
+  // label). Live from-values keep a mid-morph reverse seamless. Stands down
+  // while the intro plays and under reduced motion.
+  function hoverMorph(toPill){
+    if (introPlaying || reduce) return;
+    const w0 = getComputedStyle(fab).width, o0 = getComputedStyle(label).opacity;
+    hoverAnims.forEach(a=>a.cancel()); hoverAnims = [];
+    const opt = { duration:MORPH, easing: toPill ? E.inOut : E.collapse, fill:'both' };
+    hoverAnims.push(fab.animate([{width:w0},{width: toPill ? PILL : '56px'}], opt));
+    hoverAnims.push(label.animate([{opacity:o0},{opacity: toPill ? 1 : 0}], opt));
+    hoverAnims.push(star.animate(
+      toPill ? [{transform:'rotate(0deg)'},{transform:'rotate(720deg)'}]
+             : [{transform:'rotate(720deg)'},{transform:'rotate(0deg)'}], opt));
+    setPhase(toPill ? 'hover → pill' : 'hover ← circle');
+  }
+  fab.addEventListener('mouseenter', ()=>hoverMorph(true));
+  fab.addEventListener('mouseleave', ()=>hoverMorph(false));
 
   run();   // autoplay on load
 </script>
