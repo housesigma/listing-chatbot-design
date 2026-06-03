@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Chatbot FAB — first-launch intro animation</title>
+<style>
+  :root{
+    --primary:#00838f;
+    --shadow-fab:0 6px 20px rgba(0,0,0,0.18);
+    --ink:#1f2a2e; --muted:#8b969b;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;height:100%;}
+  body{
+    font-family:-apple-system,"Helvetica Neue","Segoe UI","PingFang SC",sans-serif;
+    background:#eef1f3; color:var(--ink); overflow:hidden;
+  }
+  .watermark{
+    position:fixed; inset:0; display:grid; place-items:center;
+    color:#cdd5d8; font-size:14px; letter-spacing:.4px; user-select:none; pointer-events:none;
+  }
+
+  /* controls — minimal, top-left */
+  .controls{
+    position:fixed; top:18px; left:18px; z-index:50;
+    background:#fff; border:1px solid #e3e7e9; border-radius:12px;
+    padding:12px 14px; box-shadow:0 4px 16px rgba(0,0,0,.08); width:312px;
+  }
+  .controls h1{font-size:13px; margin:0 0 10px; font-weight:700;}
+  .seg{display:flex; gap:6px; margin-bottom:8px;}
+  .seg button{
+    flex:1; appearance:none; cursor:pointer; border:1px solid #d8dee0; background:#f6f8f9;
+    color:#445; font:600 11.5px/1.2 inherit; padding:9px 6px; border-radius:8px; transition:.15s;
+  }
+  .seg button:hover{border-color:var(--primary); color:var(--primary);}
+  .seg button.active{background:var(--primary); border-color:var(--primary); color:#fff;}
+  .row2{display:flex; gap:6px; align-items:center;}
+  .replay{
+    flex:0 0 auto; appearance:none; cursor:pointer; border:1px solid #d8dee0; background:#fff;
+    color:#445; font:600 12px/1 inherit; padding:9px 12px; border-radius:8px;
+  }
+  .replay:hover{border-color:var(--primary); color:var(--primary);}
+  .phase{flex:1; font-size:11px; color:var(--muted); font-variant-numeric:tabular-nums; text-align:right;}
+
+  /* shared pill/circle look */
+  .fab, .schedule{
+    position:fixed; right:24px; z-index:40;
+    height:56px; border-radius:28px;
+    background:var(--primary); box-shadow:var(--shadow-fab);
+    display:flex; align-items:center; gap:10px;
+    overflow:hidden; white-space:nowrap; transform-origin:bottom right; cursor:pointer;
+  }
+  /* ===== AI launcher (morphing) ===== */
+  .fab{
+    bottom:24px; width:56px;
+    padding-left:16px; padding-right:18px;   /* left:16 = star auto-centers at 56px */
+  }
+  .fab .star{flex:0 0 auto; width:24px; height:24px; transform-origin:center;}
+  .fab .star svg{display:block; width:24px; height:24px; fill:#fff;}
+  .fab .label{color:#fff; font-size:15px; font-weight:600; white-space:nowrap; opacity:0;}
+
+  /* ===== Schedule View (host CTA, < 1280px only) ===== */
+  .schedule{
+    bottom:24px; padding:0 20px 0 18px; display:none;   /* shown only in <1280 modes */
+  }
+  .schedule .cal{flex:0 0 auto; width:22px; height:22px;}
+  .schedule .cal svg{display:block; width:22px; height:22px; fill:none; stroke:#fff; stroke-width:2;}
+  .schedule .txt{color:#fff; font-size:16px; font-weight:700;}
+</style>
+</head>
+<body>
+  <div class="watermark">（其余留白 · blank canvas — bottom-right only）</div>
+
+  <div class="controls">
+    <h1>Chatbot FAB · intro animation</h1>
+    <div class="seg" id="seg">
+      <button data-mode="first-wide" class="active">First · ≥1280</button>
+      <button data-mode="first-narrow">First · &lt;1280</button>
+      <button data-mode="return">Returning</button>
+    </div>
+    <div class="row2">
+      <button class="replay" id="replay">↻ Replay</button>
+      <span class="phase" id="phase">—</span>
+    </div>
+  </div>
+
+  <!-- Schedule View — host CTA, bottom anchor (< 1280px) -->
+  <div class="schedule" id="schedule" aria-label="Schedule View">
+    <span class="cal"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span>
+    <span class="txt">Schedule View</span>
+  </div>
+
+  <!-- AI launcher — stacked above Schedule when present -->
+  <div class="fab" id="fab" aria-label="Ask anything about this home">
+    <span class="star"><svg viewBox="0 0 256 256"><path d="M128 20l20 68 68 20-68 20-20 68-20-68-68-20 68-20z"/></svg></span>
+    <span class="label" id="label">Ask anything about this home</span>
+  </div>
+
+<script>
+  const fab      = document.getElementById('fab');
+  const label    = document.getElementById('label');
+  const star     = fab.querySelector('.star');
+  const schedule = document.getElementById('schedule');
+  const seg      = document.getElementById('seg');
+  const phase    = document.getElementById('phase');
+  const replay   = document.getElementById('replay');
+
+  const D = 2900;                         // first-launch morph duration
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let mode = 'first-wide';
+  let anims = [], timers = [];
+
+  function clearAll(){
+    anims.forEach(a => a.cancel()); anims = [];
+    timers.forEach(t => clearTimeout(t)); timers = [];
+  }
+  const setPhase = t => phase.textContent = t;
+
+  // narrow = <1280: Schedule View floats (bottom anchor), AI sits 56+12 above it
+  function setStack(narrow){
+    schedule.style.display = narrow ? 'flex' : 'none';
+    fab.style.bottom = narrow ? '92px' : '24px';
+  }
+
+  function markTimers(delay, narrow){
+    if (narrow) timers.push(setTimeout(()=>setPhase('Schedule View enters'), 0));
+    timers.push(setTimeout(()=>setPhase('AI entrance'),       delay));
+    timers.push(setTimeout(()=>setPhase('dwell — AI focal'),  delay+400));
+    timers.push(setTimeout(()=>setPhase('collapse'),          delay+2300));
+    timers.push(setTimeout(()=>setPhase('settle'),            delay+2720));
+    timers.push(setTimeout(()=>setPhase('rest ✓'),            delay+2900));
+  }
+
+  function playFirst(narrow){
+    clearAll();
+    setStack(narrow);
+    fab.style.width = '56px';
+    const delay = narrow ? 500 : 0;        // stagger: Schedule settles first
+
+    if (narrow){
+      schedule.style.opacity = '0';
+      anims.push(schedule.animate(
+        [{opacity:0, transform:'translateY(10px)'},{opacity:1, transform:'none'}],
+        {duration:300, easing:'cubic-bezier(.22,1,.36,1)', fill:'forwards'}));
+    }
+
+    if (reduce){ playReturn(true, narrow); setPhase('rest ✓ (reduced motion)'); return; }
+
+    anims.push(fab.animate([
+      { width:'284px', opacity:0, transform:'translateY(12px) scale(0.92)', easing:'cubic-bezier(.22,1,.36,1)', offset:0 },
+      { width:'284px', opacity:1, transform:'translateY(0px) scale(1)', offset:0.138 },                                       // 400ms expanded
+      { width:'284px', opacity:1, transform:'translateY(0px) scale(1)', easing:'cubic-bezier(.65,0,.35,1)', offset:0.793 },   // 2300ms collapse start
+      { width:'56px',  opacity:1, transform:'translateY(0px) scale(1)', easing:'cubic-bezier(.34,1.56,.64,1)', offset:0.938 },// 2720ms collapsed
+      { width:'56px',  opacity:1, transform:'translateY(0px) scale(1.06)', offset:0.966 },                                    // 2800ms overshoot
+      { width:'56px',  opacity:1, transform:'translateY(0px) scale(1)', offset:1 }                                            // 2900ms rest
+    ], { duration:D, delay, fill:'both' }));   // 'both' = stays hidden (keyframe 0) through the stagger delay
+
+    anims.push(label.animate([
+      { opacity:0, offset:0 },
+      { opacity:1, offset:0.138 },
+      { opacity:1, easing:'ease-in', offset:0.793 },
+      { opacity:0, offset:0.848 },
+      { opacity:0, offset:1 }
+    ], { duration:D, delay, fill:'both' }));
+
+    anims.push(star.animate([
+      { transform:'scale(1)', offset:0 },
+      { transform:'scale(1)', offset:0.362 },
+      { transform:'scale(1.08)', offset:0.41 },
+      { transform:'scale(1)', offset:0.455 },
+      { transform:'scale(1)', offset:1 }
+    ], { duration:D, delay }));
+
+    markTimers(delay, narrow);
+  }
+
+  function playReturn(silent, narrow){
+    clearAll();
+    setStack(!!narrow);
+    fab.style.width = '56px';
+    label.style.opacity = '0';
+    if (narrow) schedule.style.opacity = '1';
+    anims.push(fab.animate(
+      [{opacity:0, transform:'scale(0.9)'},{opacity:1, transform:'scale(1)'}],
+      {duration:280, easing:'cubic-bezier(.22,1,.36,1)', fill:'forwards'}));
+    if (!silent) setPhase('rest ✓ (no intro)');
+  }
+
+  function run(){
+    if (mode === 'first-wide')   return playFirst(false);
+    if (mode === 'first-narrow') return playFirst(true);
+    return playReturn(false, false);
+  }
+
+  seg.addEventListener('click', e=>{
+    const b = e.target.closest('button'); if(!b) return;
+    mode = b.dataset.mode;
+    [...seg.children].forEach(x=>x.classList.toggle('active', x===b));
+    run();
+  });
+  replay.addEventListener('click', run);
+  fab.addEventListener('click', ()=>{ if(mode.startsWith('first')) run(); });
+
+  run();   // autoplay on load
+</script>
+</body>
+</html>

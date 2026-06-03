@@ -548,10 +548,12 @@ tokens; the container shell is what differs.
 | Drag bar / grabber | **None** — close exclusively via the `×` button or ESC key |
 | Safe-area-inset | **N/A** — desktop has no notch / home indicator |
 
-**FAB / panel toggle:** the desktop FAB lives at the same `bottom: 24px;
-right: 24px` slot. When the panel opens, the FAB unmounts (the panel
-occupies its anchor); when the panel closes, the FAB re-mounts. Single
-floating element at any time, no visual stacking.
+**FAB / panel toggle:** the desktop FAB lives inside the shared Floating
+Action Stack (§5.17) pinned to `bottom: 24px; right: 24px` — never a
+standalone corner anchor. When the panel opens, the entire stack unmounts
+(the panel occupies the corner); when the panel closes, the stack
+re-mounts. Single floating *AI surface* at any time, no visual stacking
+between FAB and panel.
 
 **Header chrome**: **always minimal** — only the `×` close button,
 right-aligned. No divider, no scope pill. Same treatment for every chat
@@ -608,6 +610,97 @@ Typing Indicator (§5.10), Show More Toggle (§5.11), Scope Pill (§5.13),
 Error Bubble (§5.14). Bubble inner-text wrap, padding, gap, and shape
 are byte-identical. Only the outer chrome (sheet vs popover) differs.
 
+### 5.17 Floating Action Stack (Host Corner)
+
+The desktop FAB (§5.16) does **not** own the bottom-right corner alone —
+the host listing page anchors its **primary commercial CTA** there too
+(e.g. *Schedule View*). Two independent `position: fixed; right: 24px;
+bottom: 24px` elements collide blindly: neither measures the other, so
+they overlap. This section closes that gap.
+
+**Rule:** the corner is owned by **one** shared stack container — never by
+individual `fixed` floaters reaching for the same slot.
+
+| Property | Value |
+|---|---|
+| Container | `position: fixed; right: 24px; bottom: 24px` |
+| Layout | `display: flex; flex-direction: column-reverse; align-items: flex-end; gap: 12px` |
+| Order (bottom → top) | Primary host CTA lowest (closest to cursor) · AI FAB stacked above |
+| z-index | 900 (below popover / FAB-open at 1000, so an open panel always covers the stack) |
+| Open-panel behavior | Popover (§5.16) covers the corner → hide / unmount the whole stack; restore on close |
+
+**Invariants:**
+
+- No host-page floater may anchor `fixed` to the corner on its own — it
+  joins the stack or it does not float. This is the rule the old spec was
+  missing: "single floating element at any time" (§5.16) governed only
+  FAB ↔ panel, never FAB ↔ host CTA.
+- The primary commercial CTA keeps the lowest (most reachable) slot; the
+  AI FAB never displaces it. AI is **additive**, not a takeover.
+- `column-reverse` makes source order = priority order (CTA first in DOM,
+  rendered at the bottom); mounting / unmounting the FAB never shifts the
+  CTA's position.
+- While the AI panel is open the stack is gone, so stack and panel never
+  coexist — the corner holds exactly one AI surface at a time.
+
+**Alternative considered — toolbar dock (Variant B, not adopted):** move
+the AI entry into the host action bar (the §5.15 mobile model) and leave
+the corner to the CTA alone. Valid when the host wants the corner
+single-purpose, but rejected as the default — a persistent FAB
+out-discovers a toolbar icon. The stack keeps **both** the FAB's
+discoverability and the CTA's primacy.
+
+**First-launch intro × Schedule View (< 1280px).** Below 1280px the stack
+holds two items — Schedule View (bottom anchor) and the AI FAB (top). On a
+user's first visit the AI slot plays its intro (expanded `✦ Ask anything
+about this home` pill → 56 circle; see the FAB intro motion spec /
+`chat-fab-intro-demo.html`). That wide intro pill shares the corner with the
+Schedule View CTA, so the two are choreographed by these rules:
+
+1. **Schedule View is never suppressed.** It is the primary (more important)
+   CTA and stays mounted at full prominence throughout the intro — never
+   hidden, dimmed, or delayed. Do not demote the commercial CTA to spotlight
+   a secondary feature.
+2. **Vertical stack, no horizontal collision.** Intro pill (~284) and
+   Schedule View (~190) are both right-anchored in the column and stack with
+   `gap: 12`; they never overlap — the intro pill just extends further left.
+   AI is the TOP slot, Schedule the BOTTOM anchor, so as the pill collapses
+   `284 → 56` (width only; height stays 56) **Schedule never moves.**
+3. **Stagger the entrances** — never two simultaneous animations. Schedule
+   View enters with the page and settles first; ~500 ms later the AI intro
+   entrance begins above it. By the time the pill dwells, Schedule is already
+   calm; the AI earns focus through **motion + label**, not color.
+4. **Deliberate, time-boxed hierarchy inversion.** During the ~1.9 s dwell
+   the wide labeled pill is louder than Schedule — an intentional one-time
+   "meet the assistant" beat. After collapse, normal hierarchy is restored
+   (full Schedule pill ≫ small AI circle), honoring Schedule's primacy. The
+   inversion is bounded to the intro and never repeats (`localStorage
+   .aiLauncher_intro_viewed`).
+5. **Interrupt = commit.** Tapping the intro pill (or anything that opens the
+   panel) cancels the intro, sets the viewed flag, and proceeds. The intro
+   never blocks input.
+6. **Panel-open still wins (§5.16).** Opening the panel mid-intro cancels the
+   intro and unmounts the whole stack; on close the resting stack
+   (circle + Schedule) returns and the intro does not replay.
+7. **≥ 1280px:** no Schedule floating CTA → intro plays solo (FAB-alone), no
+   stagger.
+8. **Resize across 1280px:** Schedule mount/unmount tracks the breakpoint
+   independently; the intro is gated only by `localStorage`. Schedule
+   mounting mid-intro simply takes the bottom slot; the AI slot is unaffected.
+9. **`prefers-reduced-motion`:** skip the morph — AI renders directly as the
+   circle, Schedule fades in, no stagger.
+
+Timeline (first launch, < 1280px) — motion-spec offsets + 500 ms stagger:
+
+| t (ms) | event |
+|---|---|
+| 0 | page paint · Schedule View enters (host), settles |
+| ~500 | AI intro entrance begins above Schedule |
+| ~900 | intro pill expanded & landed |
+| 900–2800 | dwell — AI is focal, Schedule calm below |
+| 2800–3220 | AI collapses 284 → 56 (Schedule unmoved) |
+| 3220 | rest — stack = `[ AI circle, Schedule View ]` |
+
 ---
 
 ## 6. Component Composition Rules
@@ -639,7 +732,7 @@ are byte-identical. Only the outer chrome (sheet vs popover) differs.
 | Scrim (§5.7.2) | above all page content | mobile only — desktop popover has no scrim |
 | Sheet (§5.7) | above scrim | mobile |
 | Desktop Popover (§5.16) | 1000 | desktop |
-| Desktop FAB | 1000 | desktop |
+| Floating Action Stack + FAB (§5.17) | 900 | desktop |
 | Toast (base DS) | above everything | both |
 
 ---
